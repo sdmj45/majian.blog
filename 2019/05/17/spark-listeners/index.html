@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>spark listeners | MA Jian</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="When running spark job, driver collects logs from different executors and send events via an event bus to Web UI and to EventLog Listener simultaneously. EventLog Listener send events to a some direct">
+<meta property="og:type" content="article">
+<meta property="og:title" content="spark listeners">
+<meta property="og:url" content="https://sdmj45.github.io/blog/2019/05/17/spark-listeners/index.html">
+<meta property="og:site_name" content="MA Jian">
+<meta property="og:description" content="When running spark job, driver collects logs from different executors and send events via an event bus to Web UI and to EventLog Listener simultaneously. EventLog Listener send events to a some direct">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://sdmj45.github.io/blog/2019/05/17/spark-listeners/spark_history-min.png">
+<meta property="og:image" content="https://sdmj45.github.io/blog/2019/05/17/spark-listeners/sparklens-min.png">
+<meta property="article:published_time" content="2019-05-17T14:21:43.000Z">
+<meta property="article:modified_time" content="2020-03-09T14:25:34.373Z">
+<meta property="article:author" content="MA Jian">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://sdmj45.github.io/blog/2019/05/17/spark-listeners/spark_history-min.png">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="MA Jian" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">MA Jian</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">Enthussiasm in developing</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://sdmj45.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-spark-listeners" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2019/05/17/spark-listeners/" class="article-date">
+  <time datetime="2019-05-17T14:21:43.000Z" itemprop="datePublished">2019-05-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/spark/">spark</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      spark listeners
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>When running spark job, driver collects logs from different executors and send events via an event bus to Web UI and to EventLog Listener simultaneously.</p>
+<p>EventLog Listener send events to a some directory for example in hdfs to store the events, and then spark history server will expose these events in its interface.</p>
+<p>We could define our custom EventLog Listener, there are several listeners already developed and we can use them directly, here I will prent 3 examples.</p>
+<img src="/blog/2019/05/17/spark-listeners/spark_history-min.png" class="" title="spark history">
+<h2 id="sparklens"><a href="#sparklens" class="headerlink" title="sparklens"></a>sparklens</h2><p><a href="https://github.com/qubole/sparklens" target="_blank" rel="noopener">Sparklens</a> is a profiling tool for Spark with built-in Spark Scheduler simulator, it reports </p>
+<ul>
+<li><p>Estimated completion time and estimated cluster utilisation with different number of executors</p>
+</li>
+<li><p>Job/Stage timeline which shows how the parallel stages were scheduled within a job. This makes it easy to visualise the DAG with stage dependencies at the job level.</p>
+</li>
+</ul>
+<p>Here is a screen capture of sparklens reporting ( in my example, I added sparklens jar in the classpath of zepplin, and import sparklens package, and then I can use sparklens directly)</p>
+<p>import package</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.qubole.sparklens.<span class="type">QuboleNotebookListener</span></span><br><span class="line"><span class="keyword">val</span> <span class="type">QNL</span> = <span class="keyword">new</span> <span class="type">QuboleNotebookListener</span>(sc.getConf)</span><br><span class="line">sc.addSparkListener(<span class="type">QNL</span>)</span><br></pre></td></tr></table></figure>
+<img src="/blog/2019/05/17/spark-listeners/sparklens-min.png" class="" title="sparklens">
+<h2 id="sparklint"><a href="#sparklint" class="headerlink" title="sparklint"></a>sparklint</h2><p><a href="https://github.com/groupon/sparklint" target="_blank" rel="noopener">Sparklint</a> is a profiling tool for Spark with advance metrics and better visualization about your spark application’s resource utilization. It helps you find out where the bottle neck are</p>
+<p>We can use it in the application code, or we can also use it to analyse event logs, at the moment when I write this blog, the actual version of sparklint is 1.0.13, and we can’t analyse event logs of history server yet if it is compressed in the configuration.<br>But we can decompress it to json file and then we can work on it.</p>
+<p>here is a screen capture of sparklint</p>
+
+<h2 id="sparkMeasure"><a href="#sparkMeasure" class="headerlink" title="sparkMeasure"></a>sparkMeasure</h2><p><a href="https://github.com/LucaCanali/sparkMeasure" target="_blank" rel="noopener">sparkMeasure</a> is a tool for performance troubleshooting of Apache Spark workloads, It simplifies the collection and analysis of Spark performance metrics.</p>
+<p>It is a tool for multiple uses: instrument interactive (notebooks) and batch workloads</p>
+
+      
+    </div>
+    <footer class="article-footer">
+<!--
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
+        <div>交流或订阅，请长按或扫描上方二维码</div>
+      </div>
+-->
+      <a data-url="https://sdmj45.github.io/blog/2019/05/17/spark-listeners/" data-id="ck7oyyz6x0007s8i3hdangraq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2020/03/08/xiaomakuaibao/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          小马快报
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2019/05/13/Hive-vs-Presto/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hive vs Presto</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/big-data/">big data</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/ci-cd/">ci/cd</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/devops/">devops</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/feelings/">feelings</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/spark/">spark</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/news/" rel="tag">news</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/blog/tags/news/" style="font-size: 10px;">news</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2020/03/08/xiaomakuaibao/">小马快报</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/05/17/spark-listeners/">spark listeners</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/05/13/Hive-vs-Presto/">Hive vs Presto</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/05/03/Jenkins-multiple-pipelines/">Jenkins multiple pipelines</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/04/26/Kubernetes-Deploy-Example-Part-2/">Kubernetes Deploy Example - Part 2</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 MA Jian<br>
+      <!--Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>-->
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/blog/js/xiaomakuaibao.js"></script>
+
+
+  
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+
+  
+<script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

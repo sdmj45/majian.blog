@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hive vs Presto | MA Jian</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="PrestoPresto is a distributed SQL query engine for big data, it allows users to query a variety of data sources such as Hadoop, RDBMS, Mongo etc. One can even query data from multiple data sources wit">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hive vs Presto">
+<meta property="og:url" content="https://sdmj45.github.io/blog/2019/05/13/Hive-vs-Presto/index.html">
+<meta property="og:site_name" content="MA Jian">
+<meta property="og:description" content="PrestoPresto is a distributed SQL query engine for big data, it allows users to query a variety of data sources such as Hadoop, RDBMS, Mongo etc. One can even query data from multiple data sources wit">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-05-13T13:53:41.000Z">
+<meta property="article:modified_time" content="2020-03-09T14:25:34.310Z">
+<meta property="article:author" content="MA Jian">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="MA Jian" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">MA Jian</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">Enthussiasm in developing</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://sdmj45.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Hive-vs-Presto" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2019/05/13/Hive-vs-Presto/" class="article-date">
+  <time datetime="2019-05-13T13:53:41.000Z" itemprop="datePublished">2019-05-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/big-data/">big data</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Hive vs Presto
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Presto"><a href="#Presto" class="headerlink" title="Presto"></a>Presto</h1><p>Presto is a distributed SQL query engine for big data, it allows users to query a variety of data sources such as Hadoop, RDBMS, Mongo etc. One can even query data from multiple data sources within a single query.</p>
+<h1 id="Hive"><a href="#Hive" class="headerlink" title="Hive"></a>Hive</h1><p>Hive is a data warehouse software built on top of Apache Hadoop for providing data query and analysis. It translates SQL queries into multiple stages of MapReduce and it is powerful enough to handle huge numbers of jobs</p>
+<h1 id="Comparisons"><a href="#Comparisons" class="headerlink" title="Comparisons"></a>Comparisons</h1><table>
+<thead>
+<tr>
+<th>Tables</th>
+<th style="text-align:center">Presto</th>
+<th style="text-align:right">Hive</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>best of use</td>
+<td style="text-align:center">Interactive queries</td>
+<td style="text-align:right">Large data aggregation(join for example)</td>
+</tr>
+<tr>
+<td>sql standardized fidelity</td>
+<td style="text-align:center">ANSI SQL</td>
+<td style="text-align:right">HiveQL</td>
+</tr>
+<tr>
+<td>window function</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:right">yes</td>
+</tr>
+<tr>
+<td>optimized target</td>
+<td style="text-align:center">latency</td>
+<td style="text-align:right">query throughput</td>
+</tr>
+<tr>
+<td>execution mode</td>
+<td style="text-align:center">Intermediate data in memory</td>
+<td style="text-align:right">Spills intermediate data to File System</td>
+</tr>
+<tr>
+<td>fault tolerance</td>
+<td style="text-align:center">No</td>
+<td style="text-align:right">Yes</td>
+</tr>
+<tr>
+<td>speed</td>
+<td style="text-align:center">2 times faster than hive</td>
+<td style="text-align:right">slow</td>
+</tr>
+<tr>
+<td>data processing models</td>
+<td style="text-align:center">push model</td>
+<td style="text-align:right">pull model</td>
+</tr>
+<tr>
+<td>limitation</td>
+<td style="text-align:center">limited at the maximum amount of memory that each task can store</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    <footer class="article-footer">
+<!--
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
+        <div>交流或订阅，请长按或扫描上方二维码</div>
+      </div>
+-->
+      <a data-url="https://sdmj45.github.io/blog/2019/05/13/Hive-vs-Presto/" data-id="ck7oyyz6r0002s8i3ekuqexjp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2019/05/17/spark-listeners/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          spark listeners
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2019/05/03/Jenkins-multiple-pipelines/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Jenkins multiple pipelines</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/big-data/">big data</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/ci-cd/">ci/cd</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/devops/">devops</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/feelings/">feelings</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/spark/">spark</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/news/" rel="tag">news</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/blog/tags/news/" style="font-size: 10px;">news</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2020/03/08/xiaomakuaibao/">小马快报</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/05/17/spark-listeners/">spark listeners</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/05/13/Hive-vs-Presto/">Hive vs Presto</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/05/03/Jenkins-multiple-pipelines/">Jenkins multiple pipelines</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/04/26/Kubernetes-Deploy-Example-Part-2/">Kubernetes Deploy Example - Part 2</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 MA Jian<br>
+      <!--Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>-->
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/blog/js/xiaomakuaibao.js"></script>
+
+
+  
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+
+  
+<script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
