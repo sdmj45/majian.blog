@@ -17,7 +17,7 @@
 <meta property="og:image" content="https://sdmj45.github.io/blog/2020/05/03/2-Getting-Started-With-GCP/resources_hierarchy.png">
 <meta property="og:image" content="https://sdmj45.github.io/blog/2020/05/03/2-Getting-Started-With-GCP/cloud_security.png">
 <meta property="article:published_time" content="2020-05-03T12:53:10.000Z">
-<meta property="article:modified_time" content="2020-05-05T15:34:11.260Z">
+<meta property="article:modified_time" content="2020-05-05T15:37:43.511Z">
 <meta property="article:author" content="MA Jian">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://sdmj45.github.io/blog/2020/05/03/2-Getting-Started-With-GCP/resources_hierarchy.png">
@@ -115,16 +115,16 @@
 </ul>
 <h2 id="GCP-resource-hierarchy"><a href="#GCP-resource-hierarchy" class="headerlink" title="GCP resource hierarchy"></a>GCP resource hierarchy</h2><p>polices can define in organization, folder, project, they are inherited in the hierarchy.<br><img src="/blog/2020/05/03/2-Getting-Started-With-GCP/resources_hierarchy.png" class="" title="resources_hierarchy"></p>
 <p><strong>Projects</strong> are the main way you organise your gcp resources.</p>
-<p>Policies defined in organisation level can be inherited to all children.</p>
-<p>GCP use <strong>least</strong> privilege in managing any kind of compute infrastructure. </p>
-<p><strong>The policies implemented at a higher level in this hierarchy can’t take away access that’s granted at a lower level</strong><br>Eg: if you grant Editor role to Organisation and Viewer role to the folder, then the folder is granted the Editor role.</p>
-<p>Projects can have different owners and users - they are built separately and managed separately.</p>
 <p>Each project has </p>
 <ul>
 <li>Project ID: immutable (assigned by you)</li>
 <li>Project Name: mutable (assigned by you)</li>
 <li>Project number: immutable (assigned by GCP)</li>
 </ul>
+<p>Policies defined in organisation level can be inherited to all children.</p>
+<p>GCP use <strong>least</strong> privilege in managing any kind of compute infrastructure. </p>
+<p><strong>The policies implemented at a higher level in this hierarchy can’t take away access that’s granted at a lower level</strong><br>Eg: if you grant Editor role to Organisation and Viewer role to the folder, then the folder is granted the Editor role.</p>
+<p>Projects can have different owners and users - they are built separately and managed separately.</p>
 <h2 id="Service-Account"><a href="#Service-Account" class="headerlink" title="Service Account"></a>Service Account</h2><p>For example: If you want to give permissions to a Compute Engine rather than a person, you would use service account.<br>A service account is also a resource, so you can give a role to it.</p>
 <p>There are 4 ways to interact with GCP’s management layer:</p>
 <ul>
@@ -162,7 +162,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/03/2-Getting-Started-With-GCP/" data-id="ck9u2pjll000020i33u2who29" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/03/2-Getting-Started-With-GCP/" data-id="ck9u2u6fa000938i3amca93gf" class="article-share-link">Share</a>
       
       
     </footer>
