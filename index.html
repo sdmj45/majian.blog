@@ -70,6 +70,117 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-3-GCP-Virtual-Machines" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2020/05/06/3-GCP-Virtual-Machines/" class="article-date">
+  <time datetime="2020-05-06T11:41:07.000Z" itemprop="datePublished">2020-05-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/gcp/">gcp</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2020/05/06/3-GCP-Virtual-Machines/">3-GCP-Virtual-Machines</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>We can run virtual machines by using of Compute Engine</p>
+<h2 id="VPC-Network"><a href="#VPC-Network" class="headerlink" title="VPC Network"></a>VPC Network</h2><p>Virtual Private Cloud: it connects your GCP resources to each other and to the internet.</p>
+<p>In the example below, us-east1-b and us-east1-c are on the same subnet but in different zones<br><img src="/blog/2020/05/06/3-GCP-Virtual-Machines/subnet.png" class="" title="subnet"></p>
+<p>VPCs have routing tables, you can define firewall rules in terms of tags on compute engine.</p>
+<p>VPC Peering: establish a peering relationship between projects<br>Shared VPC:  you can use IAM to control</p>
+<h2 id="Cloud-Load-Balancing"><a href="#Cloud-Load-Balancing" class="headerlink" title="Cloud Load Balancing"></a>Cloud Load Balancing</h2><p>Users get a single, global anycast IP address</p>
+<h2 id="Cloud-CDN-Content-Delivery-Network"><a href="#Cloud-CDN-Content-Delivery-Network" class="headerlink" title="Cloud CDN(Content Delivery Network)"></a>Cloud CDN(Content Delivery Network)</h2><p>Use Google’s globally distributed edge caches to cache content close to your users</p>
+<h2 id="Compute-Engine"><a href="#Compute-Engine" class="headerlink" title="Compute Engine"></a>Compute Engine</h2><p>Create virtual machine by using of: </p>
+<ul>
+<li>GCP Console</li>
+<li>gcloud</li>
+</ul>
+<p>You can run images of linux or windows servers.</p>
+<p>You can configure memories and cpus of each VM, you can choose 2 kinds of storage: standard or SSD</p>
+<p>You can choose a Preemptible VM to save money (the instance will terminate after 24 hours, it can be used for applications<br>distribute processes across multiple instances in a cluster or for test)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+<!--
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
+        <div>交流或订阅，请长按或扫描上方二维码</div>
+      </div>
+-->
+      <a data-url="https://sdmj45.github.io/blog/2020/05/06/3-GCP-Virtual-Machines/" data-id="ck9vjmmso00063ii358aqchyf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-spark-cross-join" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2020/05/06/spark-cross-join/" class="article-date">
+  <time datetime="2020-05-06T06:57:42.000Z" itemprop="datePublished">2020-05-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/spark/">spark</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2020/05/06/spark-cross-join/">spark cross join</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>//todo: to complete</p>
+<p>Cross join matches every row from left with every row from right, generating a Cartesian cross product.</p>
+<p>val joinDF=statesPopulationDF.crossJoin(statesTaxRatesDF)</p>
+<p>without using a join condition.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+<!--
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
+        <div>交流或订阅，请长按或扫描上方二维码</div>
+      </div>
+-->
+      <a data-url="https://sdmj45.github.io/blog/2020/05/06/spark-cross-join/" data-id="ck9vjmmsw000b3ii3hzjj4dft" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2-Getting-Started-With-GCP" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2020/05/03/2-Getting-Started-With-GCP/" class="article-date">
@@ -159,7 +270,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/03/2-Getting-Started-With-GCP/" data-id="ck9v1cynh00030si3cs4y5lmk" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/03/2-Getting-Started-With-GCP/" data-id="ck9vjmmrw00023ii36az27gow" class="article-share-link">Share</a>
       
       
     </footer>
@@ -255,7 +366,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/01/1-GCP-introduction/" data-id="ck9v1cyn200000si36j6ffqwz" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/01/1-GCP-introduction/" data-id="ck9vjmmrs00013ii33n4efiw3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -306,7 +417,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/03/31/xiaomakuaibao/" data-id="ck9v1cynn00080si3bvsr1ujn" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/03/31/xiaomakuaibao/" data-id="ck9vjmmsx000c3ii3703y0k4j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -373,7 +484,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/05/17/spark-listeners/" data-id="ck9v1cyno00090si30i7neu0s" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/05/17/spark-listeners/" data-id="ck9vjmmsu00093ii3fhjl1ynj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -476,7 +587,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/05/13/Hive-vs-Presto/" data-id="ck9v1cynj00040si36bk976mr" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/05/13/Hive-vs-Presto/" data-id="ck9vjmmrx00033ii36nwkg2y4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -545,7 +656,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/05/03/Jenkins-multiple-pipelines/" data-id="ck9v1cynl00060si3bbvyclye" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/05/03/Jenkins-multiple-pipelines/" data-id="ck9vjmmry00043ii3ez4zcvl8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -597,7 +708,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/04/26/Kubernetes-Deploy-Example-Part-2/" data-id="ck9v1cynm00070si3hc16hrru" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/04/26/Kubernetes-Deploy-Example-Part-2/" data-id="ck9vjmmss00083ii38ufthpft" class="article-share-link">Share</a>
       
       
     </footer>
@@ -656,136 +767,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/04/26/Kubernetes-Deploy-Example-Part-1/" data-id="ck9v1cynp000a0si3ftp51rq2" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Avro-vs-Parquet" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2019/04/17/Avro-vs-Parquet/" class="article-date">
-  <time datetime="2019-04-17T13:54:12.000Z" itemprop="datePublished">2019-04-17</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/big-data/">big data</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2019/04/17/Avro-vs-Parquet/">Avro vs Parquet</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Avro"><a href="#Avro" class="headerlink" title="Avro"></a>Avro</h1><p>Apache Avro is a remote procedure call and data serialization framework developed with Apache Hadoop project. It uses Json for defining data types and protocols and serialize data in compact binary format.<br>Avro stores both schema and data together in one message or file.<br>A key feature of Avro is robust support for data schemas that change over time, called scheam evolution.</p>
-<h3 id="Avro-1"><a href="#Avro-1" class="headerlink" title="Avro"></a>Avro</h3><ul>
-<li>Row based format</li>
-<li>Schema is stored as JSON within the file</li>
-<li>It is also a Serialization and RPC framework</li>
-<li>Files support block compression and are splittable</li>
-<li>Can be written from streaming data (eg Apache Kafka)</li>
-<li>Excellent with schema evolution</li>
-</ul>
-<h1 id="Parquet"><a href="#Parquet" class="headerlink" title="Parquet"></a>Parquet</h1><p>Parquet is a columnar file format that provides optimizations to speed up queries and a far more efficient file format than csv or json</p>
-<h3 id="Parquet-1"><a href="#Parquet-1" class="headerlink" title="Parquet"></a>Parquet</h3><ul>
-<li>Column based format</li>
-<li>Schema is stored in the footer of the file</li>
-<li>Due to merging of schema across multiple files, schema evolution is expensive</li>
-<li>Excellent for selected column data consumption and processing</li>
-<li>Can’t be written from streaming data since it needs to wait for blocks to get finished. However, this will work using micro-batch (eg Apache Spark).</li>
-<li>Working excellent with spark as there is vectorized reader for parquet</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-<!--
-      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
-        <div>交流或订阅，请长按或扫描上方二维码</div>
-      </div>
--->
-      <a data-url="https://sdmj45.github.io/blog/2019/04/17/Avro-vs-Parquet/" data-id="ck9v1cynk00050si30f52h0c4" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-First blog" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2019/03/08/First%20blog/" class="article-date">
-  <time datetime="2019-03-08T16:03:53.000Z" itemprop="datePublished">2019-03-08</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/feelings/">feelings</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2019/03/08/First%20blog/">My First Blog</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>The first time I tried to write a blog, this is a start. . .</p>
-<h2 id="My-Blog"><a href="#My-Blog" class="headerlink" title="My Blog"></a>My Blog</h2><h3 id="Why-to-write-blog"><a href="#Why-to-write-blog" class="headerlink" title="Why to write blog"></a>Why to write blog</h3><p>2018 is coming soon. I think that I came to France alone in 2009 and came to this country where everything is strange. Now I have not seen it for more than 8 years. During this period, I went to school, graduated, and found a job. Later, in love, marriage, childbirth, and embarrassment, there have been five or six years of experience in the world of programmers.</p>
-<p>I really want to leave something for my life, even if I want to make a simple record, I also want to communicate with my friends, and I have some experience in life.</p>
-<p>However, my writing is really a dish, and I haven’t written it for many years. There is no way, I can only bite my head.</p>
-<p>Seeing a summary of a peer on the Internet feels very good, use it to borrow, as an original intention of a personal blog.</p>
-<ul>
-<li>Accumulate Accumulate experience in work and gain in life.</li>
-<li>Record Use the blog as a diary to record what you see and hear in your work life.</li>
-<li>Share As a programmer, you must have an “open source” spirit.</li>
-<li>Communication Blog is a big circle.</li>
-<li>Learning I always learn knowledge here, just like reading it every day.</li>
-</ul>
-<h3 id="Blog’s-content"><a href="#Blog’s-content" class="headerlink" title="Blog’s content"></a>Blog’s content</h3><ul>
-<li><p>Tell the world of programmers and reprint some technically and nutritious articles.</p>
-</li>
-<li><p>Some stories about living abroad</p>
-</li>
-</ul>
-<p>Ok, the first blog is simply recorded here, my blog journey starts here!</p>
-
-      
-    </div>
-    <footer class="article-footer">
-<!--
-      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
-        <div>交流或订阅，请长按或扫描上方二维码</div>
-      </div>
--->
-      <a data-url="https://sdmj45.github.io/blog/2019/03/08/First%20blog/" data-id="ck9v1cyng00020si3awnf4ehg" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/04/26/Kubernetes-Deploy-Example-Part-1/" data-id="ck9vjmmsz000e3ii35txtapp2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -796,6 +778,11 @@
 
   
 
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="extend next" rel="next" href="/blog/page/2/">Next &amp;raquo;</a>
+  </nav>
 
 </section>
         
@@ -833,6 +820,14 @@
       <ul>
         
           <li>
+            <a href="/blog/2020/05/06/3-GCP-Virtual-Machines/">3-GCP-Virtual-Machines</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2020/05/06/spark-cross-join/">spark cross join</a>
+          </li>
+        
+          <li>
             <a href="/blog/2020/05/03/2-Getting-Started-With-GCP/">2-Getting-Started-With-GCP</a>
           </li>
         
@@ -842,14 +837,6 @@
         
           <li>
             <a href="/blog/2020/03/31/xiaomakuaibao/">Website Recommended</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2019/05/17/spark-listeners/">spark listeners</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2019/05/13/Hive-vs-Presto/">Hive vs Presto</a>
           </li>
         
       </ul>
