@@ -5,22 +5,22 @@
   
 
   
-  <title>2-Getting-Started-With-GCP | Developer</title>
+  <title>6-GCP-Applications | Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="IAMIAM: Google Cloud’s Identity and Access Management.It has 3 parts:  Who:  can be defined by google account, google group, service account Can do what: can be defined by an IAM role which is a colle">
+  <meta name="description" content="App Engineis a PaaS for building scalable applications  it makes deployment, maintenance and scalability easy suited for building scalable web applications and mobile backends  It offers 2 environment">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2-Getting-Started-With-GCP">
-<meta property="og:url" content="https://sdmj45.github.io/blog/2020/05/03/2-Getting-Started-With-GCP/index.html">
+<meta property="og:title" content="6-GCP-Applications">
+<meta property="og:url" content="https://sdmj45.github.io/blog/2020/05/08/6-GCP-Applications/index.html">
 <meta property="og:site_name" content="Developer">
-<meta property="og:description" content="IAMIAM: Google Cloud’s Identity and Access Management.It has 3 parts:  Who:  can be defined by google account, google group, service account Can do what: can be defined by an IAM role which is a colle">
+<meta property="og:description" content="App Engineis a PaaS for building scalable applications  it makes deployment, maintenance and scalability easy suited for building scalable web applications and mobile backends  It offers 2 environment">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://sdmj45.github.io/blog/2020/05/03/2-Getting-Started-With-GCP/resources_hierarchy.png">
-<meta property="og:image" content="https://sdmj45.github.io/blog/2020/05/03/2-Getting-Started-With-GCP/cloud_security.png">
-<meta property="article:published_time" content="2020-05-03T12:53:10.000Z">
-<meta property="article:modified_time" content="2020-05-06T07:43:47.915Z">
+<meta property="og:image" content="https://sdmj45.github.io/blog/2020/05/08/6-GCP-Applications/standard_vs_flexible.png">
+<meta property="og:image" content="https://sdmj45.github.io/blog/2020/05/08/6-GCP-Applications/kubernetes_engine_vs_app_engine.png">
+<meta property="article:published_time" content="2020-05-08T13:21:34.000Z">
+<meta property="article:modified_time" content="2020-05-08T15:52:35.676Z">
 <meta property="article:author" content="MA Jian">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://sdmj45.github.io/blog/2020/05/03/2-Getting-Started-With-GCP/resources_hierarchy.png">
+<meta name="twitter:image" content="https://sdmj45.github.io/blog/2020/05/08/6-GCP-Applications/standard_vs_flexible.png">
   
     <link rel="alternate" href="/blog/atom.xml" title="Developer" type="application/atom+xml">
   
@@ -73,10 +73,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-2-Getting-Started-With-GCP" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-6-GCP-Applications" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2020/05/03/2-Getting-Started-With-GCP/" class="article-date">
-  <time datetime="2020-05-03T12:53:10.000Z" itemprop="datePublished">2020-05-03</time>
+    <a href="/blog/2020/05/08/6-GCP-Applications/" class="article-date">
+  <time datetime="2020-05-08T13:21:34.000Z" itemprop="datePublished">2020-05-08</time>
 </a>
     
   <div class="article-category">
@@ -91,7 +91,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      2-Getting-Started-With-GCP
+      6-GCP-Applications
     </h1>
   
 
@@ -99,60 +99,47 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="IAM"><a href="#IAM" class="headerlink" title="IAM"></a>IAM</h2><p>IAM: Google Cloud’s Identity and Access Management.<br>It has 3 parts:</p>
+        <h2 id="App-Engine"><a href="#App-Engine" class="headerlink" title="App Engine"></a>App Engine</h2><p>is a PaaS for building scalable applications</p>
 <ul>
-<li><strong>Who</strong>:<br>  can be defined by google account, google group, service account</li>
-<li><strong>Can do what</strong>: can be defined by an <strong>IAM role</strong> which is a collection of permissions<ul>
-<li>There are 3 kinds of roles:<ul>
-<li>Primitive role</li>
-<li>Predefined role</li>
-<li>Custom role:  can only be defined in organization or project, but not in folders</li>
+<li>it makes deployment, maintenance and scalability easy</li>
+<li>suited for building scalable web applications and mobile backends</li>
 </ul>
-</li>
-</ul>
-</li>
-<li><strong>On which resource</strong></li>
-</ul>
-<h2 id="GCP-resource-hierarchy"><a href="#GCP-resource-hierarchy" class="headerlink" title="GCP resource hierarchy"></a>GCP resource hierarchy</h2><p>polices can define in organization, folder, project, they are inherited in the hierarchy.<br><img src="/blog/2020/05/03/2-Getting-Started-With-GCP/resources_hierarchy.png" class="" title="resources_hierarchy"></p>
-<p><strong>Projects</strong> are the main way you organise your gcp resources.</p>
-<p>Each project has </p>
+<p>It offers 2 environments:</p>
 <ul>
-<li>Project ID: immutable (assigned by you)</li>
-<li>Project Name: mutable (assigned by you)</li>
-<li>Project number: immutable (assigned by GCP)</li>
-</ul>
-<p>Policies defined in organisation level can be inherited to all children.</p>
-<p>GCP use <strong>least</strong> privilege in managing any kind of compute infrastructure. </p>
-<p><strong>The policies implemented at a higher level in this hierarchy can’t take away access that’s granted at a lower level</strong><br>Eg: if you grant Editor role to Organisation and Viewer role to the folder, then the folder is granted the Editor role.</p>
-<p>Projects can have different owners and users - they are built separately and managed separately.</p>
-<h2 id="Service-Account"><a href="#Service-Account" class="headerlink" title="Service Account"></a>Service Account</h2><p>For example: If you want to give permissions to a Compute Engine rather than a person, you would use service account.<br>A service account is also a resource, so you can give a role to it.</p>
-<p>There are 4 ways to interact with GCP’s management layer:</p>
+<li><p><strong>standard environment</strong></p>
 <ul>
-<li>GCP console<ul>
-<li>Manage and create projects</li>
-<li>Access to GCP APIs</li>
-<li>Offers access to Cloud Shell</li>
+<li>easily deploy applications</li>
+<li>autoscale</li>
+<li>free daily quota</li>
+<li>usage based pricing</li>
+<li>Specific versions of Java, Python, PHP and Go are supported</li>
+</ul>
+<p>Sandbox constraints:</p>
+<ul>
+<li>No writing to local files</li>
+<li>All requests time out at 60s</li>
+<li>Limits on third-party software</li>
 </ul>
 </li>
-<li>Cloud shell and Cloud SDK<ul>
-<li>Includes command line tools: gcloud, gsutil(Cloud storage), bq(BigQuery)</li>
-</ul>
-</li>
-<li>API<ul>
-<li>Enabled through GCP console</li>
-<li>APIs Explorer is an interface tool that let you easily try GCP APIs using a browser</li>
-<li>Use libraries within your code<ul>
-<li>Cloud Client Libraries</li>
-<li>Google API Client Libraries</li>
+<li><strong>flexible environment</strong><ul>
+<li>Build and deploy containerized apps with a click</li>
+<li>No sandbox constraints</li>
+<li>Can access App Engine resources</li>
 </ul>
 </li>
 </ul>
-</li>
-<li>Cloud Console Mobile App</li>
+<p>Comparing standard and flexible environments<br><img src="/blog/2020/05/08/6-GCP-Applications/standard_vs_flexible.png" class="" title="standard_vs_flexible"><br>Comparing Kubernetes Engine and App Engine<br><img src="/blog/2020/05/08/6-GCP-Applications/kubernetes_engine_vs_app_engine.png" class="" title="kubernetes_engine_vs_app_engine"></p>
+<p>GCP provides 2 API management tools</p>
+<h2 id="Cloud-Endpoints"><a href="#Cloud-Endpoints" class="headerlink" title="Cloud Endpoints"></a>Cloud Endpoints</h2><ul>
+<li>Control access and validate calls with JSON Web Token and Google API keys<ul>
+<li>Identify web, mobile users with Auth0 and Firebase Authentication</li>
 </ul>
-<p>When using GCP, it handles most of the lower security layer, the upper layers remain the customer’s responsibility<br><img src="/blog/2020/05/03/2-Getting-Started-With-GCP/cloud_security.png" class="" title="cloud_security"></p>
-<h2 id="Cloud-MarketPlace-formerly-Cloud-Launcher"><a href="#Cloud-MarketPlace-formerly-Cloud-Launcher" class="headerlink" title="Cloud MarketPlace( formerly Cloud Launcher)"></a>Cloud MarketPlace( formerly Cloud Launcher)</h2><p>It’s a tool for quickly deploying functional software packages on GCP</p>
-<div class="video-container"><iframe src="https://www.youtube.com/embed/WVwEVeW4A64" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
+</li>
+<li>Generate client libraries<h2 id="Apigee-Edge"><a href="#Apigee-Edge" class="headerlink" title="Apigee Edge"></a>Apigee Edge</h2></li>
+<li>A platform for making APIs available to your customers and partners</li>
+<li>Contains analytics, monetization, and a developer portal<br>The backend services for Apigee need not to be in GCP</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
@@ -162,7 +149,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/03/2-Getting-Started-With-GCP/" data-id="ck9ydx1fn000e5li31ozy8h53" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/08/6-GCP-Applications/" data-id="ck9ydx1fc00045li38xy257lk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -171,19 +158,10 @@
     
 <nav id="article-nav">
   
-    <a href="/blog/2020/05/06/spark-cross-join/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          spark cross join
-        
-      </div>
-    </a>
   
-  
-    <a href="/blog/2020/05/01/1-GCP-introduction/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/2020/05/08/5-GCP-Containers/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">1-GCP-introduction</div>
+      <div class="article-nav-title">5-GCP-Containers</div>
     </a>
   
 </nav>
