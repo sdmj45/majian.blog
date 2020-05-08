@@ -15,8 +15,10 @@
 <meta property="og:description" content="Cloud StorageIt is object storage(you have a storage and have a unique key to access) which is not the same asfile storage(you manage your data as a hierarchy of folders) orblock storage(the operating">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://sdmj45.github.io/blog/2020/05/06/4-GCP-Storage/cloud_storage_classes.png">
+<meta property="og:image" content="https://sdmj45.github.io/blog/2020/05/06/4-GCP-Storage/cloud_storage_comparing_1.png">
+<meta property="og:image" content="https://sdmj45.github.io/blog/2020/05/06/4-GCP-Storage/cloud_storage_comparing_2.png">
 <meta property="article:published_time" content="2020-05-06T15:30:14.000Z">
-<meta property="article:modified_time" content="2020-05-07T12:56:20.003Z">
+<meta property="article:modified_time" content="2020-05-08T10:07:52.065Z">
 <meta property="article:author" content="MA Jian">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://sdmj45.github.io/blog/2020/05/06/4-GCP-Storage/cloud_storage_classes.png">
@@ -116,10 +118,50 @@
 <p>Cloud Storage offers <strong>lifecycle management policies</strong>, eg: you could delete objects older than 5 days</p>
 <p>Cloud Storage has different types of storage classes: Multi-Regional, Regional, Nearline, Coldline<br><img src="/blog/2020/05/06/4-GCP-Storage/cloud_storage_classes.png" class="" title="cloud_storage_classes"></p>
 <p>3 Ways to bring data into Cloud Storage:</p>
-<pre><code>+ Online Transfer
-+ Storage Transfer Service
-+ Transfer Appliance
-</code></pre>
+<ul>
+<li>Online Transfer</li>
+<li>Storage Transfer Service</li>
+<li>Transfer Appliance</li>
+</ul>
+<h2 id="Cloud-Bigtable"><a href="#Cloud-Bigtable" class="headerlink" title="Cloud Bigtable"></a>Cloud Bigtable</h2><p>It is google’s NoSQL, big data database service. It supports high throughput, both read and write.</p>
+<p>It offers same API as HBase(native database for Apache Hadoop), differences:</p>
+<ul>
+<li>Bigtable can scale and manage fast and easily</li>
+<li>Bigtable encrypts data in-flight and at rest</li>
+<li>Bigtable can be controlled access with IAM</li>
+<li>Bigtable drives major applications such as Google Analytics, Gmail</li>
+</ul>
+<p>Bigtable access patterns:</p>
+<ul>
+<li>application api</li>
+<li>streaming</li>
+<li>batch processing</li>
+</ul>
+<h2 id="Cloud-SQL"><a href="#Cloud-SQL" class="headerlink" title="Cloud SQL"></a>Cloud SQL</h2><p>managed RDBMS</p>
+<ul>
+<li>MySQL and PostgreSQL databases</li>
+<li>Automatic replication</li>
+<li>Managed backups</li>
+<li>Vertical scaling(read and write)</li>
+<li>Horizontal scaling(read)</li>
+<li>Google security</li>
+</ul>
+<h2 id="Cloud-Spanner"><a href="#Cloud-Spanner" class="headerlink" title="Cloud Spanner"></a>Cloud Spanner</h2><p>horizontally scalable RDBMS</p>
+<ul>
+<li>Strong global consistency</li>
+<li>High availability</li>
+<li>SQL queries</li>
+<li>Automatic replication</li>
+</ul>
+<h2 id="Cloud-Datastore"><a href="#Cloud-Datastore" class="headerlink" title="Cloud Datastore"></a>Cloud Datastore</h2><p>horizontally scalable NoSQL DB</p>
+<ul>
+<li>Designed for application backend</li>
+<li>Supports transactions</li>
+<li>includes a free daily quota</li>
+</ul>
+<h2 id="Cloud-Storage-Comparing"><a href="#Cloud-Storage-Comparing" class="headerlink" title="Cloud Storage Comparing"></a>Cloud Storage Comparing</h2><img src="/blog/2020/05/06/4-GCP-Storage/cloud_storage_comparing_1.png" class="" title="cloud_storage_comparing_1">
+<img src="/blog/2020/05/06/4-GCP-Storage/cloud_storage_comparing_2.png" class="" title="cloud_storage_comparing_2">
+
       
     </div>
     <footer class="article-footer">
@@ -129,7 +171,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/06/4-GCP-Storage/" data-id="ck9wryoxw000f18i3b28rhyv5" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/06/4-GCP-Storage/" data-id="ck9y1dspb00022gi321a9gkzo" class="article-share-link">Share</a>
       
       
     </footer>
