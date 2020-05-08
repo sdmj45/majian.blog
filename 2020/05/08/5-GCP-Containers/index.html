@@ -5,22 +5,19 @@
   
 
   
-  <title>2-Getting-Started-With-GCP | Developer</title>
+  <title>5-GCP-Containers | Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="IAMIAM: Google Cloud’s Identity and Access Management.It has 3 parts:  Who:  can be defined by google account, google group, service account Can do what: can be defined by an IAM role which is a colle">
+  <meta name="description" content="Kubernetesorchestrator for containers so you can better manage and scale your applications Kubernetes EngineKubernetes as a managed service in the cloud.  You can create Kubernetes Cluster with Kubern">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2-Getting-Started-With-GCP">
-<meta property="og:url" content="https://sdmj45.github.io/blog/2020/05/03/2-Getting-Started-With-GCP/index.html">
+<meta property="og:title" content="5-GCP-Containers">
+<meta property="og:url" content="https://sdmj45.github.io/blog/2020/05/08/5-GCP-Containers/index.html">
 <meta property="og:site_name" content="Developer">
-<meta property="og:description" content="IAMIAM: Google Cloud’s Identity and Access Management.It has 3 parts:  Who:  can be defined by google account, google group, service account Can do what: can be defined by an IAM role which is a colle">
+<meta property="og:description" content="Kubernetesorchestrator for containers so you can better manage and scale your applications Kubernetes EngineKubernetes as a managed service in the cloud.  You can create Kubernetes Cluster with Kubern">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://sdmj45.github.io/blog/2020/05/03/2-Getting-Started-With-GCP/resources_hierarchy.png">
-<meta property="og:image" content="https://sdmj45.github.io/blog/2020/05/03/2-Getting-Started-With-GCP/cloud_security.png">
-<meta property="article:published_time" content="2020-05-03T12:53:10.000Z">
-<meta property="article:modified_time" content="2020-05-06T07:43:47.915Z">
+<meta property="article:published_time" content="2020-05-08T12:17:44.000Z">
+<meta property="article:modified_time" content="2020-05-08T14:08:29.291Z">
 <meta property="article:author" content="MA Jian">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://sdmj45.github.io/blog/2020/05/03/2-Getting-Started-With-GCP/resources_hierarchy.png">
   
     <link rel="alternate" href="/blog/atom.xml" title="Developer" type="application/atom+xml">
   
@@ -73,10 +70,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-2-Getting-Started-With-GCP" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-5-GCP-Containers" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2020/05/03/2-Getting-Started-With-GCP/" class="article-date">
-  <time datetime="2020-05-03T12:53:10.000Z" itemprop="datePublished">2020-05-03</time>
+    <a href="/blog/2020/05/08/5-GCP-Containers/" class="article-date">
+  <time datetime="2020-05-08T12:17:44.000Z" itemprop="datePublished">2020-05-08</time>
 </a>
     
   <div class="article-category">
@@ -91,7 +88,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      2-Getting-Started-With-GCP
+      5-GCP-Containers
     </h1>
   
 
@@ -99,60 +96,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="IAM"><a href="#IAM" class="headerlink" title="IAM"></a>IAM</h2><p>IAM: Google Cloud’s Identity and Access Management.<br>It has 3 parts:</p>
-<ul>
-<li><strong>Who</strong>:<br>  can be defined by google account, google group, service account</li>
-<li><strong>Can do what</strong>: can be defined by an <strong>IAM role</strong> which is a collection of permissions<ul>
-<li>There are 3 kinds of roles:<ul>
-<li>Primitive role</li>
-<li>Predefined role</li>
-<li>Custom role:  can only be defined in organization or project, but not in folders</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>On which resource</strong></li>
-</ul>
-<h2 id="GCP-resource-hierarchy"><a href="#GCP-resource-hierarchy" class="headerlink" title="GCP resource hierarchy"></a>GCP resource hierarchy</h2><p>polices can define in organization, folder, project, they are inherited in the hierarchy.<br><img src="/blog/2020/05/03/2-Getting-Started-With-GCP/resources_hierarchy.png" class="" title="resources_hierarchy"></p>
-<p><strong>Projects</strong> are the main way you organise your gcp resources.</p>
-<p>Each project has </p>
-<ul>
-<li>Project ID: immutable (assigned by you)</li>
-<li>Project Name: mutable (assigned by you)</li>
-<li>Project number: immutable (assigned by GCP)</li>
-</ul>
-<p>Policies defined in organisation level can be inherited to all children.</p>
-<p>GCP use <strong>least</strong> privilege in managing any kind of compute infrastructure. </p>
-<p><strong>The policies implemented at a higher level in this hierarchy can’t take away access that’s granted at a lower level</strong><br>Eg: if you grant Editor role to Organisation and Viewer role to the folder, then the folder is granted the Editor role.</p>
-<p>Projects can have different owners and users - they are built separately and managed separately.</p>
-<h2 id="Service-Account"><a href="#Service-Account" class="headerlink" title="Service Account"></a>Service Account</h2><p>For example: If you want to give permissions to a Compute Engine rather than a person, you would use service account.<br>A service account is also a resource, so you can give a role to it.</p>
-<p>There are 4 ways to interact with GCP’s management layer:</p>
-<ul>
-<li>GCP console<ul>
-<li>Manage and create projects</li>
-<li>Access to GCP APIs</li>
-<li>Offers access to Cloud Shell</li>
-</ul>
-</li>
-<li>Cloud shell and Cloud SDK<ul>
-<li>Includes command line tools: gcloud, gsutil(Cloud storage), bq(BigQuery)</li>
-</ul>
-</li>
-<li>API<ul>
-<li>Enabled through GCP console</li>
-<li>APIs Explorer is an interface tool that let you easily try GCP APIs using a browser</li>
-<li>Use libraries within your code<ul>
-<li>Cloud Client Libraries</li>
-<li>Google API Client Libraries</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Cloud Console Mobile App</li>
-</ul>
-<p>When using GCP, it handles most of the lower security layer, the upper layers remain the customer’s responsibility<br><img src="/blog/2020/05/03/2-Getting-Started-With-GCP/cloud_security.png" class="" title="cloud_security"></p>
-<h2 id="Cloud-MarketPlace-formerly-Cloud-Launcher"><a href="#Cloud-MarketPlace-formerly-Cloud-Launcher" class="headerlink" title="Cloud MarketPlace( formerly Cloud Launcher)"></a>Cloud MarketPlace( formerly Cloud Launcher)</h2><p>It’s a tool for quickly deploying functional software packages on GCP</p>
-<div class="video-container"><iframe src="https://www.youtube.com/embed/WVwEVeW4A64" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
+        <h2 id="Kubernetes"><a href="#Kubernetes" class="headerlink" title="Kubernetes"></a>Kubernetes</h2><p>orchestrator for containers so you can better manage and scale your applications</p>
+<h2 id="Kubernetes-Engine"><a href="#Kubernetes-Engine" class="headerlink" title="Kubernetes Engine"></a>Kubernetes Engine</h2><p>Kubernetes as a managed service in the cloud. </p>
+<p>You can create Kubernetes Cluster with Kubernetes Engine</p>
+<h2 id="Cluster"><a href="#Cluster" class="headerlink" title="Cluster"></a>Cluster</h2><p>is a set of master components that control the system as a whole and a set of nodes that run containers</p>
+<p>In GCP, node is VM running in Compute Engine</p>
+<h2 id="Pod"><a href="#Pod" class="headerlink" title="Pod"></a>Pod</h2><p>the smallest deployable unit in Kubernetes. It has 1 container often, but it could have multiple containers, where the containers<br>will share the networking and have the same disk storage volume</p>
+<h2 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h2><p>a deployment represents a group a replicas of the same pod. It keeps your pods running even if a node fails</p>
+<h2 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h2><p>is a fundamental way Kubernetes represents load balancing. It has a public IP so the external can access the cluster</p>
+<p>In GKE, this kind of load balancer is a network load balancer</p>
+<h2 id="Anthos"><a href="#Anthos" class="headerlink" title="Anthos"></a>Anthos</h2><p>Hybrid and Multi-Cloud distributed systems and service management from Google. It rests on Kubernetes and Kubernetes Engine deployed on-premise</p>
+
       
     </div>
     <footer class="article-footer">
@@ -162,7 +116,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/03/2-Getting-Started-With-GCP/" data-id="ck9yaetok000c40i3csfc3m7v" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/08/5-GCP-Containers/" data-id="ck9yaetog000840i31j3036mi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -171,19 +125,10 @@
     
 <nav id="article-nav">
   
-    <a href="/blog/2020/05/06/spark-cross-join/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          spark cross join
-        
-      </div>
-    </a>
   
-  
-    <a href="/blog/2020/05/01/1-GCP-introduction/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/2020/05/06/4-GCP-Storage/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">1-GCP-introduction</div>
+      <div class="article-nav-title">4-GCP-Storage</div>
     </a>
   
 </nav>
