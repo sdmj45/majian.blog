@@ -70,6 +70,131 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-8-GCP-Big-Data-and-Machine-Learning" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2020/05/09/8-GCP-Big-Data-and-Machine-Learning/" class="article-date">
+  <time datetime="2020-05-09T08:09:01.000Z" itemprop="datePublished">2020-05-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/gcp/">gcp</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2020/05/09/8-GCP-Big-Data-and-Machine-Learning/">8-GCP Big Data and Machine Learning</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Big-Data"><a href="#Big-Data" class="headerlink" title="Big Data"></a>Big Data</h2><img src="/blog/2020/05/09/8-GCP-Big-Data-and-Machine-Learning/big_data_services.png" class="" title="big_data_services">
+<p><strong>Serverless</strong> means you don’t have to worry about provisioning compute instances to run your jobs. the services are fully managed.</p>
+<h2 id="Cloud-Dataproc"><a href="#Cloud-Dataproc" class="headerlink" title="Cloud Dataproc"></a>Cloud Dataproc</h2><p>is managed Hadoop</p>
+<ul>
+<li>Fast, easy, managed way to run Hadoop, Spark/Hive/Pig on GCP</li>
+<li>Create clusters in 90 seconds</li>
+<li>Scale clusters up and down even when jobs are running</li>
+<li>Easily migrate on-premises Hadoop jobs to the cloud</li>
+<li>Save money with preemptible instances</li>
+</ul>
+<h2 id="Cloud-Dataflow"><a href="#Cloud-Dataflow" class="headerlink" title="Cloud Dataflow"></a>Cloud Dataflow</h2><p>is managed data pipelines</p>
+<ul>
+<li>Processes data using Compute Engine<ul>
+<li>Clusters are sized for you</li>
+<li>Automated scaling </li>
+</ul>
+</li>
+<li>Write code for batch and streaming   </li>
+</ul>
+<p>Why use Cloud Dataflow?</p>
+<ul>
+<li>ETL</li>
+<li>Data analytics: batch or streaming</li>
+<li>Orchestration: create pipelines that coordinate services, including external services</li>
+<li>Integrates with GCP services</li>
+</ul>
+<h2 id="Big-Query"><a href="#Big-Query" class="headerlink" title="Big Query"></a>Big Query</h2><p>is managed data warehouse</p>
+<ul>
+<li>It provides near real-time interactive analysis of massive dataset using SQL</li>
+<li>No cluster maintenance</li>
+<li>Compute and Storage are separated with a terabit network in between</li>
+<li>You only pay for storage and processing used</li>
+<li>Automatic discount for long-term data storage(when data reaches <strong>90 days</strong> in BigQuery, google drops the price of storage)</li>
+</ul>
+<h2 id="Cloud-Pub-Sub"><a href="#Cloud-Pub-Sub" class="headerlink" title="Cloud Pub/Sub"></a>Cloud Pub/Sub</h2><p>is scalable, reliable messaging</p>
+<ul>
+<li>Supports many-to-many asynchronous messaging</li>
+<li>Push/pull to topics</li>
+<li>Support for offline consumers</li>
+<li>At least once delivery policy</li>
+</ul>
+<h2 id="Cloud-Datalab"><a href="#Cloud-Datalab" class="headerlink" title="Cloud Datalab"></a>Cloud Datalab</h2><p>interactive data exploration(Notebook)</p>
+<p>Built on Jupyter(formerly IPython)</p>
+<p>Easily deploy models to BigQuery. You can visualize data with Google Charts or map plot line</p>
+<h2 id="Cloud-Machine-Learning-Platform"><a href="#Cloud-Machine-Learning-Platform" class="headerlink" title="Cloud Machine Learning Platform"></a>Cloud Machine Learning Platform</h2><ul>
+<li>TensorFlow</li>
+<li>Cloud ML</li>
+<li>Machine Learning APIs</li>
+</ul>
+<p>Why use CLoud Machine Learning Platform?</p>
+<ul>
+<li>For structured data<ul>
+<li>Classification and regression</li>
+<li>Recommendation</li>
+<li>Anomaly detection</li>
+</ul>
+</li>
+<li>For unstructured data<ul>
+<li>Image and video analytics</li>
+<li>Text analytics</li>
+</ul>
+</li>
+</ul>
+<h2 id="CLoud-Vision-API"><a href="#CLoud-Vision-API" class="headerlink" title="CLoud Vision API"></a>CLoud Vision API</h2><ul>
+<li>Gain insight from images</li>
+<li>Detect inappropriate content</li>
+<li>Analyze sentiment</li>
+<li>Extract text<h2 id="Cloud-Natural-Language-API"><a href="#Cloud-Natural-Language-API" class="headerlink" title="Cloud Natural Language API"></a>Cloud Natural Language API</h2></li>
+<li>can return text in real time</li>
+<li>Highly accurate, even in noisy environments</li>
+<li>Access from any device<h2 id="Cloud-Translation-API"><a href="#Cloud-Translation-API" class="headerlink" title="Cloud Translation API"></a>Cloud Translation API</h2></li>
+<li>Translate strings </li>
+<li>Programmatically detect a document’s language</li>
+<li>Support for dozen’s languages<h2 id="Cloud-Video-Intelligence-API"><a href="#Cloud-Video-Intelligence-API" class="headerlink" title="Cloud Video Intelligence API"></a>Cloud Video Intelligence API</h2></li>
+<li>Annotate the contents of video</li>
+<li>Detect scene changes</li>
+<li>Flag inappropriate content</li>
+<li>Support for a variety of video formats</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+<!--
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
+        <div>交流或订阅，请长按或扫描上方二维码</div>
+      </div>
+-->
+      <a data-url="https://sdmj45.github.io/blog/2020/05/09/8-GCP-Big-Data-and-Machine-Learning/" data-id="ck9zkr68y00073ci35wxe8sec" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-7-GCP-Developing-Deploying-and-Monitoring" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2020/05/08/7-GCP-Developing-Deploying-and-Monitoring/" class="article-date">
@@ -116,7 +241,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/08/7-GCP-Developing-Deploying-and-Monitoring/" data-id="ck9zeo13800061ri3ahb27moe" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/08/7-GCP-Developing-Deploying-and-Monitoring/" data-id="ck9zkr68w00063ci33zfphs81" class="article-share-link">Share</a>
       
       
     </footer>
@@ -202,7 +327,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/08/6-GCP-Applications/" data-id="ck9zeo13700051ri3ezbkaqux" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/08/6-GCP-Applications/" data-id="ck9zkr68v00053ci31kpcf9s7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -258,7 +383,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/08/5-GCP-Containers/" data-id="ck9zeo13700041ri3gu3tfwcw" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/08/5-GCP-Containers/" data-id="ck9zkr68u00043ci34qykfr23" class="article-share-link">Share</a>
       
       
     </footer>
@@ -365,7 +490,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/06/4-GCP-Storage/" data-id="ck9zeo13600031ri3avpg9yed" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/06/4-GCP-Storage/" data-id="ck9zkr68t00033ci30nwj1hru" class="article-share-link">Share</a>
       
       
     </footer>
@@ -426,7 +551,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/06/3-GCP-Virtual-Machines/" data-id="ck9zeo13500021ri38ofr11pr" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/06/3-GCP-Virtual-Machines/" data-id="ck9zkr68r00023ci39lrpdzg6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -476,7 +601,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/06/spark-cross-join/" data-id="ck9zeo13e000d1ri33cuygd7t" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/06/spark-cross-join/" data-id="ck9zkr697000h3ci35rro84cu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -575,7 +700,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/03/2-Getting-Started-With-GCP/" data-id="ck9zeo13h000g1ri39kp56lw3" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/03/2-Getting-Started-With-GCP/" data-id="ck9zkr696000g3ci37o1mhbgr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -671,7 +796,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/01/1-GCP-introduction/" data-id="ck9zeo13100011ri3dnaa6jvf" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/01/1-GCP-introduction/" data-id="ck9zkr68o00013ci3htbhfp8x" class="article-share-link">Share</a>
       
       
     </footer>
@@ -722,74 +847,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/03/31/xiaomakuaibao/" data-id="ck9zeo13g000f1ri331n142zu" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-spark-listeners" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2019/05/17/spark-listeners/" class="article-date">
-  <time datetime="2019-05-17T14:21:43.000Z" itemprop="datePublished">2019-05-17</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/spark/">spark</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2019/05/17/spark-listeners/">spark listeners</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>When running spark job, driver collects logs from different executors and send events via an event bus to Web UI and to EventLog Listener simultaneously.</p>
-<p>EventLog Listener send events to a some directory for example in hdfs to store the events, and then spark history server will expose these events in its interface.</p>
-<p>We could define our custom EventLog Listener, there are several listeners already developed and we can use them directly, here I will prent 3 examples.</p>
-<img src="/blog/2019/05/17/spark-listeners/spark_history-min.png" class="" title="spark history">
-<h2 id="sparklens"><a href="#sparklens" class="headerlink" title="sparklens"></a>sparklens</h2><p><a href="https://github.com/qubole/sparklens" target="_blank" rel="noopener">Sparklens</a> is a profiling tool for Spark with built-in Spark Scheduler simulator, it reports </p>
-<ul>
-<li><p>Estimated completion time and estimated cluster utilisation with different number of executors</p>
-</li>
-<li><p>Job/Stage timeline which shows how the parallel stages were scheduled within a job. This makes it easy to visualise the DAG with stage dependencies at the job level.</p>
-</li>
-</ul>
-<p>Here is a screen capture of sparklens reporting ( in my example, I added sparklens jar in the classpath of zepplin, and import sparklens package, and then I can use sparklens directly)</p>
-<p>import package</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.qubole.sparklens.<span class="type">QuboleNotebookListener</span></span><br><span class="line"><span class="keyword">val</span> <span class="type">QNL</span> = <span class="keyword">new</span> <span class="type">QuboleNotebookListener</span>(sc.getConf)</span><br><span class="line">sc.addSparkListener(<span class="type">QNL</span>)</span><br></pre></td></tr></table></figure>
-<img src="/blog/2019/05/17/spark-listeners/sparklens-min.png" class="" title="sparklens">
-<h2 id="sparklint"><a href="#sparklint" class="headerlink" title="sparklint"></a>sparklint</h2><p><a href="https://github.com/groupon/sparklint" target="_blank" rel="noopener">Sparklint</a> is a profiling tool for Spark with advance metrics and better visualization about your spark application’s resource utilization. It helps you find out where the bottle neck are</p>
-<p>We can use it in the application code, or we can also use it to analyse event logs, at the moment when I write this blog, the actual version of sparklint is 1.0.13, and we can’t analyse event logs of history server yet if it is compressed in the configuration.<br>But we can decompress it to json file and then we can work on it.</p>
-<p>here is a screen capture of sparklint</p>
-
-<h2 id="sparkMeasure"><a href="#sparkMeasure" class="headerlink" title="sparkMeasure"></a>sparkMeasure</h2><p><a href="https://github.com/LucaCanali/sparkMeasure" target="_blank" rel="noopener">sparkMeasure</a> is a tool for performance troubleshooting of Apache Spark workloads, It simplifies the collection and analysis of Spark performance metrics.</p>
-<p>It is a tool for multiple uses: instrument interactive (notebooks) and batch workloads</p>
-
-      
-    </div>
-    <footer class="article-footer">
-<!--
-      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
-        <div>交流或订阅，请长按或扫描上方二维码</div>
-      </div>
--->
-      <a data-url="https://sdmj45.github.io/blog/2019/05/17/spark-listeners/" data-id="ck9zeo13f000e1ri39pmx7xn9" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/03/31/xiaomakuaibao/" data-id="ck9zkr696000f3ci3akdrfbu4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -842,6 +900,10 @@
       <ul>
         
           <li>
+            <a href="/blog/2020/05/09/8-GCP-Big-Data-and-Machine-Learning/">8-GCP Big Data and Machine Learning</a>
+          </li>
+        
+          <li>
             <a href="/blog/2020/05/08/7-GCP-Developing-Deploying-and-Monitoring/">7-GCP-Developing, Deploying and Monitoring</a>
           </li>
         
@@ -855,10 +917,6 @@
         
           <li>
             <a href="/blog/2020/05/06/4-GCP-Storage/">4-GCP-Storage</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2020/05/06/3-GCP-Virtual-Machines/">3-GCP-Virtual-Machines</a>
           </li>
         
       </ul>

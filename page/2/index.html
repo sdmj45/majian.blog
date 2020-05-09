@@ -70,6 +70,73 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-spark-listeners" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2019/05/17/spark-listeners/" class="article-date">
+  <time datetime="2019-05-17T14:21:43.000Z" itemprop="datePublished">2019-05-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/spark/">spark</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2019/05/17/spark-listeners/">spark listeners</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>When running spark job, driver collects logs from different executors and send events via an event bus to Web UI and to EventLog Listener simultaneously.</p>
+<p>EventLog Listener send events to a some directory for example in hdfs to store the events, and then spark history server will expose these events in its interface.</p>
+<p>We could define our custom EventLog Listener, there are several listeners already developed and we can use them directly, here I will prent 3 examples.</p>
+<img src="/blog/2019/05/17/spark-listeners/spark_history-min.png" class="" title="spark history">
+<h2 id="sparklens"><a href="#sparklens" class="headerlink" title="sparklens"></a>sparklens</h2><p><a href="https://github.com/qubole/sparklens" target="_blank" rel="noopener">Sparklens</a> is a profiling tool for Spark with built-in Spark Scheduler simulator, it reports </p>
+<ul>
+<li><p>Estimated completion time and estimated cluster utilisation with different number of executors</p>
+</li>
+<li><p>Job/Stage timeline which shows how the parallel stages were scheduled within a job. This makes it easy to visualise the DAG with stage dependencies at the job level.</p>
+</li>
+</ul>
+<p>Here is a screen capture of sparklens reporting ( in my example, I added sparklens jar in the classpath of zepplin, and import sparklens package, and then I can use sparklens directly)</p>
+<p>import package</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.qubole.sparklens.<span class="type">QuboleNotebookListener</span></span><br><span class="line"><span class="keyword">val</span> <span class="type">QNL</span> = <span class="keyword">new</span> <span class="type">QuboleNotebookListener</span>(sc.getConf)</span><br><span class="line">sc.addSparkListener(<span class="type">QNL</span>)</span><br></pre></td></tr></table></figure>
+<img src="/blog/2019/05/17/spark-listeners/sparklens-min.png" class="" title="sparklens">
+<h2 id="sparklint"><a href="#sparklint" class="headerlink" title="sparklint"></a>sparklint</h2><p><a href="https://github.com/groupon/sparklint" target="_blank" rel="noopener">Sparklint</a> is a profiling tool for Spark with advance metrics and better visualization about your spark application’s resource utilization. It helps you find out where the bottle neck are</p>
+<p>We can use it in the application code, or we can also use it to analyse event logs, at the moment when I write this blog, the actual version of sparklint is 1.0.13, and we can’t analyse event logs of history server yet if it is compressed in the configuration.<br>But we can decompress it to json file and then we can work on it.</p>
+<p>here is a screen capture of sparklint</p>
+
+<h2 id="sparkMeasure"><a href="#sparkMeasure" class="headerlink" title="sparkMeasure"></a>sparkMeasure</h2><p><a href="https://github.com/LucaCanali/sparkMeasure" target="_blank" rel="noopener">sparkMeasure</a> is a tool for performance troubleshooting of Apache Spark workloads, It simplifies the collection and analysis of Spark performance metrics.</p>
+<p>It is a tool for multiple uses: instrument interactive (notebooks) and batch workloads</p>
+
+      
+    </div>
+    <footer class="article-footer">
+<!--
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
+        <div>交流或订阅，请长按或扫描上方二维码</div>
+      </div>
+-->
+      <a data-url="https://sdmj45.github.io/blog/2019/05/17/spark-listeners/" data-id="ck9zkr693000d3ci32pa61y0p" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Hive-vs-Presto" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2019/05/13/Hive-vs-Presto/" class="article-date">
@@ -163,7 +230,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/05/13/Hive-vs-Presto/" data-id="ck9zeo13b00091ri3194u4931" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/05/13/Hive-vs-Presto/" data-id="ck9zkr69000093ci3cf2810oj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -232,7 +299,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/05/03/Jenkins-multiple-pipelines/" data-id="ck9zeo13c000a1ri349hxejr6" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/05/03/Jenkins-multiple-pipelines/" data-id="ck9zkr691000a3ci3hsc9fulf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -284,7 +351,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/04/26/Kubernetes-Deploy-Example-Part-2/" data-id="ck9zeo13d000c1ri35g8p3240" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/04/26/Kubernetes-Deploy-Example-Part-2/" data-id="ck9zkr695000e3ci37qltdawz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -343,7 +410,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/04/26/Kubernetes-Deploy-Example-Part-1/" data-id="ck9zeo13d000b1ri3h1n7cfl0" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/04/26/Kubernetes-Deploy-Example-Part-1/" data-id="ck9zkr692000b3ci3em40egw0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -407,7 +474,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/04/17/Avro-vs-Parquet/" data-id="ck9zeo13900071ri3gv5dabfr" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/04/17/Avro-vs-Parquet/" data-id="ck9zkr68z00083ci3hdc5bv4n" class="article-share-link">Share</a>
       
       
     </footer>
@@ -472,7 +539,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/03/08/First%20blog/" data-id="ck9zeo13a00081ri32owk4do7" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/03/08/First%20blog/" data-id="ck9zkr693000c3ci3blgeeaue" class="article-share-link">Share</a>
       
       
     </footer>
@@ -525,6 +592,10 @@
       <ul>
         
           <li>
+            <a href="/blog/2020/05/09/8-GCP-Big-Data-and-Machine-Learning/">8-GCP Big Data and Machine Learning</a>
+          </li>
+        
+          <li>
             <a href="/blog/2020/05/08/7-GCP-Developing-Deploying-and-Monitoring/">7-GCP-Developing, Deploying and Monitoring</a>
           </li>
         
@@ -538,10 +609,6 @@
         
           <li>
             <a href="/blog/2020/05/06/4-GCP-Storage/">4-GCP-Storage</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2020/05/06/3-GCP-Virtual-Machines/">3-GCP-Virtual-Machines</a>
           </li>
         
       </ul>
