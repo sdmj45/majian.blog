@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>a02-Getting-Started-With-GCP | Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="IAMIAM: Google Cloud’s Identity and Access Management.It has 3 parts:  Who:  can be defined by google account, google group, service account Can do what: can be defined by an IAM role which is a colle">
+<meta property="og:type" content="article">
+<meta property="og:title" content="a02-Getting-Started-With-GCP">
+<meta property="og:url" content="https://sdmj45.github.io/blog/2020/05/03/a02-Getting-Started-With-GCP/index.html">
+<meta property="og:site_name" content="Developer">
+<meta property="og:description" content="IAMIAM: Google Cloud’s Identity and Access Management.It has 3 parts:  Who:  can be defined by google account, google group, service account Can do what: can be defined by an IAM role which is a colle">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://sdmj45.github.io/blog/2020/05/03/a02-Getting-Started-With-GCP/resources_hierarchy.png">
+<meta property="og:image" content="https://sdmj45.github.io/blog/2020/05/03/a02-Getting-Started-With-GCP/cloud_security.png">
+<meta property="article:published_time" content="2020-05-03T12:53:10.000Z">
+<meta property="article:modified_time" content="2020-05-11T14:16:44.047Z">
+<meta property="article:author" content="MA Jian">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://sdmj45.github.io/blog/2020/05/03/a02-Getting-Started-With-GCP/resources_hierarchy.png">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Developer" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="source/css/images/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Developer</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">Enthussiasm in developing</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://sdmj45.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-a02-Getting-Started-With-GCP" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2020/05/03/a02-Getting-Started-With-GCP/" class="article-date">
+  <time datetime="2020-05-03T12:53:10.000Z" itemprop="datePublished">2020-05-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/gcp/">gcp</a>►<a class="article-category-link" href="/blog/categories/gcp/a-core-infrastructure/">a-core-infrastructure</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      a02-Getting-Started-With-GCP
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="IAM"><a href="#IAM" class="headerlink" title="IAM"></a>IAM</h2><p>IAM: Google Cloud’s Identity and Access Management.<br>It has 3 parts:</p>
+<ul>
+<li><strong>Who</strong>:<br>  can be defined by google account, google group, service account</li>
+<li><strong>Can do what</strong>: can be defined by an <strong>IAM role</strong> which is a collection of permissions<ul>
+<li>There are 3 kinds of roles:<ul>
+<li>Primitive role</li>
+<li>Predefined role</li>
+<li>Custom role:  can only be defined in organization or project, but not in folders</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>On which resource</strong></li>
+</ul>
+<h2 id="GCP-resource-hierarchy"><a href="#GCP-resource-hierarchy" class="headerlink" title="GCP resource hierarchy"></a>GCP resource hierarchy</h2><p>polices can define in organization, folder, project, they are inherited in the hierarchy.<br><img src="/blog/2020/05/03/a02-Getting-Started-With-GCP/resources_hierarchy.png" class="" title="resources_hierarchy"></p>
+<p><strong>Projects</strong> are the main way you organise your gcp resources.</p>
+<p>Each project has </p>
+<ul>
+<li>Project ID: immutable (assigned by you)</li>
+<li>Project Name: mutable (assigned by you)</li>
+<li>Project number: immutable (assigned by GCP)</li>
+</ul>
+<p>Policies defined in organisation level can be inherited to all children.</p>
+<p>GCP use <strong>least</strong> privilege in managing any kind of compute infrastructure. </p>
+<p><strong>The policies implemented at a higher level in this hierarchy can’t take away access that’s granted at a lower level</strong><br>Eg: if you grant Editor role to Organisation and Viewer role to the folder, then the folder is granted the Editor role.</p>
+<p>Projects can have different owners and users - they are built separately and managed separately.</p>
+<h2 id="Service-Account"><a href="#Service-Account" class="headerlink" title="Service Account"></a>Service Account</h2><p>For example: If you want to give permissions to a Compute Engine rather than a person, you would use service account.<br>A service account is also a resource, so you can give a role to it.</p>
+<p>There are 4 ways to interact with GCP’s management layer:</p>
+<ul>
+<li>GCP console<ul>
+<li>Manage and create projects</li>
+<li>Access to GCP APIs</li>
+<li>Offers access to Cloud Shell</li>
+</ul>
+</li>
+<li>Cloud shell and Cloud SDK<ul>
+<li>Includes command line tools: gcloud, gsutil(Cloud storage), bq(BigQuery)</li>
+</ul>
+</li>
+<li>API<ul>
+<li>Enabled through GCP console</li>
+<li>APIs Explorer is an interface tool that let you easily try GCP APIs using a browser</li>
+<li>Use libraries within your code<ul>
+<li>Cloud Client Libraries</li>
+<li>Google API Client Libraries</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Cloud Console Mobile App</li>
+</ul>
+<p>When using GCP, it handles most of the lower security layer, the upper layers remain the customer’s responsibility<br><img src="/blog/2020/05/03/a02-Getting-Started-With-GCP/cloud_security.png" class="" title="cloud_security"></p>
+<h2 id="Cloud-MarketPlace-formerly-Cloud-Launcher"><a href="#Cloud-MarketPlace-formerly-Cloud-Launcher" class="headerlink" title="Cloud MarketPlace( formerly Cloud Launcher)"></a>Cloud MarketPlace( formerly Cloud Launcher)</h2><p>It’s a tool for quickly deploying functional software packages on GCP</p>
+<div class="video-container"><iframe src="https://www.youtube.com/embed/WVwEVeW4A64" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
+      
+    </div>
+    <footer class="article-footer">
+<!--
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
+        <div>交流或订阅，请长按或扫描上方二维码</div>
+      </div>
+-->
+      <a data-url="https://sdmj45.github.io/blog/2020/05/03/a02-Getting-Started-With-GCP/" data-id="cka2kldea0008h1i330nug8bw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2020/05/06/spark-cross-join/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          spark cross join
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2020/05/01/a01-GCP-introduction/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">a01-GCP-introduction</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/big-data/">big data</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/ci-cd/">ci/cd</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/devops/">devops</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/feelings/">feelings</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/gcp/">gcp</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/gcp/a-core-infrastructure/">a-core-infrastructure</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/gcp/b-data-engineer/">b-data-engineer</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/spark/">spark</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2020/05/11/b01-GCP-Concepts/">b01-GCP-Concepts</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2020/05/09/a08-GCP-Big-Data-and-Machine-Learning/">a08-GCP Big Data and Machine Learning</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2020/05/08/a07-GCP-Developing-Deploying-and-Monitoring/">a07-GCP Developing, Deploying and Monitoring</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2020/05/08/a06-GCP-Applications/">a06-GCP-Applications</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2020/05/08/a05-GCP-Containers/">a05-GCP-Containers</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 MA Jian<br>
+      <!--Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>-->
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/blog/js/xiaomakuaibao.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-160632404-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-160632404-1');
+</script>
+
+
+  
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+
+  
+<script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

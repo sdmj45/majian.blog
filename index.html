@@ -70,6 +70,543 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-b01-GCP-Concepts" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2020/05/11/b01-GCP-Concepts/" class="article-date">
+  <time datetime="2020-05-11T12:49:04.000Z" itemprop="datePublished">2020-05-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/gcp/">gcp</a>►<a class="article-category-link" href="/blog/categories/gcp/b-data-engineer/">b-data-engineer</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2020/05/11/b01-GCP-Concepts/">b01-GCP-Concepts</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+<!--
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
+        <div>交流或订阅，请长按或扫描上方二维码</div>
+      </div>
+-->
+      <a data-url="https://sdmj45.github.io/blog/2020/05/11/b01-GCP-Concepts/" data-id="cka2kldeg000eh1i32hl66e6q" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-a08-GCP-Big-Data-and-Machine-Learning" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2020/05/09/a08-GCP-Big-Data-and-Machine-Learning/" class="article-date">
+  <time datetime="2020-05-09T08:09:01.000Z" itemprop="datePublished">2020-05-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/gcp/">gcp</a>►<a class="article-category-link" href="/blog/categories/gcp/a-core-infrastructure/">a-core-infrastructure</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2020/05/09/a08-GCP-Big-Data-and-Machine-Learning/">a08-GCP Big Data and Machine Learning</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Big-Data"><a href="#Big-Data" class="headerlink" title="Big Data"></a>Big Data</h2><img src="/blog/2020/05/09/a08-GCP-Big-Data-and-Machine-Learning/big_data_services.png" class="" title="big_data_services">
+<p><strong>Serverless</strong> means you don’t have to worry about provisioning compute instances to run your jobs. the services are fully managed.</p>
+<h2 id="Cloud-Dataproc"><a href="#Cloud-Dataproc" class="headerlink" title="Cloud Dataproc"></a>Cloud Dataproc</h2><p>is managed Hadoop</p>
+<ul>
+<li>Fast, easy, managed way to run Hadoop, Spark/Hive/Pig on GCP</li>
+<li>Create clusters in 90 seconds</li>
+<li>Scale clusters up and down even when jobs are running</li>
+<li>Easily migrate on-premises Hadoop jobs to the cloud</li>
+<li>Save money with preemptible instances</li>
+</ul>
+<h2 id="Cloud-Dataflow"><a href="#Cloud-Dataflow" class="headerlink" title="Cloud Dataflow"></a>Cloud Dataflow</h2><p>is managed data pipelines</p>
+<ul>
+<li>Processes data using Compute Engine<ul>
+<li>Clusters are sized for you</li>
+<li>Automated scaling </li>
+</ul>
+</li>
+<li>Write code for batch and streaming   </li>
+</ul>
+<p>Why use Cloud Dataflow?</p>
+<ul>
+<li>ETL</li>
+<li>Data analytics: batch or streaming</li>
+<li>Orchestration: create pipelines that coordinate services, including external services</li>
+<li>Integrates with GCP services</li>
+</ul>
+<h2 id="Big-Query"><a href="#Big-Query" class="headerlink" title="Big Query"></a>Big Query</h2><p>is managed data warehouse</p>
+<ul>
+<li>It provides near real-time interactive analysis of massive dataset using SQL</li>
+<li>No cluster maintenance</li>
+<li>Compute and Storage are separated with a terabit network in between</li>
+<li>You only pay for storage and processing used</li>
+<li>Automatic discount for long-term data storage(when data reaches <strong>90 days</strong> in BigQuery, google drops the price of storage)</li>
+</ul>
+<h2 id="Cloud-Pub-Sub"><a href="#Cloud-Pub-Sub" class="headerlink" title="Cloud Pub/Sub"></a>Cloud Pub/Sub</h2><p>is scalable, reliable messaging</p>
+<ul>
+<li>Supports many-to-many asynchronous messaging</li>
+<li>Push/pull to topics</li>
+<li>Support for offline consumers</li>
+<li>At least once delivery policy</li>
+</ul>
+<h2 id="Cloud-Datalab"><a href="#Cloud-Datalab" class="headerlink" title="Cloud Datalab"></a>Cloud Datalab</h2><p>interactive data exploration(Notebook)</p>
+<p>Built on Jupyter(formerly IPython)</p>
+<p>Easily deploy models to BigQuery. You can visualize data with Google Charts or map plot line</p>
+<h2 id="Cloud-Machine-Learning-Platform"><a href="#Cloud-Machine-Learning-Platform" class="headerlink" title="Cloud Machine Learning Platform"></a>Cloud Machine Learning Platform</h2><ul>
+<li>TensorFlow</li>
+<li>Cloud ML</li>
+<li>Machine Learning APIs</li>
+</ul>
+<p>Why use CLoud Machine Learning Platform?</p>
+<ul>
+<li>For structured data<ul>
+<li>Classification and regression</li>
+<li>Recommendation</li>
+<li>Anomaly detection</li>
+</ul>
+</li>
+<li>For unstructured data<ul>
+<li>Image and video analytics</li>
+<li>Text analytics</li>
+</ul>
+</li>
+</ul>
+<h2 id="CLoud-Vision-API"><a href="#CLoud-Vision-API" class="headerlink" title="CLoud Vision API"></a>CLoud Vision API</h2><ul>
+<li>Gain insight from images</li>
+<li>Detect inappropriate content</li>
+<li>Analyze sentiment</li>
+<li>Extract text<h2 id="Cloud-Natural-Language-API"><a href="#Cloud-Natural-Language-API" class="headerlink" title="Cloud Natural Language API"></a>Cloud Natural Language API</h2></li>
+<li>can return text in real time</li>
+<li>Highly accurate, even in noisy environments</li>
+<li>Access from any device<h2 id="Cloud-Translation-API"><a href="#Cloud-Translation-API" class="headerlink" title="Cloud Translation API"></a>Cloud Translation API</h2></li>
+<li>Translate strings </li>
+<li>Programmatically detect a document’s language</li>
+<li>Support for dozen’s languages<h2 id="Cloud-Video-Intelligence-API"><a href="#Cloud-Video-Intelligence-API" class="headerlink" title="Cloud Video Intelligence API"></a>Cloud Video Intelligence API</h2></li>
+<li>Annotate the contents of video</li>
+<li>Detect scene changes</li>
+<li>Flag inappropriate content</li>
+<li>Support for a variety of video formats</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+<!--
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
+        <div>交流或订阅，请长按或扫描上方二维码</div>
+      </div>
+-->
+      <a data-url="https://sdmj45.github.io/blog/2020/05/09/a08-GCP-Big-Data-and-Machine-Learning/" data-id="cka2kldeh000fh1i3dxvq2p23" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-a07-GCP-Developing-Deploying-and-Monitoring" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2020/05/08/a07-GCP-Developing-Deploying-and-Monitoring/" class="article-date">
+  <time datetime="2020-05-08T15:03:40.000Z" itemprop="datePublished">2020-05-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/gcp/">gcp</a>►<a class="article-category-link" href="/blog/categories/gcp/a-core-infrastructure/">a-core-infrastructure</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2020/05/08/a07-GCP-Developing-Deploying-and-Monitoring/">a07-GCP Developing, Deploying and Monitoring</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Cloud-Source-Repositories"><a href="#Cloud-Source-Repositories" class="headerlink" title="Cloud Source Repositories"></a>Cloud Source Repositories</h2><p>Fully featured Git repositories hosted on GCP</p>
+<h2 id="Cloud-Functions"><a href="#Cloud-Functions" class="headerlink" title="Cloud Functions"></a>Cloud Functions</h2><ul>
+<li>Create single-purpose functions that respond to events without a server or runtime</li>
+<li>Written in Js, execute in managed node.js environment on GCP</li>
+</ul>
+<h2 id="Deployment-Manager"><a href="#Deployment-Manager" class="headerlink" title="Deployment Manager"></a>Deployment Manager</h2><ul>
+<li>Provides repeatable deployments</li>
+<li>Create a .yaml template describing your environment and use Deployment Manager to create resources</li>
+</ul>
+<h2 id="Stackdriver"><a href="#Stackdriver" class="headerlink" title="Stackdriver"></a>Stackdriver</h2><p>is GCP’s tool for monitoring, logging and diagnostics</p>
+
+      
+    </div>
+    <footer class="article-footer">
+<!--
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
+        <div>交流或订阅，请长按或扫描上方二维码</div>
+      </div>
+-->
+      <a data-url="https://sdmj45.github.io/blog/2020/05/08/a07-GCP-Developing-Deploying-and-Monitoring/" data-id="cka2kldee000dh1i36wgw98zs" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-a06-GCP-Applications" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2020/05/08/a06-GCP-Applications/" class="article-date">
+  <time datetime="2020-05-08T13:21:34.000Z" itemprop="datePublished">2020-05-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/gcp/">gcp</a>►<a class="article-category-link" href="/blog/categories/gcp/a-core-infrastructure/">a-core-infrastructure</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2020/05/08/a06-GCP-Applications/">a06-GCP-Applications</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="App-Engine"><a href="#App-Engine" class="headerlink" title="App Engine"></a>App Engine</h2><p>is a PaaS for building scalable applications</p>
+<ul>
+<li>it makes deployment, maintenance and scalability easy</li>
+<li>suited for building scalable web applications and mobile backends</li>
+</ul>
+<p>It offers 2 environments:</p>
+<ul>
+<li><p><strong>standard environment</strong></p>
+<ul>
+<li>easily deploy applications</li>
+<li>autoscale</li>
+<li>free daily quota</li>
+<li>usage based pricing</li>
+<li>Specific versions of Java, Python, PHP and Go are supported</li>
+</ul>
+<p>Sandbox constraints:</p>
+<ul>
+<li>No writing to local files</li>
+<li>All requests time out at 60s</li>
+<li>Limits on third-party software</li>
+</ul>
+</li>
+<li><strong>flexible environment</strong><ul>
+<li>Build and deploy containerized apps with a click</li>
+<li>No sandbox constraints</li>
+<li>Can access App Engine resources</li>
+</ul>
+</li>
+</ul>
+<p>Comparing standard and flexible environments<br><img src="/blog/2020/05/08/a06-GCP-Applications/standard_vs_flexible.png" class="" title="standard_vs_flexible"><br>Comparing Kubernetes Engine and App Engine<br><img src="/blog/2020/05/08/a06-GCP-Applications/kubernetes_engine_vs_app_engine.png" class="" title="kubernetes_engine_vs_app_engine"></p>
+<p>GCP provides 2 API management tools</p>
+<h2 id="Cloud-Endpoints"><a href="#Cloud-Endpoints" class="headerlink" title="Cloud Endpoints"></a>Cloud Endpoints</h2><ul>
+<li>Control access and validate calls with JSON Web Token and Google API keys<ul>
+<li>Identify web, mobile users with Auth0 and Firebase Authentication</li>
+</ul>
+</li>
+<li>Generate client libraries<h2 id="Apigee-Edge"><a href="#Apigee-Edge" class="headerlink" title="Apigee Edge"></a>Apigee Edge</h2></li>
+<li>A platform for making APIs available to your customers and partners</li>
+<li>Contains analytics, monetization, and a developer portal<br>The backend services for Apigee need not to be in GCP</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+<!--
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
+        <div>交流或订阅，请长按或扫描上方二维码</div>
+      </div>
+-->
+      <a data-url="https://sdmj45.github.io/blog/2020/05/08/a06-GCP-Applications/" data-id="cka2kldee000ch1i31m0z6wb4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-a05-GCP-Containers" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2020/05/08/a05-GCP-Containers/" class="article-date">
+  <time datetime="2020-05-08T12:17:44.000Z" itemprop="datePublished">2020-05-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/gcp/">gcp</a>►<a class="article-category-link" href="/blog/categories/gcp/a-core-infrastructure/">a-core-infrastructure</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2020/05/08/a05-GCP-Containers/">a05-GCP-Containers</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Kubernetes"><a href="#Kubernetes" class="headerlink" title="Kubernetes"></a>Kubernetes</h2><p>orchestrator for containers so you can better manage and scale your applications</p>
+<h2 id="Kubernetes-Engine"><a href="#Kubernetes-Engine" class="headerlink" title="Kubernetes Engine"></a>Kubernetes Engine</h2><p>Kubernetes as a managed service in the cloud. </p>
+<p>You can create Kubernetes Cluster with Kubernetes Engine</p>
+<h2 id="Cluster"><a href="#Cluster" class="headerlink" title="Cluster"></a>Cluster</h2><p>is a set of master components that control the system as a whole and a set of nodes that run containers</p>
+<p>In GCP, node is VM running in Compute Engine</p>
+<h2 id="Pod"><a href="#Pod" class="headerlink" title="Pod"></a>Pod</h2><p>the smallest deployable unit in Kubernetes. It has 1 container often, but it could have multiple containers, where the containers<br>will share the networking and have the same disk storage volume</p>
+<h2 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h2><p>a deployment represents a group a replicas of the same pod. It keeps your pods running even if a node fails</p>
+<h2 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h2><p>is a fundamental way Kubernetes represents load balancing. It has a public IP so the external can access the cluster</p>
+<p>In GKE, this kind of load balancer is a network load balancer</p>
+<h2 id="Anthos"><a href="#Anthos" class="headerlink" title="Anthos"></a>Anthos</h2><p>Hybrid and Multi-Cloud distributed systems and service management from Google. It rests on Kubernetes and Kubernetes Engine deployed on-premise</p>
+
+      
+    </div>
+    <footer class="article-footer">
+<!--
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
+        <div>交流或订阅，请长按或扫描上方二维码</div>
+      </div>
+-->
+      <a data-url="https://sdmj45.github.io/blog/2020/05/08/a05-GCP-Containers/" data-id="cka2kldeb0009h1i3ckwuff2i" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-a04-GCP-Storage" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2020/05/06/a04-GCP-Storage/" class="article-date">
+  <time datetime="2020-05-06T15:30:14.000Z" itemprop="datePublished">2020-05-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/gcp/">gcp</a>►<a class="article-category-link" href="/blog/categories/gcp/a-core-infrastructure/">a-core-infrastructure</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2020/05/06/a04-GCP-Storage/">a04-GCP-Storage</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Cloud-Storage"><a href="#Cloud-Storage" class="headerlink" title="Cloud Storage"></a>Cloud Storage</h2><p>It is <strong>object storage</strong>(you have a storage and have a unique key to access) which is not the same as<br><strong>file storage</strong>(you manage your data as a hierarchy of folders) or<br><strong>block storage</strong>(the operating system manage data as chunks of disk)</p>
+<p>Cloud storage works well with web technologies and is scalable</p>
+<p>Each of objects in Cloud Storage has a URL and is immutable</p>
+<p>Usage:</p>
+<ul>
+<li>serving website content</li>
+<li>storing data for archival and disaster recovery</li>
+<li>distributing large data objects to your end users via Direct Download</li>
+</ul>
+<p>For most of case, IAM is sufficient, but if you need finer control, you can create ACLs(access control lists).<br>Each ACL consists of:</p>
+<ul>
+<li>a user or group</li>
+<li>a permission</li>
+</ul>
+<p>Cloud Storage keeps a history of modification, you can list the archived versions of an object, restore or delete it</p>
+<p>Cloud Storage offers <strong>lifecycle management policies</strong>, eg: you could delete objects older than 5 days</p>
+<p>Cloud Storage has different types of storage classes: Multi-Regional, Regional, Nearline, Coldline<br><img src="/blog/2020/05/06/a04-GCP-Storage/cloud_storage_classes.png" class="" title="cloud_storage_classes"></p>
+<p>3 Ways to bring data into Cloud Storage:</p>
+<ul>
+<li>Online Transfer</li>
+<li>Storage Transfer Service</li>
+<li>Transfer Appliance</li>
+</ul>
+<h2 id="Cloud-Bigtable"><a href="#Cloud-Bigtable" class="headerlink" title="Cloud Bigtable"></a>Cloud Bigtable</h2><p>It is google’s NoSQL, big data database service. It supports high throughput, both read and write.</p>
+<p>It offers same API as HBase(native database for Apache Hadoop), differences:</p>
+<ul>
+<li>Bigtable can scale and manage fast and easily</li>
+<li>Bigtable encrypts data in-flight and at rest</li>
+<li>Bigtable can be controlled access with IAM</li>
+<li>Bigtable drives major applications such as Google Analytics, Gmail</li>
+</ul>
+<p>Bigtable access patterns:</p>
+<ul>
+<li>application api</li>
+<li>streaming</li>
+<li>batch processing</li>
+</ul>
+<h2 id="Cloud-SQL"><a href="#Cloud-SQL" class="headerlink" title="Cloud SQL"></a>Cloud SQL</h2><p>managed RDBMS</p>
+<ul>
+<li>MySQL and PostgreSQL databases</li>
+<li>Automatic replication</li>
+<li>Managed backups</li>
+<li>Vertical scaling(read and write)</li>
+<li>Horizontal scaling(read)</li>
+<li>Google security</li>
+</ul>
+<h2 id="Cloud-Spanner"><a href="#Cloud-Spanner" class="headerlink" title="Cloud Spanner"></a>Cloud Spanner</h2><p>horizontally scalable RDBMS</p>
+<ul>
+<li>Strong global consistency</li>
+<li>High availability</li>
+<li>SQL queries</li>
+<li>Automatic replication</li>
+</ul>
+<h2 id="Cloud-Datastore"><a href="#Cloud-Datastore" class="headerlink" title="Cloud Datastore"></a>Cloud Datastore</h2><p>horizontally scalable NoSQL DB</p>
+<ul>
+<li>Designed for application backend</li>
+<li>Supports transactions</li>
+<li>includes a free daily quota</li>
+</ul>
+<h2 id="Cloud-Storage-Comparing"><a href="#Cloud-Storage-Comparing" class="headerlink" title="Cloud Storage Comparing"></a>Cloud Storage Comparing</h2><img src="/blog/2020/05/06/a04-GCP-Storage/cloud_storage_comparing_1.png" class="" title="cloud_storage_comparing_1">
+<img src="/blog/2020/05/06/a04-GCP-Storage/cloud_storage_comparing_2.png" class="" title="cloud_storage_comparing_2">
+
+      
+    </div>
+    <footer class="article-footer">
+<!--
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
+        <div>交流或订阅，请长按或扫描上方二维码</div>
+      </div>
+-->
+      <a data-url="https://sdmj45.github.io/blog/2020/05/06/a04-GCP-Storage/" data-id="cka2klded000bh1i3ccmh3903" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-a03-GCP-Virtual-Machines" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2020/05/06/a03-GCP-Virtual-Machines/" class="article-date">
+  <time datetime="2020-05-06T11:41:07.000Z" itemprop="datePublished">2020-05-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/gcp/">gcp</a>►<a class="article-category-link" href="/blog/categories/gcp/a-core-infrastructure/">a-core-infrastructure</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2020/05/06/a03-GCP-Virtual-Machines/">a03-GCP-Virtual-Machines</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>We can run virtual machines by using of Compute Engine</p>
+<h2 id="VPC-Network"><a href="#VPC-Network" class="headerlink" title="VPC Network"></a>VPC Network</h2><p>Virtual Private Cloud: it connects your GCP resources to each other and to the internet.</p>
+<p>In the example below, us-east1-b and us-east1-c are on the same subnet but in different zones<br><img src="/blog/2020/05/06/a03-GCP-Virtual-Machines/subnet.png" class="" title="subnet"></p>
+<p>VPCs have routing tables, you can define firewall rules in terms of tags on compute engine.</p>
+<p>VPC Peering: establish a peering relationship between projects<br>Shared VPC:  you can use IAM to control</p>
+<h2 id="Cloud-Load-Balancing"><a href="#Cloud-Load-Balancing" class="headerlink" title="Cloud Load Balancing"></a>Cloud Load Balancing</h2><p>Users get a single, global anycast IP address</p>
+<h2 id="Cloud-CDN-Content-Delivery-Network"><a href="#Cloud-CDN-Content-Delivery-Network" class="headerlink" title="Cloud CDN(Content Delivery Network)"></a>Cloud CDN(Content Delivery Network)</h2><p>Use Google’s globally distributed edge caches to cache content close to your users</p>
+<h2 id="Compute-Engine"><a href="#Compute-Engine" class="headerlink" title="Compute Engine"></a>Compute Engine</h2><p>Create virtual machine by using of: </p>
+<ul>
+<li>GCP Console</li>
+<li>gcloud</li>
+</ul>
+<p>You can run images of linux or windows servers.</p>
+<p>You can configure memories and cpus of each VM, you can choose 2 kinds of storage: standard or SSD</p>
+<p>You can choose a Preemptible VM to save money (the instance will terminate after 24 hours, it can be used for applications<br>distribute processes across multiple instances in a cluster or for test)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+<!--
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
+        <div>交流或订阅，请长按或扫描上方二维码</div>
+      </div>
+-->
+      <a data-url="https://sdmj45.github.io/blog/2020/05/06/a03-GCP-Virtual-Machines/" data-id="cka2kldec000ah1i3fhwh9zey" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-spark-cross-join" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2020/05/06/spark-cross-join/" class="article-date">
@@ -110,7 +647,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/06/spark-cross-join/" data-id="cka2kixmk0005fii3dvbxbk1j" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/06/spark-cross-join/" data-id="cka2kldeh000gh1i30dmg1esc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -120,65 +657,14 @@
 
 
   
-    <article id="post-xiaomakuaibao" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-a02-Getting-Started-With-GCP" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2020/03/31/xiaomakuaibao/" class="article-date">
-  <time datetime="2020-03-31T19:56:21.024Z" itemprop="datePublished">2020-03-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2020/03/31/xiaomakuaibao/">Website Recommended</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Share a website which you can view </p>
-<ul>
-<li>headlines of major French media in real time</li>
-<li>changes in the epidemic</li>
-<li>markets, food delivery shops, drug stores, and banks that are open during the epidemic</li>
-<li>some very useful links, you can enjoy online concerts for free, visit online museums</li>
-<li>some rumor information, etc.</li>
-</ul>
-<p>highly recommended <a href="http://daccfrance.com" target="_blank" rel="noopener">http://daccfrance.com/</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-<!--
-      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
-        <div>交流或订阅，请长按或扫描上方二维码</div>
-      </div>
--->
-      <a data-url="https://sdmj45.github.io/blog/2020/03/31/xiaomakuaibao/" data-id="cka2kixmn0009fii3gl8m78xo" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-spark-listeners" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2019/05/17/spark-listeners/" class="article-date">
-  <time datetime="2019-05-17T14:21:43.000Z" itemprop="datePublished">2019-05-17</time>
+    <a href="/blog/2020/05/03/a02-Getting-Started-With-GCP/" class="article-date">
+  <time datetime="2020-05-03T12:53:10.000Z" itemprop="datePublished">2020-05-03</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/spark/">spark</a>
+    <a class="article-category-link" href="/blog/categories/gcp/">gcp</a>►<a class="article-category-link" href="/blog/categories/gcp/a-core-infrastructure/">a-core-infrastructure</a>
   </div>
 
   </div>
@@ -189,7 +675,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2019/05/17/spark-listeners/">spark listeners</a>
+      <a class="article-title" href="/blog/2020/05/03/a02-Getting-Started-With-GCP/">a02-Getting-Started-With-GCP</a>
     </h1>
   
 
@@ -197,28 +683,60 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>When running spark job, driver collects logs from different executors and send events via an event bus to Web UI and to EventLog Listener simultaneously.</p>
-<p>EventLog Listener send events to a some directory for example in hdfs to store the events, and then spark history server will expose these events in its interface.</p>
-<p>We could define our custom EventLog Listener, there are several listeners already developed and we can use them directly, here I will prent 3 examples.</p>
-<img src="/blog/2019/05/17/spark-listeners/spark_history-min.png" class="" title="spark history">
-<h2 id="sparklens"><a href="#sparklens" class="headerlink" title="sparklens"></a>sparklens</h2><p><a href="https://github.com/qubole/sparklens" target="_blank" rel="noopener">Sparklens</a> is a profiling tool for Spark with built-in Spark Scheduler simulator, it reports </p>
+        <h2 id="IAM"><a href="#IAM" class="headerlink" title="IAM"></a>IAM</h2><p>IAM: Google Cloud’s Identity and Access Management.<br>It has 3 parts:</p>
 <ul>
-<li><p>Estimated completion time and estimated cluster utilisation with different number of executors</p>
-</li>
-<li><p>Job/Stage timeline which shows how the parallel stages were scheduled within a job. This makes it easy to visualise the DAG with stage dependencies at the job level.</p>
+<li><strong>Who</strong>:<br>  can be defined by google account, google group, service account</li>
+<li><strong>Can do what</strong>: can be defined by an <strong>IAM role</strong> which is a collection of permissions<ul>
+<li>There are 3 kinds of roles:<ul>
+<li>Primitive role</li>
+<li>Predefined role</li>
+<li>Custom role:  can only be defined in organization or project, but not in folders</li>
+</ul>
 </li>
 </ul>
-<p>Here is a screen capture of sparklens reporting ( in my example, I added sparklens jar in the classpath of zepplin, and import sparklens package, and then I can use sparklens directly)</p>
-<p>import package</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.qubole.sparklens.<span class="type">QuboleNotebookListener</span></span><br><span class="line"><span class="keyword">val</span> <span class="type">QNL</span> = <span class="keyword">new</span> <span class="type">QuboleNotebookListener</span>(sc.getConf)</span><br><span class="line">sc.addSparkListener(<span class="type">QNL</span>)</span><br></pre></td></tr></table></figure>
-<img src="/blog/2019/05/17/spark-listeners/sparklens-min.png" class="" title="sparklens">
-<h2 id="sparklint"><a href="#sparklint" class="headerlink" title="sparklint"></a>sparklint</h2><p><a href="https://github.com/groupon/sparklint" target="_blank" rel="noopener">Sparklint</a> is a profiling tool for Spark with advance metrics and better visualization about your spark application’s resource utilization. It helps you find out where the bottle neck are</p>
-<p>We can use it in the application code, or we can also use it to analyse event logs, at the moment when I write this blog, the actual version of sparklint is 1.0.13, and we can’t analyse event logs of history server yet if it is compressed in the configuration.<br>But we can decompress it to json file and then we can work on it.</p>
-<p>here is a screen capture of sparklint</p>
-
-<h2 id="sparkMeasure"><a href="#sparkMeasure" class="headerlink" title="sparkMeasure"></a>sparkMeasure</h2><p><a href="https://github.com/LucaCanali/sparkMeasure" target="_blank" rel="noopener">sparkMeasure</a> is a tool for performance troubleshooting of Apache Spark workloads, It simplifies the collection and analysis of Spark performance metrics.</p>
-<p>It is a tool for multiple uses: instrument interactive (notebooks) and batch workloads</p>
-
+</li>
+<li><strong>On which resource</strong></li>
+</ul>
+<h2 id="GCP-resource-hierarchy"><a href="#GCP-resource-hierarchy" class="headerlink" title="GCP resource hierarchy"></a>GCP resource hierarchy</h2><p>polices can define in organization, folder, project, they are inherited in the hierarchy.<br><img src="/blog/2020/05/03/a02-Getting-Started-With-GCP/resources_hierarchy.png" class="" title="resources_hierarchy"></p>
+<p><strong>Projects</strong> are the main way you organise your gcp resources.</p>
+<p>Each project has </p>
+<ul>
+<li>Project ID: immutable (assigned by you)</li>
+<li>Project Name: mutable (assigned by you)</li>
+<li>Project number: immutable (assigned by GCP)</li>
+</ul>
+<p>Policies defined in organisation level can be inherited to all children.</p>
+<p>GCP use <strong>least</strong> privilege in managing any kind of compute infrastructure. </p>
+<p><strong>The policies implemented at a higher level in this hierarchy can’t take away access that’s granted at a lower level</strong><br>Eg: if you grant Editor role to Organisation and Viewer role to the folder, then the folder is granted the Editor role.</p>
+<p>Projects can have different owners and users - they are built separately and managed separately.</p>
+<h2 id="Service-Account"><a href="#Service-Account" class="headerlink" title="Service Account"></a>Service Account</h2><p>For example: If you want to give permissions to a Compute Engine rather than a person, you would use service account.<br>A service account is also a resource, so you can give a role to it.</p>
+<p>There are 4 ways to interact with GCP’s management layer:</p>
+<ul>
+<li>GCP console<ul>
+<li>Manage and create projects</li>
+<li>Access to GCP APIs</li>
+<li>Offers access to Cloud Shell</li>
+</ul>
+</li>
+<li>Cloud shell and Cloud SDK<ul>
+<li>Includes command line tools: gcloud, gsutil(Cloud storage), bq(BigQuery)</li>
+</ul>
+</li>
+<li>API<ul>
+<li>Enabled through GCP console</li>
+<li>APIs Explorer is an interface tool that let you easily try GCP APIs using a browser</li>
+<li>Use libraries within your code<ul>
+<li>Cloud Client Libraries</li>
+<li>Google API Client Libraries</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Cloud Console Mobile App</li>
+</ul>
+<p>When using GCP, it handles most of the lower security layer, the upper layers remain the customer’s responsibility<br><img src="/blog/2020/05/03/a02-Getting-Started-With-GCP/cloud_security.png" class="" title="cloud_security"></p>
+<h2 id="Cloud-MarketPlace-formerly-Cloud-Launcher"><a href="#Cloud-MarketPlace-formerly-Cloud-Launcher" class="headerlink" title="Cloud MarketPlace( formerly Cloud Launcher)"></a>Cloud MarketPlace( formerly Cloud Launcher)</h2><p>It’s a tool for quickly deploying functional software packages on GCP</p>
+<div class="video-container"><iframe src="https://www.youtube.com/embed/WVwEVeW4A64" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       
     </div>
     <footer class="article-footer">
@@ -228,7 +746,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/05/17/spark-listeners/" data-id="cka2kixmm0008fii3fp2w9esc" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/03/a02-Getting-Started-With-GCP/" data-id="cka2kldea0008h1i330nug8bw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -238,14 +756,14 @@
 
 
   
-    <article id="post-Hive-vs-Presto" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-a01-GCP-introduction" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2019/05/13/Hive-vs-Presto/" class="article-date">
-  <time datetime="2019-05-13T13:53:41.000Z" itemprop="datePublished">2019-05-13</time>
+    <a href="/blog/2020/05/01/a01-GCP-introduction/" class="article-date">
+  <time datetime="2020-05-01T13:37:46.000Z" itemprop="datePublished">2020-05-01</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/big-data/">big data</a>
+    <a class="article-category-link" href="/blog/categories/gcp/">gcp</a>►<a class="article-category-link" href="/blog/categories/gcp/a-core-infrastructure/">a-core-infrastructure</a>
   </div>
 
   </div>
@@ -256,7 +774,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2019/05/13/Hive-vs-Presto/">Hive vs Presto</a>
+      <a class="article-title" href="/blog/2020/05/01/a01-GCP-introduction/">a01-GCP-introduction</a>
     </h1>
   
 
@@ -264,373 +782,57 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Presto"><a href="#Presto" class="headerlink" title="Presto"></a>Presto</h1><p>Presto is a distributed SQL query engine for big data, it allows users to query a variety of data sources such as Hadoop, RDBMS, Mongo etc. One can even query data from multiple data sources within a single query.</p>
-<h1 id="Hive"><a href="#Hive" class="headerlink" title="Hive"></a>Hive</h1><p>Hive is a data warehouse software built on top of Apache Hadoop for providing data query and analysis. It translates SQL queries into multiple stages of MapReduce and it is powerful enough to handle huge numbers of jobs</p>
-<h1 id="Comparisons"><a href="#Comparisons" class="headerlink" title="Comparisons"></a>Comparisons</h1><table>
-<thead>
-<tr>
-<th>Tables</th>
-<th style="text-align:center">Presto</th>
-<th style="text-align:right">Hive</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>best of use</td>
-<td style="text-align:center">Interactive queries</td>
-<td style="text-align:right">Large data aggregation(join for example)</td>
-</tr>
-<tr>
-<td>sql standardized fidelity</td>
-<td style="text-align:center">ANSI SQL</td>
-<td style="text-align:right">HiveQL</td>
-</tr>
-<tr>
-<td>window function</td>
-<td style="text-align:center">yes</td>
-<td style="text-align:right">yes</td>
-</tr>
-<tr>
-<td>optimized target</td>
-<td style="text-align:center">latency</td>
-<td style="text-align:right">query throughput</td>
-</tr>
-<tr>
-<td>execution mode</td>
-<td style="text-align:center">Intermediate data in memory</td>
-<td style="text-align:right">Spills intermediate data to File System</td>
-</tr>
-<tr>
-<td>fault tolerance</td>
-<td style="text-align:center">No</td>
-<td style="text-align:right">Yes</td>
-</tr>
-<tr>
-<td>speed</td>
-<td style="text-align:center">2 times faster than hive</td>
-<td style="text-align:right">slow</td>
-</tr>
-<tr>
-<td>data processing models</td>
-<td style="text-align:center">push model</td>
-<td style="text-align:right">pull model</td>
-</tr>
-<tr>
-<td>limitation</td>
-<td style="text-align:center">limited at the maximum amount of memory that each task can store</td>
-</tr>
-</tbody>
-</table>
-
-      
-    </div>
-    <footer class="article-footer">
-<!--
-      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
-        <div>交流或订阅，请长按或扫描上方二维码</div>
-      </div>
--->
-      <a data-url="https://sdmj45.github.io/blog/2019/05/13/Hive-vs-Presto/" data-id="cka2kixmh0002fii3477wah13" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Jenkins-multiple-pipelines" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2019/05/03/Jenkins-multiple-pipelines/" class="article-date">
-  <time datetime="2019-05-03T15:03:53.000Z" itemprop="datePublished">2019-05-03</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/ci-cd/">ci/cd</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2019/05/03/Jenkins-multiple-pipelines/">Jenkins multiple pipelines</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Jenkins architecture is fundamentally “Master + Agent”, the master is designed to do the co-ordination and provide the GUI and API endpoint, and the Agents are designed to execute the work. </p>
-<p>Jenkins can run on distributed mode, this may be for scale or to provide different tools and we can launch jenkins en multiple pipelines simultaneously, it can work on parallel</p>
-<p>Here I will show an example how to install multiple agents to a Jenkins master. In my example, I use docker to install Jenkins master and vagrant to install two machines as agents.</p>
-<h2 id="Create-agent-machines-by-vagrant"><a href="#Create-agent-machines-by-vagrant" class="headerlink" title="Create agent machines by vagrant"></a>Create agent machines by vagrant</h2><p>I created 2 machines by vagrant with the Vagrantfile as below, you can go the directory of this file and run the command :</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vagrant up</span><br></pre></td></tr></table></figure>
-<a href="/blog/2019/05/03/Jenkins-multiple-pipelines/Vagrantfile" title="[Vagrantfile]">[Vagrantfile]</a>
-<h2 id="Run-master-via-docker"><a href="#Run-master-via-docker" class="headerlink" title="Run master via docker"></a>Run master via docker</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts</span><br></pre></td></tr></table></figure>
-<p>copy the password to the interface of jenkins, configure user information, install the plugins recommended and then we can access to jenkins home page</p>
-<h2 id="Add-agent"><a href="#Add-agent" class="headerlink" title="Add agent"></a>Add agent</h2><p>go to Manage Jenkins/Manage Nodes and click “New Node” button, we give a Node name and check Permanent Agent</p>
-<h3 id="SSH-connexion"><a href="#SSH-connexion" class="headerlink" title="SSH connexion"></a>SSH connexion</h3><p>In the first example, we will add an agent via SSH:<br>Before doing that, I generated the ssh key inside of docker container, and copy id_rsa.pub to ~/.ssh/known_hosts in agent<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C <span class="string">"sdmj45@gmail.com"</span></span><br></pre></td></tr></table></figure><br><img src="/blog/2019/05/03/Jenkins-multiple-pipelines/new_node_SSH-min.png" class="" title="new node via ssh"></p>
-<p>Labels: group name of the agent<br>Host: agent ip<br>Credentials: configure credential as below, we give the username as vagrant and private key generated in docker container</p>
-<img src="/blog/2019/05/03/Jenkins-multiple-pipelines/jenkins_credentials_provider-min.png" class="" title="new jenkins credentials via ssh">
-<p>Launch agent:<br>We can click Launch agent button to launch Agent</p>
-<img src="/blog/2019/05/03/Jenkins-multiple-pipelines/launch_ssh_agent-min.png" class="" title="launch ssh agent via ssh">
-<h3 id="Java-Web-Start-connexion"><a href="#Java-Web-Start-connexion" class="headerlink" title="Java Web Start connexion"></a>Java Web Start connexion</h3><p>In the second example, we will add an agent via Java Web Start:</p>
-<img src="/blog/2019/05/03/Jenkins-multiple-pipelines/new_node_JWS-min.png" class="" title="new node via Java web start">
-<p>Labels: group name of the agent</p>
-<p>Launch agent:<br>We can launch agent by “Run from agent command line”: copy the agent.jar to agent machine and run the command by changing localhost:8080 to host_ip:8080</p>
-<img src="/blog/2019/05/03/Jenkins-multiple-pipelines/launch_jws_agent-min.png" class="" title="launch agent via Java web start">
-<h2 id="Multiple-pipeline-build"><a href="#Multiple-pipeline-build" class="headerlink" title="Multiple pipeline build"></a>Multiple pipeline build</h2><p>I add a new build of test and execute a simple command, I added “sleep 30” in order to keep some time in the building </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"hello slave"</span></span><br><span class="line">sleep 30</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"bye slave"</span></span><br></pre></td></tr></table></figure>
-<p>and then I can launch multiple pipeline build as follow (as there are 2 executors in each agent, I can launch 4 build simultaneously)</p>
-<img src="/blog/2019/05/03/Jenkins-multiple-pipelines/build_interface-min.png" class="" title="build interface">
-
-      
-    </div>
-    <footer class="article-footer">
-<!--
-      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
-        <div>交流或订阅，请长按或扫描上方二维码</div>
-      </div>
--->
-      <a data-url="https://sdmj45.github.io/blog/2019/05/03/Jenkins-multiple-pipelines/" data-id="cka2kixmj0004fii37rc42h7b" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Kubernetes-Deploy-Example-Part-2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2019/04/26/Kubernetes-Deploy-Example-Part-2/" class="article-date">
-  <time datetime="2019-04-26T11:44:51.000Z" itemprop="datePublished">2019-04-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/devops/">devops</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2019/04/26/Kubernetes-Deploy-Example-Part-2/">Kubernetes Deploy Example - Part 2</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>This is part 2 of Kubernetes Deploy Example, in this example, we will use the yaml file to deploy a nginx.</p>
-<p>In this example, we have combined the Deployment part and the Service part together. We could deploy them at the same time.</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">apps/v1</span> <span class="comment"># for versions before 1.9.0 use apps/v1beta2 </span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Deployment</span> </span><br><span class="line"><span class="attr">metadata:</span> </span><br><span class="line">  <span class="attr">name:</span> <span class="string">nginx-deployment</span> </span><br><span class="line"><span class="attr">spec:</span> </span><br><span class="line">  <span class="attr">selector:</span> </span><br><span class="line">    <span class="attr">matchLabels:</span> </span><br><span class="line">      <span class="attr">app:</span> <span class="string">nginx</span></span><br><span class="line">  <span class="attr">replicas:</span> <span class="number">2</span> <span class="comment"># tells deployment to run 2 pods matching the template </span></span><br><span class="line">  <span class="attr">template:</span> </span><br><span class="line">    <span class="attr">metadata:</span> </span><br><span class="line">      <span class="attr">labels:</span> </span><br><span class="line">        <span class="attr">app:</span> <span class="string">nginx</span> </span><br><span class="line">    <span class="attr">spec:</span> </span><br><span class="line">      <span class="attr">containers:</span> </span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">nginx</span> </span><br><span class="line">        <span class="attr">image:</span> <span class="string">nginx:latest</span> </span><br><span class="line">        <span class="attr">ports:</span> </span><br><span class="line">        <span class="bullet">-</span> <span class="attr">containerPort:</span> <span class="number">80</span> </span><br><span class="line"><span class="string">---</span> </span><br><span class="line"><span class="comment"># https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service  </span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Service</span> </span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span> </span><br><span class="line"><span class="attr">metadata:</span> </span><br><span class="line">  <span class="attr">name:</span> <span class="string">nginx-service</span> </span><br><span class="line"><span class="attr">spec:</span> </span><br><span class="line">  <span class="attr">selector:</span> </span><br><span class="line">    <span class="attr">app:</span> <span class="string">nginx</span> </span><br><span class="line">  <span class="attr">ports:</span> </span><br><span class="line">  <span class="bullet">-</span> <span class="attr">protocol:</span> <span class="string">TCP</span> </span><br><span class="line">    <span class="attr">port:</span> <span class="number">80</span> </span><br><span class="line">    <span class="attr">targetPort:</span> <span class="number">80</span> </span><br><span class="line">    <span class="attr">nodePort:</span> <span class="number">32000</span> </span><br><span class="line">  <span class="attr">type:</span> <span class="string">NodePort</span></span><br></pre></td></tr></table></figure>
-<h2 id="Step-1-Apply-applications-with-yaml-file"><a href="#Step-1-Apply-applications-with-yaml-file" class="headerlink" title="Step 1: Apply applications with yaml file"></a>Step 1: Apply applications with yaml file</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">kubectl apply -f ./deployment.yaml</span><br><span class="line">deployment.apps <span class="string">"nginx-deployment"</span> created</span><br><span class="line">service <span class="string">"nginx-service"</span> created</span><br></pre></td></tr></table></figure>
-<h2 id="Step-2-Get-kubernetes-ip"><a href="#Step-2-Get-kubernetes-ip" class="headerlink" title="Step 2: Get kubernetes ip"></a>Step 2: Get kubernetes ip</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">kubectl get endpoints kubernetes</span><br><span class="line"></span><br><span class="line">NAME         ENDPOINTS             AGE</span><br><span class="line">kubernetes   192.168.99.100:8443   143d</span><br></pre></td></tr></table></figure>
-<h2 id="Step-3-Access-to-nginx"><a href="#Step-3-Access-to-nginx" class="headerlink" title="Step 3: Access to nginx"></a>Step 3: Access to nginx</h2><p>Open your navigator and type the url of kubernetes with the port of nginx(we defined 32000 in the yaml file), you will access to welcome page of nginx<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.99.100:32000</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-<!--
-      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
-        <div>交流或订阅，请长按或扫描上方二维码</div>
-      </div>
--->
-      <a data-url="https://sdmj45.github.io/blog/2019/04/26/Kubernetes-Deploy-Example-Part-2/" data-id="cka2kixml0006fii31mo1drg7" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Kubernetes-Deploy-Example-Part-1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2019/04/26/Kubernetes-Deploy-Example-Part-1/" class="article-date">
-  <time datetime="2019-04-26T09:52:39.000Z" itemprop="datePublished">2019-04-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/devops/">devops</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2019/04/26/Kubernetes-Deploy-Example-Part-1/">Kubernetes Deploy Example - Part 1</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Kubernetes is a container orchestration system for automating application deployment, scaling and management. Here we will show a simple example of nginx deployment by kubernetes.</p>
-<h2 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h2><ol>
-<li>install kubernetes, for me, I use minikube</li>
-<li>install docker </li>
+        <h1 id="What-is-GCP"><a href="#What-is-GCP" class="headerlink" title="What is GCP ?"></a>What is GCP ?</h1><p>GCP stands for Google Cloud Platform which is a suite of public cloud computing services offered by Google. It offers 4 main kinds of services: compute, storage, big data, machine learning that run on Google hardware.</p>
+<h2 id="what-is-cloud-computing"><a href="#what-is-cloud-computing" class="headerlink" title="what is cloud computing ?"></a>what is cloud computing ?</h2><ul>
+<li><strong>On-demand self-service</strong>: use interface to get processing, no human intervention needed</li>
+<li><strong>Broad network access</strong>: access from anywhere</li>
+<li><strong>Resource pooling</strong>: provider shares resources to customers</li>
+<li><strong>Rapid elasticity</strong>: get more resources quickly as needed</li>
+<li><strong>Measured service</strong>: pay only for what you consume</li>
+</ul>
+<h2 id="compute-evolution"><a href="#compute-evolution" class="headerlink" title="compute evolution"></a>compute evolution</h2><ol>
+<li><strong>Physical/colo</strong>: user-configured, managed and maintained</li>
+<li><strong>Virtualized</strong>: user-configured; provider-managed and maintained</li>
+<li><strong>Serverless</strong>: container based architecture, fully automated</li>
 </ol>
-<h2 id="Step-1-Pull-the-image-from-Docker-Registry"><a href="#Step-1-Pull-the-image-from-Docker-Registry" class="headerlink" title="Step 1: Pull the image from Docker Registry"></a>Step 1: Pull the image from Docker Registry</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ kubectl run nginx --image=nginx:latest --port=80</span><br></pre></td></tr></table></figure>
-<h2 id="Step-2-Check-if-deployment-ok"><a href="#Step-2-Check-if-deployment-ok" class="headerlink" title="Step 2: Check if deployment ok"></a>Step 2: Check if deployment ok</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ kubectl get pods</span><br><span class="line"></span><br><span class="line">NAME              READY     STATUS    RESTARTS   AGE</span><br><span class="line">nginx-6bfb654d7c-xjvhg                1/1       Running   0          1h</span><br></pre></td></tr></table></figure>
-<h2 id="Step-3-Expose-service-through-NodePort"><a href="#Step-3-Expose-service-through-NodePort" class="headerlink" title="Step 3: Expose service through NodePort"></a>Step 3: Expose service through NodePort</h2><p>As I use minikube in local, I don’t have LoadBalancer installed, so I use NodePort as type here</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">kubectl expose deployment nginx --<span class="built_in">type</span>=NodePort --port=80 --target-port=80</span><br><span class="line"></span><br><span class="line">service <span class="string">"nginx"</span> exposed</span><br></pre></td></tr></table></figure>
-<h2 id="Step-4-Get-service-port"><a href="#Step-4-Get-service-port" class="headerlink" title="Step 4: Get service port"></a>Step 4: Get service port</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">kubectl get svc nginx</span><br><span class="line"></span><br><span class="line">NAME      TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE</span><br><span class="line">nginx     NodePort   10.109.174.66   &lt;none&gt;        80:32598/TCP   45m</span><br></pre></td></tr></table></figure>
-<p>Here we can find that the service if exposed by port 32598</p>
-<h2 id="Step-5-Get-kubernetes-ip"><a href="#Step-5-Get-kubernetes-ip" class="headerlink" title="Step 5: Get kubernetes ip"></a>Step 5: Get kubernetes ip</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">kubectl get endpoints kubernetes</span><br><span class="line"></span><br><span class="line">NAME         ENDPOINTS             AGE</span><br><span class="line">kubernetes   192.168.99.100:8443   143d</span><br></pre></td></tr></table></figure>
-<h2 id="Step-6-Access-to-nginx"><a href="#Step-6-Access-to-nginx" class="headerlink" title="Step 6: Access to nginx"></a>Step 6: Access to nginx</h2><p>Open your navigator and type the url of kubernetes with the port of nginx, you will access to welcome page of nginx<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.99.100:32598</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-<!--
-      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
-        <div>交流或订阅，请长按或扫描上方二维码</div>
-      </div>
--->
-      <a data-url="https://sdmj45.github.io/blog/2019/04/26/Kubernetes-Deploy-Example-Part-1/" data-id="cka2kixmm0007fii31vi7743m" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Avro-vs-Parquet" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2019/04/17/Avro-vs-Parquet/" class="article-date">
-  <time datetime="2019-04-17T13:54:12.000Z" itemprop="datePublished">2019-04-17</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/big-data/">big data</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2019/04/17/Avro-vs-Parquet/">Avro vs Parquet</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Avro"><a href="#Avro" class="headerlink" title="Avro"></a>Avro</h1><p>Apache Avro is a remote procedure call and data serialization framework developed with Apache Hadoop project. It uses Json for defining data types and protocols and serialize data in compact binary format.<br>Avro stores both schema and data together in one message or file.<br>A key feature of Avro is robust support for data schemas that change over time, called scheam evolution.</p>
-<h3 id="Avro-1"><a href="#Avro-1" class="headerlink" title="Avro"></a>Avro</h3><ul>
-<li>Row based format</li>
-<li>Schema is stored as JSON within the file</li>
-<li>It is also a Serialization and RPC framework</li>
-<li>Files support block compression and are splittable</li>
-<li>Can be written from streaming data (eg Apache Kafka)</li>
-<li>Excellent with schema evolution</li>
+<h2 id="gcp-computing-architectures"><a href="#gcp-computing-architectures" class="headerlink" title="gcp computing architectures"></a>gcp computing architectures</h2><ul>
+<li><strong>IaaS</strong>: Infrastructure as a Service<ul>
+<li>provides raw compute, storage and network organized in ways that are like from data centers</li>
 </ul>
-<h1 id="Parquet"><a href="#Parquet" class="headerlink" title="Parquet"></a>Parquet</h1><p>Parquet is a columnar file format that provides optimizations to speed up queries and a far more efficient file format than csv or json</p>
-<h3 id="Parquet-1"><a href="#Parquet-1" class="headerlink" title="Parquet"></a>Parquet</h3><ul>
-<li>Column based format</li>
-<li>Schema is stored in the footer of the file</li>
-<li>Due to merging of schema across multiple files, schema evolution is expensive</li>
-<li>Excellent for selected column data consumption and processing</li>
-<li>Can’t be written from streaming data since it needs to wait for blocks to get finished. However, this will work using micro-batch (eg Apache Spark).</li>
-<li>Working excellent with spark as there is vectorized reader for parquet</li>
+</li>
+<li><strong>PaaS</strong>: Platform as a Service<ul>
+<li>provides a platform allowing customers to develop, run and manage applications without maintaining infrastructure</li>
 </ul>
-
-      
-    </div>
-    <footer class="article-footer">
-<!--
-      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
-        <div>交流或订阅，请长按或扫描上方二维码</div>
-      </div>
--->
-      <a data-url="https://sdmj45.github.io/blog/2019/04/17/Avro-vs-Parquet/" data-id="cka2kixmd0001fii3gct58kmx" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-First blog" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2019/03/08/First%20blog/" class="article-date">
-  <time datetime="2019-03-08T16:03:53.000Z" itemprop="datePublished">2019-03-08</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/feelings/">feelings</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2019/03/08/First%20blog/">My First Blog</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>The first time I tried to write a blog, this is a start. . .</p>
-<h2 id="My-Blog"><a href="#My-Blog" class="headerlink" title="My Blog"></a>My Blog</h2><h3 id="Why-to-write-blog"><a href="#Why-to-write-blog" class="headerlink" title="Why to write blog"></a>Why to write blog</h3><p>2018 is coming soon. I think that I came to France alone in 2009 and came to this country where everything is strange. Now I have not seen it for more than 8 years. During this period, I went to school, graduated, and found a job. Later, in love, marriage, childbirth, and embarrassment, there have been five or six years of experience in the world of programmers.</p>
-<p>I really want to leave something for my life, even if I want to make a simple record, I also want to communicate with my friends, and I have some experience in life.</p>
-<p>However, my writing is really a dish, and I haven’t written it for many years. There is no way, I can only bite my head.</p>
-<p>Seeing a summary of a peer on the Internet feels very good, use it to borrow, as an original intention of a personal blog.</p>
+</li>
+<li><strong>SaaS</strong>: Software as a Service<ul>
+<li>software is licensed on a subscription basis and is centrally hosted<img src="/blog/2020/05/01/a01-GCP-introduction/gcp_computing_architectures.png" class="" title="gcp_computing_architectures">
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="regions-and-zones"><a href="#regions-and-zones" class="headerlink" title="regions and zones"></a>regions and zones</h2><p>GCP is organized into regions and zones. <strong>Zone</strong> is department area for GCP resources. For example, the compute engine runs in a zone specified.</p>
+<p>Locations within regions usually have network latencies of under 5 milliseconds</p>
+<p>As of building a fault tolerant application, you can spread their resources across multiple regions<br><img src="/blog/2020/05/01/a01-GCP-introduction/regions_and_zones.png" class="" title="regions_and_zones"></p>
+<h2 id="open-apis"><a href="#open-apis" class="headerlink" title="open apis"></a>open apis</h2><p>GCP services are compatible with open sources products. for example:</p>
 <ul>
-<li>Accumulate Accumulate experience in work and gain in life.</li>
-<li>Record Use the blog as a diary to record what you see and hear in your work life.</li>
-<li>Share As a programmer, you must have an “open source” spirit.</li>
-<li>Communication Blog is a big circle.</li>
-<li>Learning I always learn knowledge here, just like reading it every day.</li>
+<li>Cloud Bigtable &lt;==&gt; Apache HBase</li>
+<li>Cloud Dataproc &lt;==&gt; Hadoop</li>
 </ul>
-<h3 id="Blog’s-content"><a href="#Blog’s-content" class="headerlink" title="Blog’s content"></a>Blog’s content</h3><ul>
-<li><p>Tell the world of programmers and reprint some technically and nutritious articles.</p>
-</li>
-<li><p>Some stories about living abroad</p>
+<h2 id="gcp-services"><a href="#gcp-services" class="headerlink" title="gcp services"></a>gcp services</h2><p>GCP offers services as compute, storage, big data and machine learning<br><img src="/blog/2020/05/01/a01-GCP-introduction/gcp_services.png" class="" title="gcp_services"></p>
+<h2 id="budgets-and-billing"><a href="#budgets-and-billing" class="headerlink" title="budgets and billing"></a>budgets and billing</h2><p>GCP provides 4 tools to help: </p>
+<p><strong>budgets and alert</strong>: define budget per billing or per project, you can create an alert at 50 percent, 90 percent and 100 percent</p>
+<p><strong>billing</strong>: you have billing account on GCP project</p>
+<p><strong>export</strong>: store detailed billing information</p>
+<p><strong>reports and quotas</strong>: </p>
+<ul>
+<li>report is a visual tool to monitor your expenditure. </li>
+<li>quotas are designed to prevent over-consumption of resources<ul>
+<li>rate quotas<br>  reset after a specific time. eg: Kubernetes service set a quota of 1000 calls per 100 seconds</li>
+<li>allocation quotas<br>  govern the number of resources you can have in your projects. eg: no more than 5 VPN per project</li>
+</ul>
 </li>
 </ul>
-<p>Ok, the first blog is simply recorded here, my blog journey starts here!</p>
-
+<div class="video-container"><iframe src="https://www.youtube.com/embed/SKCLJhDb-gc" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       
     </div>
     <footer class="article-footer">
@@ -640,7 +842,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/03/08/First%20blog/" data-id="cka2kixmi0003fii31gevfspt" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/01/a01-GCP-introduction/" data-id="cka2kldea0007h1i3h53618gq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -651,6 +853,11 @@
 
   
 
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="extend next" rel="next" href="/blog/page/2/">Next &amp;raquo;</a>
+  </nav>
 
 </section>
         
@@ -660,7 +867,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/big-data/">big data</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/ci-cd/">ci/cd</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/devops/">devops</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/feelings/">feelings</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/spark/">spark</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/big-data/">big data</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/ci-cd/">ci/cd</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/devops/">devops</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/feelings/">feelings</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/gcp/">gcp</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/gcp/a-core-infrastructure/">a-core-infrastructure</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/gcp/b-data-engineer/">b-data-engineer</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/spark/">spark</a></li></ul>
     </div>
   </div>
 
@@ -688,23 +895,23 @@
       <ul>
         
           <li>
-            <a href="/blog/2020/05/06/spark-cross-join/">spark cross join</a>
+            <a href="/blog/2020/05/11/b01-GCP-Concepts/">b01-GCP-Concepts</a>
           </li>
         
           <li>
-            <a href="/blog/2020/03/31/xiaomakuaibao/">Website Recommended</a>
+            <a href="/blog/2020/05/09/a08-GCP-Big-Data-and-Machine-Learning/">a08-GCP Big Data and Machine Learning</a>
           </li>
         
           <li>
-            <a href="/blog/2019/05/17/spark-listeners/">spark listeners</a>
+            <a href="/blog/2020/05/08/a07-GCP-Developing-Deploying-and-Monitoring/">a07-GCP Developing, Deploying and Monitoring</a>
           </li>
         
           <li>
-            <a href="/blog/2019/05/13/Hive-vs-Presto/">Hive vs Presto</a>
+            <a href="/blog/2020/05/08/a06-GCP-Applications/">a06-GCP-Applications</a>
           </li>
         
           <li>
-            <a href="/blog/2019/05/03/Jenkins-multiple-pipelines/">Jenkins multiple pipelines</a>
+            <a href="/blog/2020/05/08/a05-GCP-Containers/">a05-GCP-Containers</a>
           </li>
         
       </ul>
