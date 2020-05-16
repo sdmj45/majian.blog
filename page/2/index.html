@@ -70,6 +70,105 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-a02-Getting-Started-With-GCP" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2020/05/03/a02-Getting-Started-With-GCP/" class="article-date">
+  <time datetime="2020-05-03T12:53:10.000Z" itemprop="datePublished">2020-05-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/gcp/">gcp</a>►<a class="article-category-link" href="/blog/categories/gcp/a-core-infrastructure/">a-core-infrastructure</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2020/05/03/a02-Getting-Started-With-GCP/">a02-Getting-Started-With-GCP</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="IAM"><a href="#IAM" class="headerlink" title="IAM"></a>IAM</h2><p>IAM: Google Cloud’s Identity and Access Management.<br>It has 3 parts:</p>
+<ul>
+<li><strong>Who</strong>:<br>  can be defined by google account, google group, service account</li>
+<li><strong>Can do what</strong>: can be defined by an <strong>IAM role</strong> which is a collection of permissions<ul>
+<li>There are 3 kinds of roles:<ul>
+<li>Primitive role</li>
+<li>Predefined role</li>
+<li>Custom role:  can only be defined in organization or project, but not in folders</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>On which resource</strong></li>
+</ul>
+<h2 id="GCP-resource-hierarchy"><a href="#GCP-resource-hierarchy" class="headerlink" title="GCP resource hierarchy"></a>GCP resource hierarchy</h2><p>polices can define in organization, folder, project, they are inherited in the hierarchy.<br><img src="/blog/2020/05/03/a02-Getting-Started-With-GCP/resources_hierarchy.png" class="" title="resources_hierarchy"></p>
+<p><strong>Projects</strong> are the main way you organise your gcp resources.</p>
+<p>Each project has </p>
+<ul>
+<li>Project ID: immutable (assigned by you)</li>
+<li>Project Name: mutable (assigned by you)</li>
+<li>Project number: immutable (assigned by GCP)</li>
+</ul>
+<p>Policies defined in organisation level can be inherited to all children.</p>
+<p>GCP use <strong>least</strong> privilege in managing any kind of compute infrastructure. </p>
+<p><strong>The policies implemented at a higher level in this hierarchy can’t take away access that’s granted at a lower level</strong><br>Eg: if you grant Editor role to Organisation and Viewer role to the folder, then the folder is granted the Editor role.</p>
+<p>Projects can have different owners and users - they are built separately and managed separately.</p>
+<h2 id="Service-Account"><a href="#Service-Account" class="headerlink" title="Service Account"></a>Service Account</h2><p>For example: If you want to give permissions to a Compute Engine rather than a person, you would use service account.<br>A service account is also a resource, so you can give a role to it.</p>
+<p>There are 4 ways to interact with GCP’s management layer:</p>
+<ul>
+<li>GCP console<ul>
+<li>Manage and create projects</li>
+<li>Access to GCP APIs</li>
+<li>Offers access to Cloud Shell</li>
+</ul>
+</li>
+<li>Cloud shell and Cloud SDK<ul>
+<li>Includes command line tools: gcloud, gsutil(Cloud storage), bq(BigQuery)</li>
+</ul>
+</li>
+<li>API<ul>
+<li>Enabled through GCP console</li>
+<li>APIs Explorer is an interface tool that let you easily try GCP APIs using a browser</li>
+<li>Use libraries within your code<ul>
+<li>Cloud Client Libraries</li>
+<li>Google API Client Libraries</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Cloud Console Mobile App</li>
+</ul>
+<p>When using GCP, it handles most of the lower security layer, the upper layers remain the customer’s responsibility<br><img src="/blog/2020/05/03/a02-Getting-Started-With-GCP/cloud_security.png" class="" title="cloud_security"></p>
+<h2 id="Cloud-MarketPlace-formerly-Cloud-Launcher"><a href="#Cloud-MarketPlace-formerly-Cloud-Launcher" class="headerlink" title="Cloud MarketPlace( formerly Cloud Launcher)"></a>Cloud MarketPlace( formerly Cloud Launcher)</h2><p>It’s a tool for quickly deploying functional software packages on GCP</p>
+<div class="video-container"><iframe src="https://www.youtube.com/embed/WVwEVeW4A64" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
+      
+    </div>
+    <footer class="article-footer">
+<!--
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
+        <div>交流或订阅，请长按或扫描上方二维码</div>
+      </div>
+-->
+      <a data-url="https://sdmj45.github.io/blog/2020/05/03/a02-Getting-Started-With-GCP/" data-id="cka9qeoz2000556i379qkgsy9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-a01-GCP-introduction" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2020/05/01/a01-GCP-introduction/" class="article-date">
@@ -156,7 +255,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/01/a01-GCP-introduction/" data-id="cka9eqw9q00030si3c7473l7p" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/01/a01-GCP-introduction/" data-id="cka9qeoz0000356i3ggei0hlt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -207,7 +306,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/03/31/xiaomakuaibao/" data-id="cka9eqwbe000i0si3eutl25ki" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/03/31/xiaomakuaibao/" data-id="cka9qeozn000f56i3f1rw7unx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -274,7 +373,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/05/17/spark-listeners/" data-id="cka9eqwcu001f0si32djygzr5" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/05/17/spark-listeners/" data-id="cka9qeozs000h56i3f29u98ce" class="article-share-link">Share</a>
       
       
     </footer>
@@ -377,7 +476,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/05/13/Hive-vs-Presto/" data-id="cka9eqw9t00060si34diz18l9" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/05/13/Hive-vs-Presto/" data-id="cka9qeoz3000656i3h302003r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -446,7 +545,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/05/03/Jenkins-multiple-pipelines/" data-id="cka9eqw9r00040si3efsh1ujw" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/05/03/Jenkins-multiple-pipelines/" data-id="cka9qeozt000i56i3gxs69g2r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -498,7 +597,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/04/26/Kubernetes-Deploy-Example-Part-2/" data-id="cka9eqw9u00070si3coee9cbx" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/04/26/Kubernetes-Deploy-Example-Part-2/" data-id="cka9qeoz7000856i3bf9qavet" class="article-share-link">Share</a>
       
       
     </footer>
@@ -557,7 +656,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/04/26/Kubernetes-Deploy-Example-Part-1/" data-id="cka9eqw9p00020si38rrx343k" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/04/26/Kubernetes-Deploy-Example-Part-1/" data-id="cka9qeoyy000256i36xph7mt3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -621,7 +720,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/04/17/Avro-vs-Parquet/" data-id="cka9eqw9b00000si3eeptbef9" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/04/17/Avro-vs-Parquet/" data-id="cka9qeozp000g56i3b5934khb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -686,7 +785,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/03/08/First%20blog/" data-id="cka9eqw9n00010si3ers9ew0l" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/03/08/First%20blog/" data-id="cka9qeoyo000056i38p7c6ita" class="article-share-link">Share</a>
       
       
     </footer>
@@ -739,6 +838,10 @@
       <ul>
         
           <li>
+            <a href="/blog/2020/05/16/b03-Cloud-Datastore/">b03-Cloud-Datastore</a>
+          </li>
+        
+          <li>
             <a href="/blog/2020/05/14/b02-Cloud-SQL/">b02-Cloud-SQL</a>
           </li>
         
@@ -752,10 +855,6 @@
         
           <li>
             <a href="/blog/2020/05/08/a07-GCP-Developing-Deploying-and-Monitoring/">a07-GCP Developing, Deploying and Monitoring</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2020/05/08/a06-GCP-Applications/">a06-GCP-Applications</a>
           </li>
         
       </ul>

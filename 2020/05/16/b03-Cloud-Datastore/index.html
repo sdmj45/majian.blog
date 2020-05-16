@@ -5,21 +5,21 @@
   
 
   
-  <title>a08-GCP Big Data and Machine Learning | Developer</title>
+  <title>b03-Cloud-Datastore | Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Big Data Serverless means you don’t have to worry about provisioning compute instances to run your jobs. the services are fully managed. Cloud Dataprocis managed Hadoop  Fast, easy, managed way to run">
+  <meta name="description" content="What is a Cloud Datastore NoSQL Flexible structure&#x2F;relationship   No Ops No provisioning of instances Compute layer is abstracted away   Scalable Multi-regions access Sharding&#x2F;replication automatic">
 <meta property="og:type" content="article">
-<meta property="og:title" content="a08-GCP Big Data and Machine Learning">
-<meta property="og:url" content="https://sdmj45.github.io/blog/2020/05/09/a08-GCP-Big-Data-and-Machine-Learning/index.html">
+<meta property="og:title" content="b03-Cloud-Datastore">
+<meta property="og:url" content="https://sdmj45.github.io/blog/2020/05/16/b03-Cloud-Datastore/index.html">
 <meta property="og:site_name" content="Developer">
-<meta property="og:description" content="Big Data Serverless means you don’t have to worry about provisioning compute instances to run your jobs. the services are fully managed. Cloud Dataprocis managed Hadoop  Fast, easy, managed way to run">
+<meta property="og:description" content="What is a Cloud Datastore NoSQL Flexible structure&#x2F;relationship   No Ops No provisioning of instances Compute layer is abstracted away   Scalable Multi-regions access Sharding&#x2F;replication automatic">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://sdmj45.github.io/blog/2020/05/09/a08-GCP-Big-Data-and-Machine-Learning/big_data_services.png">
-<meta property="article:published_time" content="2020-05-09T08:09:01.000Z">
-<meta property="article:modified_time" content="2020-05-11T14:16:44.082Z">
+<meta property="og:image" content="https://sdmj45.github.io/blog/2020/05/16/b03-Cloud-Datastore/rdbms_vs_datastore.png">
+<meta property="article:published_time" content="2020-05-16T08:08:57.000Z">
+<meta property="article:modified_time" content="2020-05-16T14:32:54.507Z">
 <meta property="article:author" content="MA Jian">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://sdmj45.github.io/blog/2020/05/09/a08-GCP-Big-Data-and-Machine-Learning/big_data_services.png">
+<meta name="twitter:image" content="https://sdmj45.github.io/blog/2020/05/16/b03-Cloud-Datastore/rdbms_vs_datastore.png">
   
     <link rel="alternate" href="/blog/atom.xml" title="Developer" type="application/atom+xml">
   
@@ -72,14 +72,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-a08-GCP-Big-Data-and-Machine-Learning" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-b03-Cloud-Datastore" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2020/05/09/a08-GCP-Big-Data-and-Machine-Learning/" class="article-date">
-  <time datetime="2020-05-09T08:09:01.000Z" itemprop="datePublished">2020-05-09</time>
+    <a href="/blog/2020/05/16/b03-Cloud-Datastore/" class="article-date">
+  <time datetime="2020-05-16T08:08:57.000Z" itemprop="datePublished">2020-05-16</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/gcp/">gcp</a>►<a class="article-category-link" href="/blog/categories/gcp/a-core-infrastructure/">a-core-infrastructure</a>
+    <a class="article-category-link" href="/blog/categories/gcp/">gcp</a>►<a class="article-category-link" href="/blog/categories/gcp/b-data-engineer/">b-data-engineer</a>
   </div>
 
   </div>
@@ -90,7 +90,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      a08-GCP Big Data and Machine Learning
+      b03-Cloud-Datastore
     </h1>
   
 
@@ -98,84 +98,88 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Big-Data"><a href="#Big-Data" class="headerlink" title="Big Data"></a>Big Data</h2><img src="/blog/2020/05/09/a08-GCP-Big-Data-and-Machine-Learning/big_data_services.png" class="" title="big_data_services">
-<p><strong>Serverless</strong> means you don’t have to worry about provisioning compute instances to run your jobs. the services are fully managed.</p>
-<h2 id="Cloud-Dataproc"><a href="#Cloud-Dataproc" class="headerlink" title="Cloud Dataproc"></a>Cloud Dataproc</h2><p>is managed Hadoop</p>
-<ul>
-<li>Fast, easy, managed way to run Hadoop, Spark/Hive/Pig on GCP</li>
-<li>Create clusters in 90 seconds</li>
-<li>Scale clusters up and down even when jobs are running</li>
-<li>Easily migrate on-premises Hadoop jobs to the cloud</li>
-<li>Save money with preemptible instances</li>
-</ul>
-<h2 id="Cloud-Dataflow"><a href="#Cloud-Dataflow" class="headerlink" title="Cloud Dataflow"></a>Cloud Dataflow</h2><p>is managed data pipelines</p>
-<ul>
-<li>Processes data using Compute Engine<ul>
-<li>Clusters are sized for you</li>
-<li>Automated scaling </li>
+        <h2 id="What-is-a-Cloud-Datastore"><a href="#What-is-a-Cloud-Datastore" class="headerlink" title="What is a Cloud Datastore"></a>What is a Cloud Datastore</h2><ul>
+<li>NoSQL<ul>
+<li>Flexible structure/relationship</li>
 </ul>
 </li>
-<li>Write code for batch and streaming   </li>
-</ul>
-<p>Why use Cloud Dataflow?</p>
-<ul>
-<li>ETL</li>
-<li>Data analytics: batch or streaming</li>
-<li>Orchestration: create pipelines that coordinate services, including external services</li>
-<li>Integrates with GCP services</li>
-</ul>
-<h2 id="Big-Query"><a href="#Big-Query" class="headerlink" title="Big Query"></a>Big Query</h2><p>is managed data warehouse</p>
-<ul>
-<li>It provides near real-time interactive analysis of massive dataset using SQL</li>
-<li>No cluster maintenance</li>
-<li>Compute and Storage are separated with a terabit network in between</li>
-<li>You only pay for storage and processing used</li>
-<li>Automatic discount for long-term data storage(when data reaches <strong>90 days</strong> in BigQuery, google drops the price of storage)</li>
-</ul>
-<h2 id="Cloud-Pub-Sub"><a href="#Cloud-Pub-Sub" class="headerlink" title="Cloud Pub/Sub"></a>Cloud Pub/Sub</h2><p>is scalable, reliable messaging</p>
-<ul>
-<li>Supports many-to-many asynchronous messaging</li>
-<li>Push/pull to topics</li>
-<li>Support for offline consumers</li>
-<li>At least once delivery policy</li>
-</ul>
-<h2 id="Cloud-Datalab"><a href="#Cloud-Datalab" class="headerlink" title="Cloud Datalab"></a>Cloud Datalab</h2><p>interactive data exploration(Notebook)</p>
-<p>Built on Jupyter(formerly IPython)</p>
-<p>Easily deploy models to BigQuery. You can visualize data with Google Charts or map plot line</p>
-<h2 id="Cloud-Machine-Learning-Platform"><a href="#Cloud-Machine-Learning-Platform" class="headerlink" title="Cloud Machine Learning Platform"></a>Cloud Machine Learning Platform</h2><ul>
-<li>TensorFlow</li>
-<li>Cloud ML</li>
-<li>Machine Learning APIs</li>
-</ul>
-<p>Why use CLoud Machine Learning Platform?</p>
-<ul>
-<li>For structured data<ul>
-<li>Classification and regression</li>
-<li>Recommendation</li>
-<li>Anomaly detection</li>
+<li>No Ops<ul>
+<li>No provisioning of instances</li>
+<li>Compute layer is abstracted away</li>
 </ul>
 </li>
-<li>For unstructured data<ul>
-<li>Image and video analytics</li>
-<li>Text analytics</li>
+<li>Scalable<ul>
+<li>Multi-regions access</li>
+<li>Sharding/replication automatic</li>
+</ul>
+</li>
+<li><p>We can have only 1 Datastore per project</p>
+<h2 id="When-to-use-Datastore"><a href="#When-to-use-Datastore" class="headerlink" title="When to use Datastore"></a>When to use Datastore</h2><ul>
+<li>Applications need scale</li>
+<li>Product catalog - real time inventory</li>
+<li>User profiles - mobile apps</li>
+<li>Game save states</li>
+<li>ACID transactions, eg, transferring funds </li>
+</ul>
+<h2 id="When-not-use-Datastore"><a href="#When-not-use-Datastore" class="headerlink" title="When not use Datastore"></a>When not use Datastore</h2><ul>
+<li>Analytics(full SQL semantics)</li>
+</ul>
+<ul>
+<li>Use Big Query/Cloud Spanner</li>
+</ul>
+<ul>
+<li>Extreme scale(10M+ read/writes per second)</li>
+</ul>
+<ul>
+<li>Use Bigtable</li>
+</ul>
+<ul>
+<li>Don’t need ACID</li>
+</ul>
+<ul>
+<li>Bigtable</li>
+</ul>
+<ul>
+<li>Lift and shift(existing MYSQL)</li>
+</ul>
+<ul>
+<li>Cloud SQL</li>
+</ul>
+<ul>
+<li>Near zero latency(&lt; 10ms)</li>
+</ul>
+<ul>
+<li>Use in-memory database (Redis)</li>
 </ul>
 </li>
 </ul>
-<h2 id="CLoud-Vision-API"><a href="#CLoud-Vision-API" class="headerlink" title="CLoud Vision API"></a>CLoud Vision API</h2><ul>
-<li>Gain insight from images</li>
-<li>Detect inappropriate content</li>
-<li>Analyze sentiment</li>
-<li>Extract text<h2 id="Cloud-Natural-Language-API"><a href="#Cloud-Natural-Language-API" class="headerlink" title="Cloud Natural Language API"></a>Cloud Natural Language API</h2></li>
-<li>can return text in real time</li>
-<li>Highly accurate, even in noisy environments</li>
-<li>Access from any device<h2 id="Cloud-Translation-API"><a href="#Cloud-Translation-API" class="headerlink" title="Cloud Translation API"></a>Cloud Translation API</h2></li>
-<li>Translate strings </li>
-<li>Programmatically detect a document’s language</li>
-<li>Support for dozen’s languages<h2 id="Cloud-Video-Intelligence-API"><a href="#Cloud-Video-Intelligence-API" class="headerlink" title="Cloud Video Intelligence API"></a>Cloud Video Intelligence API</h2></li>
-<li>Annotate the contents of video</li>
-<li>Detect scene changes</li>
-<li>Flag inappropriate content</li>
-<li>Support for a variety of video formats</li>
+<h2 id="Relational-Database-vs-Datastore"><a href="#Relational-Database-vs-Datastore" class="headerlink" title="Relational Database vs Datastore"></a>Relational Database vs Datastore</h2><p>Entities can be hierarchical<br><img src="/blog/2020/05/16/b03-Cloud-Datastore/rdbms_vs_datastore.png" class="" title="rdbms_vs_datastore"></p>
+<h2 id="Queries-and-Indexing"><a href="#Queries-and-Indexing" class="headerlink" title="Queries and Indexing"></a>Queries and Indexing</h2><h3 id="Query"><a href="#Query" class="headerlink" title="Query"></a>Query</h3><ul>
+<li>retrieve entity from datastore</li>
+<li>query methods<ul>
+<li>programmatic</li>
+<li>web console</li>
+<li>GQL( google query language)<h3 id="Indexing"><a href="#Indexing" class="headerlink" title="Indexing"></a>Indexing</h3></li>
+</ul>
+</li>
+<li>queries get results from indexes</li>
+<li>index type<ul>
+<li>Built-in: Allows single property queries</li>
+<li>Composite: use index.yaml<h3 id="Danger-Exploding-Indexes"><a href="#Danger-Exploding-Indexes" class="headerlink" title="Danger - Exploding Indexes !"></a>Danger - Exploding Indexes !</h3></li>
+</ul>
+</li>
+<li>solutions:<ul>
+<li>use index.yaml to narrow index scope</li>
+<li>do not index properties that don’t need indexing</li>
+</ul>
+</li>
+</ul>
+<h2 id="Data-Consistency"><a href="#Data-Consistency" class="headerlink" title="Data Consistency"></a>Data Consistency</h2><p>Performance vs Accuracy</p>
+<h3 id="Strongly-Consistent"><a href="#Strongly-Consistent" class="headerlink" title="Strongly Consistent"></a>Strongly Consistent</h3><ul>
+<li>Parallel processes with orders guaranteed</li>
+<li>Use case: financial transaction<h3 id="Eventually-Consistent"><a href="#Eventually-Consistent" class="headerlink" title="Eventually Consistent"></a>Eventually Consistent</h3></li>
+<li>Parallel processes not with orders guaranteed </li>
+<li>Use case: Census population, order not important</li>
 </ul>
 
       
@@ -187,7 +191,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/09/a08-GCP-Big-Data-and-Machine-Learning/" data-id="cka9qeozv000j56i37ggxadg1" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/16/b03-Cloud-Datastore/" data-id="cka9qep2z001256i34yas5gg5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -196,19 +200,10 @@
     
 <nav id="article-nav">
   
-    <a href="/blog/2020/05/11/b01-Fundamental-Concepts/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          b01-Fundamental-Concepts
-        
-      </div>
-    </a>
   
-  
-    <a href="/blog/2020/05/08/a07-GCP-Developing-Deploying-and-Monitoring/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/2020/05/14/b02-Cloud-SQL/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">a07-GCP Developing, Deploying and Monitoring</div>
+      <div class="article-nav-title">b02-Cloud-SQL</div>
     </a>
   
 </nav>
