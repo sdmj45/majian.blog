@@ -5,17 +5,15 @@
   
 
   
-  <title>Avro vs Parquet | Developer</title>
+  <title>Archives | Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="AvroApache Avro is a remote procedure call and data serialization framework developed with Apache Hadoop project. It uses Json for defining data types and protocols and serialize data in compact binar">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Avro vs Parquet">
-<meta property="og:url" content="https://sdmj45.github.io/blog/2019/04/17/Avro-vs-Parquet/index.html">
+  <meta name="description" content="A developer&#39;s blog">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Developer">
+<meta property="og:url" content="https://sdmj45.github.io/blog/archives/page/3/index.html">
 <meta property="og:site_name" content="Developer">
-<meta property="og:description" content="AvroApache Avro is a remote procedure call and data serialization framework developed with Apache Hadoop project. It uses Json for defining data types and protocols and serialize data in compact binar">
+<meta property="og:description" content="A developer&#39;s blog">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2019-04-17T13:54:12.000Z">
-<meta property="article:modified_time" content="2020-03-09T14:25:34.299Z">
 <meta property="article:author" content="MA Jian">
 <meta name="twitter:card" content="summary">
   
@@ -70,88 +68,45 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Avro-vs-Parquet" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2019/04/17/Avro-vs-Parquet/" class="article-date">
-  <time datetime="2019-04-17T13:54:12.000Z" itemprop="datePublished">2019-04-17</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/big-data/">big data</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="article-title" itemprop="name">
-      Avro vs Parquet
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/blog/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/blog/2019/03/08/First%20blog/" class="archive-article-date">
+  <time datetime="2019-03-08T16:03:53.000Z" itemprop="datePublished">Mar 8</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/blog/2019/03/08/First%20blog/">My First Blog</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Avro"><a href="#Avro" class="headerlink" title="Avro"></a>Avro</h1><p>Apache Avro is a remote procedure call and data serialization framework developed with Apache Hadoop project. It uses Json for defining data types and protocols and serialize data in compact binary format.<br>Avro stores both schema and data together in one message or file.<br>A key feature of Avro is robust support for data schemas that change over time, called scheam evolution.</p>
-<h3 id="Avro-1"><a href="#Avro-1" class="headerlink" title="Avro"></a>Avro</h3><ul>
-<li>Row based format</li>
-<li>Schema is stored as JSON within the file</li>
-<li>It is also a Serialization and RPC framework</li>
-<li>Files support block compression and are splittable</li>
-<li>Can be written from streaming data (eg Apache Kafka)</li>
-<li>Excellent with schema evolution</li>
-</ul>
-<h1 id="Parquet"><a href="#Parquet" class="headerlink" title="Parquet"></a>Parquet</h1><p>Parquet is a columnar file format that provides optimizations to speed up queries and a far more efficient file format than csv or json</p>
-<h3 id="Parquet-1"><a href="#Parquet-1" class="headerlink" title="Parquet"></a>Parquet</h3><ul>
-<li>Column based format</li>
-<li>Schema is stored in the footer of the file</li>
-<li>Due to merging of schema across multiple files, schema evolution is expensive</li>
-<li>Excellent for selected column data consumption and processing</li>
-<li>Can’t be written from streaming data since it needs to wait for blocks to get finished. However, this will work using micro-batch (eg Apache Spark).</li>
-<li>Working excellent with spark as there is vectorized reader for parquet</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-<!--
-      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
-        <div>交流或订阅，请长按或扫描上方二维码</div>
-      </div>
--->
-      <a data-url="https://sdmj45.github.io/blog/2019/04/17/Avro-vs-Parquet/" data-id="ckae2mvuk001laoi30zag6uc7" class="article-share-link">Share</a>
-      
-      
-    </footer>
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/blog/2019/04/26/Kubernetes-Deploy-Example-Part-1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Kubernetes Deploy Example - Part 1
-        
-      </div>
-    </a>
-  
-  
-    <a href="/blog/2019/03/08/First%20blog/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">My First Blog</div>
-    </a>
-  
-</nav>
-
-  
 </article>
+  
+  
+    </div></section>
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/blog/archives/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/blog/archives/">1</a><a class="page-number" href="/blog/archives/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
 
 </section>
         

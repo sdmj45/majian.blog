@@ -5,21 +5,21 @@
   
 
   
-  <title>b02-Cloud-SQL | Developer</title>
+  <title>b04-Bigtable | Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Cloud SQL Max disk size 10 TB If need &gt; 10 TB, then choose Cloud Spanner   Read replicas limited to same region as master  Cloud SQL hands on">
+  <meta name="description" content="Cloud Bigtable High performance, massively scalable NoSQL  Ideal for large analytical workloads  Bigtable infrastructure  Front-end server pool serves requests to nodes Compute and Storage are separat">
 <meta property="og:type" content="article">
-<meta property="og:title" content="b02-Cloud-SQL">
-<meta property="og:url" content="https://sdmj45.github.io/blog/2020/05/14/b02-Cloud-SQL/index.html">
+<meta property="og:title" content="b04-Bigtable">
+<meta property="og:url" content="https://sdmj45.github.io/blog/2020/05/19/b04-Bigtable/index.html">
 <meta property="og:site_name" content="Developer">
-<meta property="og:description" content="Cloud SQL Max disk size 10 TB If need &gt; 10 TB, then choose Cloud Spanner   Read replicas limited to same region as master  Cloud SQL hands on">
+<meta property="og:description" content="Cloud Bigtable High performance, massively scalable NoSQL  Ideal for large analytical workloads  Bigtable infrastructure  Front-end server pool serves requests to nodes Compute and Storage are separat">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://sdmj45.github.io/blog/2020/05/14/b02-Cloud-SQL/hands_on.png">
-<meta property="article:published_time" content="2020-05-14T14:45:41.000Z">
-<meta property="article:modified_time" content="2020-05-16T09:07:12.540Z">
+<meta property="og:image" content="https://sdmj45.github.io/blog/2020/05/19/b04-Bigtable/bigtable_infrastructure.png">
+<meta property="article:published_time" content="2020-05-19T11:57:07.000Z">
+<meta property="article:modified_time" content="2020-05-19T15:25:09.180Z">
 <meta property="article:author" content="MA Jian">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://sdmj45.github.io/blog/2020/05/14/b02-Cloud-SQL/hands_on.png">
+<meta name="twitter:image" content="https://sdmj45.github.io/blog/2020/05/19/b04-Bigtable/bigtable_infrastructure.png">
   
     <link rel="alternate" href="/blog/atom.xml" title="Developer" type="application/atom+xml">
   
@@ -72,10 +72,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-b02-Cloud-SQL" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-b04-Bigtable" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2020/05/14/b02-Cloud-SQL/" class="article-date">
-  <time datetime="2020-05-14T14:45:41.000Z" itemprop="datePublished">2020-05-14</time>
+    <a href="/blog/2020/05/19/b04-Bigtable/" class="article-date">
+  <time datetime="2020-05-19T11:57:07.000Z" itemprop="datePublished">2020-05-19</time>
 </a>
     
   <div class="article-category">
@@ -90,7 +90,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      b02-Cloud-SQL
+      b04-Bigtable
     </h1>
   
 
@@ -98,15 +98,37 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Cloud-SQL"><a href="#Cloud-SQL" class="headerlink" title="Cloud SQL"></a>Cloud SQL</h2><ul>
-<li>Max disk size 10 TB<ul>
-<li>If need &gt; 10 TB, then choose Cloud Spanner</li>
+        <h2 id="Cloud-Bigtable"><a href="#Cloud-Bigtable" class="headerlink" title="Cloud Bigtable"></a>Cloud Bigtable</h2><ul>
+<li>High performance, massively scalable NoSQL </li>
+<li>Ideal for large analytical workloads</li>
 </ul>
-</li>
-<li>Read replicas limited to same region as master</li>
+<h3 id="Bigtable-infrastructure"><a href="#Bigtable-infrastructure" class="headerlink" title="Bigtable infrastructure"></a>Bigtable infrastructure</h3><img src="/blog/2020/05/19/b04-Bigtable/bigtable_infrastructure.png" class="" title="bigtable_infrastructure">
+<ul>
+<li>Front-end server pool serves requests to nodes</li>
+<li>Compute and Storage are separate, No data is stored on the node except for metadata to direct requests to the correct tablet</li>
+<li>tables are shards into tablets. They are stored on Colossus, google’s filesystem. as storage is separate from compute node,<br>replication and recovery of node data is very fast, as only metadata/pointers need to be updated</li>
 </ul>
-<p>Cloud SQL hands on<br><img src="/blog/2020/05/14/b02-Cloud-SQL/hands_on.png" class="" title="hands_on"></p>
-<div class="video-container"><iframe src="https://www.youtube.com/embed/CKAUkmybZCg" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
+<h3 id="instances"><a href="#instances" class="headerlink" title="instances"></a>instances</h3><p>Entire bigtable project called ‘instance’</p>
+<h3 id="cluster"><a href="#cluster" class="headerlink" title="cluster"></a>cluster</h3><p>Nodes grouped into clusters</p>
+<ul>
+<li>1 or more cluster per instance</li>
+</ul>
+<h3 id="instance-type"><a href="#instance-type" class="headerlink" title="instance type"></a>instance type</h3><ul>
+<li>Development - low cost, single node, on replication</li>
+<li>Production - 3+ nodes per cluster, replications available</li>
+</ul>
+<h3 id="Schema-Design"><a href="#Schema-Design" class="headerlink" title="Schema Design"></a>Schema Design</h3><ul>
+<li>Per table - Row key is only indexed item</li>
+</ul>
+<h2 id="Hands-on"><a href="#Hands-on" class="headerlink" title="Hands on"></a>Hands on</h2><h3 id="install-cbt-in-Google-Cloud-SDK"><a href="#install-cbt-in-Google-Cloud-SDK" class="headerlink" title="install cbt in  Google Cloud SDK"></a>install cbt in  <strong>Google Cloud SDK</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gcloud components update</span><br><span class="line">glcoud components install cbt</span><br></pre></td></tr></table></figure>
+<h3 id="set-env-variable"><a href="#set-env-variable" class="headerlink" title="set env variable"></a>set env variable</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo -e &quot;project&#x3D;[PROJECT_ID]\ninstance&#x3D;[INSTANCE_ID]&quot;&gt;~&#x2F;.cbtrc</span><br></pre></td></tr></table></figure>
+<h3 id="create-table"><a href="#create-table" class="headerlink" title="create table"></a>create table</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cbt createtable my-table</span><br></pre></td></tr></table></figure>
+<h3 id="list-table"><a href="#list-table" class="headerlink" title="list table"></a>list table</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cbt ls</span><br></pre></td></tr></table></figure>
+<h3 id="add-column-family"><a href="#add-column-family" class="headerlink" title="add column family"></a>add column family</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cbt createfamily my-table cf1</span><br></pre></td></tr></table></figure>
+<h3 id="list-column-family"><a href="#list-column-family" class="headerlink" title="list column family"></a>list column family</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cbt ls my-table</span><br></pre></td></tr></table></figure>
+<h3 id="add-value-to-row1-column-family-cf1-column-qualifier-c1"><a href="#add-value-to-row1-column-family-cf1-column-qualifier-c1" class="headerlink" title="add value to row1, column family cf1, column qualifier c1"></a>add value to row1, column family cf1, column qualifier c1</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cbt set my-table r1 cf1:c1&#x3D;testvalue</span><br></pre></td></tr></table></figure>
+<h3 id="read-table"><a href="#read-table" class="headerlink" title="read table"></a>read table</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cbt read my-table</span><br></pre></td></tr></table></figure>
+<h3 id="delete-table"><a href="#delete-table" class="headerlink" title="delete table"></a>delete table</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cbt deletetable my-table</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
@@ -116,7 +138,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/14/b02-Cloud-SQL/" data-id="ckae2mvrj000faoi3dnea6o9p" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/19/b04-Bigtable/" data-id="ckae2mvrh000daoi3d55f72h2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -125,19 +147,10 @@
     
 <nav id="article-nav">
   
-    <a href="/blog/2020/05/16/b03-Cloud-Datastore/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          b03-Cloud-Datastore
-        
-      </div>
-    </a>
   
-  
-    <a href="/blog/2020/05/11/b01-Fundamental-Concepts/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/2020/05/16/b03-Cloud-Datastore/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">b01-Fundamental-Concepts</div>
+      <div class="article-nav-title">b03-Cloud-Datastore</div>
     </a>
   
 </nav>
