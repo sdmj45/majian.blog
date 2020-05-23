@@ -5,19 +5,21 @@
   
 
   
-  <title>Kubernetes Deploy Example - Part 1 | Developer</title>
+  <title>b06-Cloud-PubSub | Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Kubernetes is a container orchestration system for automating application deployment, scaling and management. Here we will show a simple example of nginx deployment by kubernetes. Requirements install">
+  <meta name="description" content="Cloud Pub&#x2F;Sub Global scala messaging buffer&#x2F;coupler No-ops Decouples senders and receivers Equivalent to Kafka At-least-once delivery  Pub&#x2F;Sub overview  Topic: publisher sends messages to topic Messag">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Kubernetes Deploy Example - Part 1">
-<meta property="og:url" content="https://sdmj45.github.io/blog/2019/04/26/Kubernetes-Deploy-Example-Part-1/index.html">
+<meta property="og:title" content="b06-Cloud-PubSub">
+<meta property="og:url" content="https://sdmj45.github.io/blog/2020/05/23/b06-Cloud-PubSub/index.html">
 <meta property="og:site_name" content="Developer">
-<meta property="og:description" content="Kubernetes is a container orchestration system for automating application deployment, scaling and management. Here we will show a simple example of nginx deployment by kubernetes. Requirements install">
+<meta property="og:description" content="Cloud Pub&#x2F;Sub Global scala messaging buffer&#x2F;coupler No-ops Decouples senders and receivers Equivalent to Kafka At-least-once delivery  Pub&#x2F;Sub overview  Topic: publisher sends messages to topic Messag">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2019-04-26T09:52:39.000Z">
-<meta property="article:modified_time" content="2020-03-09T14:25:34.361Z">
+<meta property="og:image" content="https://sdmj45.github.io/blog/2020/05/23/b06-Cloud-PubSub/pubsub_overview.png">
+<meta property="article:published_time" content="2020-05-23T14:01:29.000Z">
+<meta property="article:modified_time" content="2020-05-23T15:17:24.253Z">
 <meta property="article:author" content="MA Jian">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://sdmj45.github.io/blog/2020/05/23/b06-Cloud-PubSub/pubsub_overview.png">
   
     <link rel="alternate" href="/blog/atom.xml" title="Developer" type="application/atom+xml">
   
@@ -70,14 +72,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Kubernetes-Deploy-Example-Part-1" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-b06-Cloud-PubSub" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2019/04/26/Kubernetes-Deploy-Example-Part-1/" class="article-date">
-  <time datetime="2019-04-26T09:52:39.000Z" itemprop="datePublished">2019-04-26</time>
+    <a href="/blog/2020/05/23/b06-Cloud-PubSub/" class="article-date">
+  <time datetime="2020-05-23T14:01:29.000Z" itemprop="datePublished">2020-05-23</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/devops/">devops</a>
+    <a class="article-category-link" href="/blog/categories/gcp/">gcp</a>►<a class="article-category-link" href="/blog/categories/gcp/b-data-engineer/">b-data-engineer</a>
   </div>
 
   </div>
@@ -88,7 +90,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Kubernetes Deploy Example - Part 1
+      b06-Cloud-PubSub
     </h1>
   
 
@@ -96,19 +98,26 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Kubernetes is a container orchestration system for automating application deployment, scaling and management. Here we will show a simple example of nginx deployment by kubernetes.</p>
-<h2 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h2><ol>
-<li>install kubernetes, for me, I use minikube</li>
-<li>install docker </li>
-</ol>
-<h2 id="Step-1-Pull-the-image-from-Docker-Registry"><a href="#Step-1-Pull-the-image-from-Docker-Registry" class="headerlink" title="Step 1: Pull the image from Docker Registry"></a>Step 1: Pull the image from Docker Registry</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ kubectl run nginx --image=nginx:latest --port=80</span><br></pre></td></tr></table></figure>
-<h2 id="Step-2-Check-if-deployment-ok"><a href="#Step-2-Check-if-deployment-ok" class="headerlink" title="Step 2: Check if deployment ok"></a>Step 2: Check if deployment ok</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ kubectl get pods</span><br><span class="line"></span><br><span class="line">NAME              READY     STATUS    RESTARTS   AGE</span><br><span class="line">nginx-6bfb654d7c-xjvhg                1/1       Running   0          1h</span><br></pre></td></tr></table></figure>
-<h2 id="Step-3-Expose-service-through-NodePort"><a href="#Step-3-Expose-service-through-NodePort" class="headerlink" title="Step 3: Expose service through NodePort"></a>Step 3: Expose service through NodePort</h2><p>As I use minikube in local, I don’t have LoadBalancer installed, so I use NodePort as type here</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">kubectl expose deployment nginx --<span class="built_in">type</span>=NodePort --port=80 --target-port=80</span><br><span class="line"></span><br><span class="line">service <span class="string">"nginx"</span> exposed</span><br></pre></td></tr></table></figure>
-<h2 id="Step-4-Get-service-port"><a href="#Step-4-Get-service-port" class="headerlink" title="Step 4: Get service port"></a>Step 4: Get service port</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">kubectl get svc nginx</span><br><span class="line"></span><br><span class="line">NAME      TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE</span><br><span class="line">nginx     NodePort   10.109.174.66   &lt;none&gt;        80:32598/TCP   45m</span><br></pre></td></tr></table></figure>
-<p>Here we can find that the service if exposed by port 32598</p>
-<h2 id="Step-5-Get-kubernetes-ip"><a href="#Step-5-Get-kubernetes-ip" class="headerlink" title="Step 5: Get kubernetes ip"></a>Step 5: Get kubernetes ip</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">kubectl get endpoints kubernetes</span><br><span class="line"></span><br><span class="line">NAME         ENDPOINTS             AGE</span><br><span class="line">kubernetes   192.168.99.100:8443   143d</span><br></pre></td></tr></table></figure>
-<h2 id="Step-6-Access-to-nginx"><a href="#Step-6-Access-to-nginx" class="headerlink" title="Step 6: Access to nginx"></a>Step 6: Access to nginx</h2><p>Open your navigator and type the url of kubernetes with the port of nginx, you will access to welcome page of nginx<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.99.100:32598</span><br></pre></td></tr></table></figure></p>
+        <h2 id="Cloud-Pub-Sub"><a href="#Cloud-Pub-Sub" class="headerlink" title="Cloud Pub/Sub"></a>Cloud Pub/Sub</h2><ul>
+<li>Global scala messaging buffer/coupler</li>
+<li>No-ops</li>
+<li>Decouples senders and receivers</li>
+<li>Equivalent to Kafka</li>
+<li>At-least-once delivery</li>
+</ul>
+<h2 id="Pub-Sub-overview"><a href="#Pub-Sub-overview" class="headerlink" title="Pub/Sub overview"></a>Pub/Sub overview</h2><img src="/blog/2020/05/23/b06-Cloud-PubSub/pubsub_overview.png" class="" title="pubsub_overview">
+<ul>
+<li>Topic: publisher sends messages to topic</li>
+<li>Messages are stored in message store until they are delivered and acknowledged by subscribers</li>
+<li>Pub/Sub forwards messages from a topic to subscribers. messages can be pushed by Pub/Sub to subscriber or pulled by subscribers from Pub/Sub</li>
+<li>Subscriber receives pending messages from subscription and acknowledge to Pub/Sub</li>
+<li>After message is acknowledged by the subscriber, it is removed from the subscription’s queue of messages.</li>
+</ul>
+<h2 id="Push-and-Pull"><a href="#Push-and-Pull" class="headerlink" title="Push and Pull"></a>Push and Pull</h2><ul>
+<li>Push = lower latency, more real-time</li>
+<li>Push subscribers must be Webhook endpoints that accept POST over HTTPS</li>
+<li>Pull ideal for large volume of messages - batch delivery</li>
+</ul>
 
       
     </div>
@@ -119,7 +128,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/04/26/Kubernetes-Deploy-Example-Part-1/" data-id="ckajshwvu00023ci35x3e8b0y" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/23/b06-Cloud-PubSub/" data-id="ckajshwwb000i3ci3h3fg623q" class="article-share-link">Share</a>
       
       
     </footer>
@@ -128,19 +137,10 @@
     
 <nav id="article-nav">
   
-    <a href="/blog/2019/04/26/Kubernetes-Deploy-Example-Part-2/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Kubernetes Deploy Example - Part 2
-        
-      </div>
-    </a>
   
-  
-    <a href="/blog/2019/04/17/Avro-vs-Parquet/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/2020/05/20/b05-Cloud-Spanner/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Avro vs Parquet</div>
+      <div class="article-nav-title">b05-Cloud-Spanner</div>
     </a>
   
 </nav>
