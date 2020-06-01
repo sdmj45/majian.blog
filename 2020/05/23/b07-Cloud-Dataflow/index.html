@@ -5,19 +5,24 @@
   
 
   
-  <title>a05-GCP-Containers | Developer</title>
+  <title>b07-Cloud Dataflow | Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Kubernetesorchestrator for containers so you can better manage and scale your applications Kubernetes EngineKubernetes as a managed service in the cloud.  You can create Kubernetes Cluster with Kubern">
+  <meta name="description" content="Data Processing Solution:Apache Beam + Cloud Dataflow Cloud Dataflow Auto scaling, No-Ops, Stream and Batch Processing Built on Apache Beam Pipelines are regional-based  Data Transformation Cloud Data">
 <meta property="og:type" content="article">
-<meta property="og:title" content="a05-GCP-Containers">
-<meta property="og:url" content="https://sdmj45.github.io/blog/2020/05/08/a05-GCP-Containers/index.html">
+<meta property="og:title" content="b07-Cloud Dataflow">
+<meta property="og:url" content="https://sdmj45.github.io/blog/2020/05/23/b07-Cloud-Dataflow/index.html">
 <meta property="og:site_name" content="Developer">
-<meta property="og:description" content="Kubernetesorchestrator for containers so you can better manage and scale your applications Kubernetes EngineKubernetes as a managed service in the cloud.  You can create Kubernetes Cluster with Kubern">
+<meta property="og:description" content="Data Processing Solution:Apache Beam + Cloud Dataflow Cloud Dataflow Auto scaling, No-Ops, Stream and Batch Processing Built on Apache Beam Pipelines are regional-based  Data Transformation Cloud Data">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-05-08T12:17:44.000Z">
-<meta property="article:modified_time" content="2020-05-11T14:16:44.060Z">
+<meta property="og:image" content="https://sdmj45.github.io/blog/2020/05/23/b07-Cloud-Dataflow/data_processing_challenge.png">
+<meta property="og:image" content="https://sdmj45.github.io/blog/2020/05/23/b07-Cloud-Dataflow/data_transformation.png">
+<meta property="og:image" content="https://sdmj45.github.io/blog/2020/05/23/b07-Cloud-Dataflow/dataproc_vs_dataflow.png">
+<meta property="og:image" content="https://sdmj45.github.io/blog/2020/05/23/b07-Cloud-Dataflow/pipeline.png">
+<meta property="article:published_time" content="2020-05-23T15:43:39.000Z">
+<meta property="article:modified_time" content="2020-05-29T13:49:31.578Z">
 <meta property="article:author" content="MA Jian">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://sdmj45.github.io/blog/2020/05/23/b07-Cloud-Dataflow/data_processing_challenge.png">
   
     <link rel="alternate" href="/blog/atom.xml" title="Developer" type="application/atom+xml">
   
@@ -70,14 +75,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-a05-GCP-Containers" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-b07-Cloud-Dataflow" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2020/05/08/a05-GCP-Containers/" class="article-date">
-  <time datetime="2020-05-08T12:17:44.000Z" itemprop="datePublished">2020-05-08</time>
+    <a href="/blog/2020/05/23/b07-Cloud-Dataflow/" class="article-date">
+  <time datetime="2020-05-23T15:43:39.000Z" itemprop="datePublished">2020-05-23</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/gcp/">gcp</a>►<a class="article-category-link" href="/blog/categories/gcp/a-core-infrastructure/">a-core-infrastructure</a>
+    <a class="article-category-link" href="/blog/categories/gcp/">gcp</a>►<a class="article-category-link" href="/blog/categories/gcp/b-data-engineer/">b-data-engineer</a>
   </div>
 
   </div>
@@ -88,7 +93,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      a05-GCP-Containers
+      b07-Cloud Dataflow
     </h1>
   
 
@@ -96,16 +101,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Kubernetes"><a href="#Kubernetes" class="headerlink" title="Kubernetes"></a>Kubernetes</h2><p>orchestrator for containers so you can better manage and scale your applications</p>
-<h2 id="Kubernetes-Engine"><a href="#Kubernetes-Engine" class="headerlink" title="Kubernetes Engine"></a>Kubernetes Engine</h2><p>Kubernetes as a managed service in the cloud. </p>
-<p>You can create Kubernetes Cluster with Kubernetes Engine</p>
-<h2 id="Cluster"><a href="#Cluster" class="headerlink" title="Cluster"></a>Cluster</h2><p>is a set of master components that control the system as a whole and a set of nodes that run containers</p>
-<p>In GCP, node is VM running in Compute Engine</p>
-<h2 id="Pod"><a href="#Pod" class="headerlink" title="Pod"></a>Pod</h2><p>the smallest deployable unit in Kubernetes. It has 1 container often, but it could have multiple containers, where the containers<br>will share the networking and have the same disk storage volume</p>
-<h2 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h2><p>a deployment represents a group a replicas of the same pod. It keeps your pods running even if a node fails</p>
-<h2 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h2><p>is a fundamental way Kubernetes represents load balancing. It has a public IP so the external can access the cluster</p>
-<p>In GKE, this kind of load balancer is a network load balancer</p>
-<h2 id="Anthos"><a href="#Anthos" class="headerlink" title="Anthos"></a>Anthos</h2><p>Hybrid and Multi-Cloud distributed systems and service management from Google. It rests on Kubernetes and Kubernetes Engine deployed on-premise</p>
+        <h2 id="Data-Processing"><a href="#Data-Processing" class="headerlink" title="Data Processing"></a>Data Processing</h2><img src="/blog/2020/05/23/b07-Cloud-Dataflow/data_processing_challenge.png" class="" title="data_processing_challenge">
+<p>Solution:<br>Apache Beam + Cloud Dataflow</p>
+<h2 id="Cloud-Dataflow"><a href="#Cloud-Dataflow" class="headerlink" title="Cloud Dataflow"></a>Cloud Dataflow</h2><ul>
+<li>Auto scaling, No-Ops, Stream and Batch Processing</li>
+<li>Built on Apache Beam</li>
+<li>Pipelines are regional-based</li>
+</ul>
+<p>Data Transformation<br><img src="/blog/2020/05/23/b07-Cloud-Dataflow/data_transformation.png" class="" title="data_transformation"></p>
+<h2 id="Cloud-Dataproc-vs-Cloud-Dataflow"><a href="#Cloud-Dataproc-vs-Cloud-Dataflow" class="headerlink" title="Cloud Dataproc vs Cloud Dataflow"></a>Cloud Dataproc vs Cloud Dataflow</h2><img src="/blog/2020/05/23/b07-Cloud-Dataflow/dataproc_vs_dataflow.png" class="" title="dataproc_vs_dataflow">
+<h2 id="Key-Terms"><a href="#Key-Terms" class="headerlink" title="Key Terms"></a>Key Terms</h2><ul>
+<li>Element : single entry of data (eg. table row)</li>
+<li>PCollection: Distributed data set, input and output</li>
+<li>Transform: Data processing in pipeline</li>
+<li>ParDo: Type of Transform <img src="/blog/2020/05/23/b07-Cloud-Dataflow/pipeline.png" class="" title="pipeline">
+</li>
+</ul>
 
       
     </div>
@@ -116,7 +127,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/08/a05-GCP-Containers/" data-id="ckawbl2ol000915i32ivc14vr" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/23/b07-Cloud-Dataflow/" data-id="ckawbl2p6000j15i3565ke3v2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -125,19 +136,10 @@
     
 <nav id="article-nav">
   
-    <a href="/blog/2020/05/08/a06-GCP-Applications/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          a06-GCP-Applications
-        
-      </div>
-    </a>
   
-  
-    <a href="/blog/2020/05/06/a04-GCP-Storage/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/2020/05/23/b06-Cloud-PubSub/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">a04-GCP-Storage</div>
+      <div class="article-nav-title">b06-Cloud-PubSub</div>
     </a>
   
 </nav>
