@@ -5,22 +5,21 @@
   
 
   
-  <title>b01-Fundamental-Concepts | Developer</title>
+  <title>b08-Cloud Dataproc | Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Database TypesRelational database SQL ACID ( Atomicity, Consistency, Isolation, Durability) Transactional Examples Mysql, Microsoft SQL Server, Oracle, PostgreSQL   Pros Standard, consistent, reliable">
+  <meta name="description" content="Dataproc Hadoop, Spark, Hive, Pig Lift and shift to GCP  Map Reduce Converting from HDFS to Google Cloud Storage Copy data to GCS Install connector or copy manually   Update file prefix in scripts Fro">
 <meta property="og:type" content="article">
-<meta property="og:title" content="b01-Fundamental-Concepts">
-<meta property="og:url" content="https://sdmj45.github.io/blog/2020/05/11/b01-Fundamental-Concepts/index.html">
+<meta property="og:title" content="b08-Cloud Dataproc">
+<meta property="og:url" content="https://sdmj45.github.io/blog/2020/06/05/b08-Cloud-Dataproc/index.html">
 <meta property="og:site_name" content="Developer">
-<meta property="og:description" content="Database TypesRelational database SQL ACID ( Atomicity, Consistency, Isolation, Durability) Transactional Examples Mysql, Microsoft SQL Server, Oracle, PostgreSQL   Pros Standard, consistent, reliable">
+<meta property="og:description" content="Dataproc Hadoop, Spark, Hive, Pig Lift and shift to GCP  Map Reduce Converting from HDFS to Google Cloud Storage Copy data to GCS Install connector or copy manually   Update file prefix in scripts Fro">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://sdmj45.github.io/blog/2020/05/11/b01-Fundamental-Concepts/storage_compare.png">
-<meta property="og:image" content="https://sdmj45.github.io/blog/2020/05/11/b01-Fundamental-Concepts/how_to_choose_storage.png">
-<meta property="article:published_time" content="2020-05-11T13:39:21.000Z">
-<meta property="article:modified_time" content="2020-05-16T09:07:01.048Z">
+<meta property="og:image" content="https://sdmj45.github.io/blog/2020/06/05/b08-Cloud-Dataproc/map_reduce.png">
+<meta property="article:published_time" content="2020-06-05T11:16:59.000Z">
+<meta property="article:modified_time" content="2020-06-08T16:17:38.291Z">
 <meta property="article:author" content="MA Jian">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://sdmj45.github.io/blog/2020/05/11/b01-Fundamental-Concepts/storage_compare.png">
+<meta name="twitter:image" content="https://sdmj45.github.io/blog/2020/06/05/b08-Cloud-Dataproc/map_reduce.png">
   
     <link rel="alternate" href="/blog/atom.xml" title="Developer" type="application/atom+xml">
   
@@ -73,10 +72,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-b01-Fundamental-Concepts" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-b08-Cloud-Dataproc" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2020/05/11/b01-Fundamental-Concepts/" class="article-date">
-  <time datetime="2020-05-11T13:39:21.000Z" itemprop="datePublished">2020-05-11</time>
+    <a href="/blog/2020/06/05/b08-Cloud-Dataproc/" class="article-date">
+  <time datetime="2020-06-05T11:16:59.000Z" itemprop="datePublished">2020-06-05</time>
 </a>
     
   <div class="article-category">
@@ -91,7 +90,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      b01-Fundamental-Concepts
+      b08-Cloud Dataproc
     </h1>
   
 
@@ -99,44 +98,37 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Database-Types"><a href="#Database-Types" class="headerlink" title="Database Types"></a>Database Types</h2><h3 id="Relational-database"><a href="#Relational-database" class="headerlink" title="Relational database"></a>Relational database</h3><ul>
-<li>SQL</li>
-<li>ACID ( Atomicity, Consistency, Isolation, Durability)</li>
-<li>Transactional</li>
-<li>Examples<ul>
-<li>Mysql, Microsoft SQL Server, Oracle, PostgreSQL</li>
+        <h2 id="Dataproc"><a href="#Dataproc" class="headerlink" title="Dataproc"></a>Dataproc</h2><ul>
+<li>Hadoop, Spark, Hive, Pig</li>
+<li>Lift and shift to GCP</li>
+</ul>
+<h2 id="Map-Reduce"><a href="#Map-Reduce" class="headerlink" title="Map Reduce"></a>Map Reduce</h2><img src="/blog/2020/06/05/b08-Cloud-Dataproc/map_reduce.png" class="" title="map_reduce">
+<h2 id="Converting-from-HDFS-to-Google-Cloud-Storage"><a href="#Converting-from-HDFS-to-Google-Cloud-Storage" class="headerlink" title="Converting from HDFS to Google Cloud Storage"></a>Converting from HDFS to Google Cloud Storage</h2><ul>
+<li>Copy data to GCS<ul>
+<li>Install connector or copy manually</li>
 </ul>
 </li>
-<li>Pros<ul>
-<li>Standard, consistent, reliable, data integrity</li>
+<li>Update file prefix in scripts<ul>
+<li>From hdfs:// to gs://</li>
 </ul>
 </li>
-<li>Cons<ul>
-<li>Poor scaling, not fast, not good for semi-structured data</li>
+<li>Use Dataproc and run against/output to GCS</li>
+</ul>
+<h2 id="Dataproc-performance-optimization"><a href="#Dataproc-performance-optimization" class="headerlink" title="Dataproc performance optimization"></a>Dataproc performance optimization</h2><ul>
+<li>Keep your data close to your cluster<ul>
+<li>Place Dataproc cluster in same region as storage bucket</li>
 </ul>
 </li>
-</ul>
-<p>“Consistency and Reliability over Performance”</p>
-<h3 id="Non-Relational-Database"><a href="#Non-Relational-Database" class="headerlink" title="Non-Relational Database"></a>Non-Relational Database</h3><ul>
-<li>Non-structured</li>
-<li>Some have ACID (Datastore)</li>
-<li>Examples<ul>
-<li>Redis, MongoDB, Cassandra, HBase, Bigtable, RavenDB</li>
+<li>Larger persistent disk = better performance<ul>
+<li>Using SSD over HDD</li>
 </ul>
 </li>
-<li>Pros<ul>
-<li>Scalable, High Performance, Not Structure-Limited</li>
-</ul>
-</li>
-<li>Cons<ul>
-<li>Consistency, Data Integrity</li>
+<li>Allocate more VMs<ul>
+<li>Use preemptible VM to save on costs</li>
 </ul>
 </li>
 </ul>
-<p>“Performance over Consistency”</p>
-<img src="/blog/2020/05/11/b01-Fundamental-Concepts/storage_compare.png" class="" title="storage_compare">
-<h2 id="How-to-choose-the-right-storage"><a href="#How-to-choose-the-right-storage" class="headerlink" title="How to choose the right storage"></a>How to choose the right storage</h2><img src="/blog/2020/05/11/b01-Fundamental-Concepts/how_to_choose_storage.png" class="" title="how_to_choose_storage">
-<div class="video-container"><iframe src="https://www.youtube.com/embed/J-2xbqn9xUQ" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
+
       
     </div>
     <footer class="article-footer">
@@ -146,7 +138,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/11/b01-Fundamental-Concepts/" data-id="ckb6p8tnf000e4ai38xfec7c1" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/06/05/b08-Cloud-Dataproc/" data-id="ckb6p8tpc000r4ai3gpsg3ykv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -155,19 +147,10 @@
     
 <nav id="article-nav">
   
-    <a href="/blog/2020/05/14/b02-Cloud-SQL/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          b02-Cloud-SQL
-        
-      </div>
-    </a>
   
-  
-    <a href="/blog/2020/05/09/a08-GCP-Big-Data-and-Machine-Learning/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/2020/05/23/b07-Cloud-Dataflow/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">a08-GCP Big Data and Machine Learning</div>
+      <div class="article-nav-title">b07-Cloud Dataflow</div>
     </a>
   
 </nav>
