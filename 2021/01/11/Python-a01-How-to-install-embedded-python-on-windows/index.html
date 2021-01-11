@@ -15,7 +15,7 @@
 <meta property="og:description" content="install an embedded python on Windows download zip file from https:&#x2F;&#x2F;www.python.org&#x2F;downloads&#x2F;windows&#x2F;, unzip it and add it to the path environment variable download get-pip.py from https:&#x2F;&#x2F;bootstrap.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-11T13:08:17.000Z">
-<meta property="article:modified_time" content="2021-01-11T13:19:17.596Z">
+<meta property="article:modified_time" content="2021-01-11T13:27:36.000Z">
 <meta property="article:author" content="MA Jian">
 <meta name="twitter:card" content="summary">
   
@@ -99,12 +99,11 @@
         <h1 id="install-an-embedded-python-on-Windows"><a href="#install-an-embedded-python-on-Windows" class="headerlink" title="install an embedded python on Windows"></a>install an embedded python on Windows</h1><ol>
 <li>download zip file from <a href="https://www.python.org/downloads/windows/" target="_blank" rel="noopener">https://www.python.org/downloads/windows/</a>, unzip it and add it to the path environment variable</li>
 <li>download get-pip.py from <a href="https://bootstrap.pypa.io/get-pip.py" target="_blank" rel="noopener">https://bootstrap.pypa.io/get-pip.py</a></li>
-<li>run command<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python get-pip.py</span><br></pre></td></tr></table></figure>
-<ol>
+<li>run command <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python get-pip.py</span><br></pre></td></tr></table></figure></li>
 <li>add pip path to the path in environment variable</li>
-<li>when running pip -V there are errors, to resolve this, we have to do the followings:<br>open python38._pth and add the following paths to it<br>C:\Dev\softwares\python-3.8.0-embed-amd64\Scripts<br>C:\Dev\softwares\python-3.8.0-embed-amd64\Lib<br>C:\Dev\softwares\python-3.8.0-embed-amd64\Lib\site-packages</li>
-</ol>
-</li>
+<li><p>when running pip -V there is error<br><em>ModuleNotFoundError: No module named ‘pip’</em></p>
+<p>In order to fix this, we have to do as below:<br> open python38._pth and add the following paths to it</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">C:\Dev\softwares\python-3.8.0-embed-amd64\Scripts</span><br><span class="line">C:\Dev\softwares\python-3.8.0-embed-amd64\Lib</span><br><span class="line">C:\Dev\softwares\python-3.8.0-embed-amd64\Lib\site-packages</span><br></pre></td></tr></table></figure></li>
 </ol>
 
       
@@ -116,7 +115,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/11/Python-a01-How-to-install-embedded-python-on-windows/" data-id="ckjslflc800071pi3hihp5ca3" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/11/Python-a01-How-to-install-embedded-python-on-windows/" data-id="ckjslpjz7000r2zi3a2le6y7t" class="article-share-link">Share</a>
       
       
     </footer>
