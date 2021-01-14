@@ -5,21 +5,19 @@
   
 
   
-  <title>b03-Cloud-Datastore | Developer</title>
+  <title>Python-a02-String | Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="What is a Cloud Datastore NoSQL Flexible structure&#x2F;relationship   No Ops No provisioning of instances Compute layer is abstracted away   Scalable Multi-regions access Sharding&#x2F;replication automatic">
+  <meta name="description" content="This article shows the examples of String in python 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253# 1   message1 &#x3D; &#39;Hello World&#39;   print">
 <meta property="og:type" content="article">
-<meta property="og:title" content="b03-Cloud-Datastore">
-<meta property="og:url" content="https://sdmj45.github.io/blog/2020/05/16/b03-Cloud-Datastore/index.html">
+<meta property="og:title" content="Python-a02-String">
+<meta property="og:url" content="https://sdmj45.github.io/blog/2021/01/14/Python-a02-String/index.html">
 <meta property="og:site_name" content="Developer">
-<meta property="og:description" content="What is a Cloud Datastore NoSQL Flexible structure&#x2F;relationship   No Ops No provisioning of instances Compute layer is abstracted away   Scalable Multi-regions access Sharding&#x2F;replication automatic">
+<meta property="og:description" content="This article shows the examples of String in python 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253# 1   message1 &#x3D; &#39;Hello World&#39;   print">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://sdmj45.github.io/blog/2020/05/16/b03-Cloud-Datastore/rdbms_vs_datastore.png">
-<meta property="article:published_time" content="2020-05-16T08:08:57.000Z">
-<meta property="article:modified_time" content="2020-05-19T19:15:21.266Z">
+<meta property="article:published_time" content="2021-01-14T19:10:16.000Z">
+<meta property="article:modified_time" content="2021-01-14T19:31:57.934Z">
 <meta property="article:author" content="MA Jian">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://sdmj45.github.io/blog/2020/05/16/b03-Cloud-Datastore/rdbms_vs_datastore.png">
   
     <link rel="alternate" href="/blog/atom.xml" title="Developer" type="application/atom+xml">
   
@@ -72,14 +70,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-b03-Cloud-Datastore" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Python-a02-String" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2020/05/16/b03-Cloud-Datastore/" class="article-date">
-  <time datetime="2020-05-16T08:08:57.000Z" itemprop="datePublished">2020-05-16</time>
+    <a href="/blog/2021/01/14/Python-a02-String/" class="article-date">
+  <time datetime="2021-01-14T19:10:16.000Z" itemprop="datePublished">2021-01-14</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/gcp/">gcp</a>►<a class="article-category-link" href="/blog/categories/gcp/b-data-engineer/">b-data-engineer</a>
+    <a class="article-category-link" href="/blog/categories/python/">python</a>►<a class="article-category-link" href="/blog/categories/python/a-basics/">a-basics</a>
   </div>
 
   </div>
@@ -90,7 +88,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      b03-Cloud-Datastore
+      Python-a02-String
     </h1>
   
 
@@ -98,91 +96,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="What-is-a-Cloud-Datastore"><a href="#What-is-a-Cloud-Datastore" class="headerlink" title="What is a Cloud Datastore"></a>What is a Cloud Datastore</h2><ul>
-<li>NoSQL<ul>
-<li>Flexible structure/relationship</li>
-</ul>
-</li>
-<li>No Ops<ul>
-<li>No provisioning of instances</li>
-<li>Compute layer is abstracted away</li>
-</ul>
-</li>
-<li>Scalable<ul>
-<li>Multi-regions access</li>
-<li>Sharding/replication automatic</li>
-</ul>
-</li>
-<li><p>We can have only 1 Datastore per project</p>
-<h2 id="When-to-use-Datastore"><a href="#When-to-use-Datastore" class="headerlink" title="When to use Datastore"></a>When to use Datastore</h2><ul>
-<li>Applications need scale</li>
-<li>Product catalog - real time inventory</li>
-<li>User profiles - mobile apps</li>
-<li>Game save states</li>
-<li>ACID transactions, eg, transferring funds </li>
-</ul>
-<h2 id="When-not-use-Datastore"><a href="#When-not-use-Datastore" class="headerlink" title="When not use Datastore"></a>When not use Datastore</h2></li>
-<li>Analytics(full SQL semantics)<ul>
-<li>Use Big Query/Cloud Spanner</li>
-</ul>
-</li>
-<li>Extreme scale(10M+ read/writes per second)<ul>
-<li>Use Bigtable</li>
-</ul>
-</li>
-<li>Don’t need ACID<ul>
-<li>Bigtable</li>
-</ul>
-</li>
-<li>Lift and shift(existing MYSQL)<ul>
-<li>Cloud SQL</li>
-</ul>
-</li>
-<li>Near zero latency(&lt; 10ms)<ul>
-<li>Use in-memory database (Redis)</li>
-</ul>
-</li>
-</ul>
-<h2 id="Relational-Database-vs-Datastore"><a href="#Relational-Database-vs-Datastore" class="headerlink" title="Relational Database vs Datastore"></a>Relational Database vs Datastore</h2><p>Entities can be hierarchical<br><img src="/blog/2020/05/16/b03-Cloud-Datastore/rdbms_vs_datastore.png" class="" title="rdbms_vs_datastore"></p>
-<h2 id="Queries-and-Indexing"><a href="#Queries-and-Indexing" class="headerlink" title="Queries and Indexing"></a>Queries and Indexing</h2><h3 id="Query"><a href="#Query" class="headerlink" title="Query"></a>Query</h3><ul>
-<li>retrieve entity from datastore</li>
-<li>query methods<ul>
-<li>programmatic</li>
-<li>web console</li>
-<li>GQL( google query language)</li>
-</ul>
-</li>
-</ul>
-<h3 id="Indexing"><a href="#Indexing" class="headerlink" title="Indexing"></a>Indexing</h3><ul>
-<li>queries get results from indexes</li>
-<li>index type<ul>
-<li>Built-in: Allows single property queries</li>
-<li>Composite: use index.yaml</li>
-</ul>
-</li>
-</ul>
-<h3 id="Danger-Exploding-Indexes"><a href="#Danger-Exploding-Indexes" class="headerlink" title="Danger - Exploding Indexes !"></a>Danger - Exploding Indexes !</h3><ul>
-<li>solutions:<ul>
-<li>use index.yaml to narrow index scope</li>
-<li>do not index properties that don’t need indexing</li>
-</ul>
-</li>
-</ul>
-<h2 id="Data-Consistency"><a href="#Data-Consistency" class="headerlink" title="Data Consistency"></a>Data Consistency</h2><p>Performance vs Accuracy</p>
-<ul>
-<li>Strongly Consistent<ul>
-<li>Parallel processes with orders guaranteed</li>
-<li>Use case: financial transaction</li>
-</ul>
-</li>
-<li>Eventually Consistent<ul>
-<li>Parallel processes not with orders guaranteed </li>
-<li>Use case: Census population, order not important<div class="video-container"><iframe src="https://www.youtube.com/embed/EZVu3AIxKFg" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
-</li>
-</ul>
-</li>
-</ul>
-
+        <p>This article shows the examples of String in python</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"># 1</span><br><span class="line">   message1 &#x3D; &#39;Hello World&#39;</span><br><span class="line">   print(message1)</span><br><span class="line"></span><br><span class="line"># 2   </span><br><span class="line">   message2 &#x3D; &quot;hello &#39;Jimmy&#39;&quot;</span><br><span class="line">   print(message2)</span><br><span class="line">   </span><br><span class="line"># 3   </span><br><span class="line">   message3 &#x3D; &#39;Hello World&#39;</span><br><span class="line">   print(len(message3))</span><br><span class="line">   </span><br><span class="line"># 4   </span><br><span class="line">   message4 &#x3D; &#39;Hello World&#39;</span><br><span class="line">   print(message4[1])</span><br><span class="line">   print(message4[-1])</span><br><span class="line">   print(message4[0:5]) # first include, second not</span><br><span class="line">   print(message4[:5]) # end to the 5</span><br><span class="line">   print(message4[6:]) # start from the 6</span><br><span class="line">   print(message4[11]) # error</span><br><span class="line"></span><br><span class="line"># 5   </span><br><span class="line">   message5 &#x3D; &#39;Hello World&#39;</span><br><span class="line">   print(message5.lower())</span><br><span class="line">   print(message5.upper())</span><br><span class="line">   print(message5.count(&#39;l&#39;)) # count l&#39;s number in the message</span><br><span class="line">   print(message5.find(&#39;World&#39;)) # return 6</span><br><span class="line">   print(message5.find(&#39;Unknown&#39;)) # return -1</span><br><span class="line"></span><br><span class="line"># 6   </span><br><span class="line">   message6 &#x3D; &#39;Hello World&#39;</span><br><span class="line">   # or by the same message6 &#x3D; message6.replace(&#39;World&#39;, &#39;You&#39;)</span><br><span class="line">   new_message6 &#x3D; message6.replace(&#39;World&#39;, &#39;You&#39;)</span><br><span class="line">   print(new_message6)</span><br><span class="line">   </span><br><span class="line"># 7   </span><br><span class="line">   greeting&#x3D;&#39;Hello&#39;</span><br><span class="line">   name&#x3D;&#39;Bob&#39;</span><br><span class="line">   message7 &#x3D; greeting + &#39;, &#39; + name</span><br><span class="line">   print(message7)  </span><br><span class="line">   </span><br><span class="line">   message8 &#x3D; &#39;&#123;&#125;, &#123;&#125;. Welcome!&#39;.format(greeting, name)</span><br><span class="line">   print(message8)</span><br><span class="line">   </span><br><span class="line">   message9 &#x3D; f&#39;&#123;greeting&#125;, &#123;name&#125;. Welcome!&#39; # python &gt;3.10</span><br><span class="line">   print(message9)</span><br><span class="line">   </span><br><span class="line">   message10 &#x3D; f&#39;&#123;greeting&#125;, &#123;name.upper()&#125;. Welcome!&#39; # python &gt;3.10</span><br><span class="line">   print(message10)</span><br><span class="line">   </span><br><span class="line"># 8</span><br><span class="line">   print(help(str))   </span><br><span class="line">   print(help(str.lower))</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
@@ -192,7 +107,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/16/b03-Cloud-Datastore/" data-id="ckjx92i6j000g12i3h5021de4" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/14/Python-a02-String/" data-id="ckjx92i66000612i3ba1e1rd1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -201,19 +116,10 @@
     
 <nav id="article-nav">
   
-    <a href="/blog/2020/05/19/b04-Bigtable/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          b04-Bigtable
-        
-      </div>
-    </a>
   
-  
-    <a href="/blog/2020/05/14/b02-Cloud-SQL/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/2021/01/11/Python-a01-How-to-install-embedded-python-on-windows/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">b02-Cloud-SQL</div>
+      <div class="article-nav-title">Python-a01-How to install embedded python on windows</div>
     </a>
   
 </nav>

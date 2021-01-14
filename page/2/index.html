@@ -70,6 +70,77 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-b05-Cloud-Spanner" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2020/05/20/b05-Cloud-Spanner/" class="article-date">
+  <time datetime="2020-05-20T14:50:32.000Z" itemprop="datePublished">2020-05-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/gcp/">gcp</a>►<a class="article-category-link" href="/blog/categories/gcp/b-data-engineer/">b-data-engineer</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2020/05/20/b05-Cloud-Spanner/">b05-Cloud-Spanner</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Cloud-Spanner"><a href="#Cloud-Spanner" class="headerlink" title="Cloud Spanner"></a>Cloud Spanner</h2><ul>
+<li>Fully managed, highly scalable/available, relational database</li>
+<li>Similar architecture to Bigtable</li>
+</ul>
+<h2 id="What-is-it-used-for"><a href="#What-is-it-used-for" class="headerlink" title="What is it used for?"></a>What is it used for?</h2><ul>
+<li>A relational database that need strong transactional consistency(ACID)</li>
+<li>Wide scale</li>
+<li>Higher workload than Cloud SQL</li>
+<li>Standard SQL format</li>
+</ul>
+<h2 id="Spanner-vs-CLoud-SQL"><a href="#Spanner-vs-CLoud-SQL" class="headerlink" title="Spanner vs CLoud SQL"></a>Spanner vs CLoud SQL</h2><ul>
+<li>Cloud SQL = MySQL</li>
+<li>Spanner is not “dropped in” replacement for MySQL<ul>
+<li>Not MySQL/PostgreSQL compatible</li>
+<li>Work need to migrate<img src="/blog/2020/05/20/b05-Cloud-Spanner/spanner_vs_relational_vs_nosql.png" class="" title="spanner_vs_relational_vs_nosql">
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Spanner-architecture"><a href="#Spanner-architecture" class="headerlink" title="Spanner architecture"></a>Spanner architecture</h2><img src="/blog/2020/05/20/b05-Cloud-Spanner/spanner_architecture.png" class="" title="spanner_architecture">
+<ul>
+<li>Nodes handle computation, each node serves up to 2 TB of storage</li>
+<li>Storage is replicated across zones, compute and storage are separated</li>
+<li>Replication is automatic</li>
+</ul>
+<div class="video-container"><iframe src="https://www.youtube.com/embed/BQX0NvWTcnw" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
+      
+    </div>
+    <footer class="article-footer">
+<!--
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
+        <div>交流或订阅，请长按或扫描上方二维码</div>
+      </div>
+-->
+      <a data-url="https://sdmj45.github.io/blog/2020/05/20/b05-Cloud-Spanner/" data-id="ckjx92i6l000i12i3et9lh9ny" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-b04-Bigtable" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2020/05/19/b04-Bigtable/" class="article-date">
@@ -137,7 +208,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/19/b04-Bigtable/" data-id="ckjsqrdex000j0qi3a5zp24bi" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/19/b04-Bigtable/" data-id="ckjx92iay001m12i3ehpr27p3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -267,7 +338,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/16/b03-Cloud-Datastore/" data-id="ckjsqrdfc000v0qi39p3y6nrj" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/16/b03-Cloud-Datastore/" data-id="ckjx92i6j000g12i3h5021de4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -321,7 +392,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/14/b02-Cloud-SQL/" data-id="ckjsqrdew000i0qi36v56he4o" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/14/b02-Cloud-SQL/" data-id="ckjx92i6h000f12i379nb6bfs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -404,7 +475,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/11/b01-Fundamental-Concepts/" data-id="ckjsqrdew000h0qi3aqdtfdqn" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/11/b01-Fundamental-Concepts/" data-id="ckjx92i6g000e12i330qze9yj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -529,7 +600,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/09/a08-GCP-Big-Data-and-Machine-Learning/" data-id="ckjsqrdev000g0qi3g7240nvg" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/09/a08-GCP-Big-Data-and-Machine-Learning/" data-id="ckjx92i6e000d12i376iia0pa" class="article-share-link">Share</a>
       
       
     </footer>
@@ -585,7 +656,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/08/a07-GCP-Developing-Deploying-and-Monitoring/" data-id="ckjsqrdes000e0qi327uldj8y" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/08/a07-GCP-Developing-Deploying-and-Monitoring/" data-id="ckjx92i6d000c12i3adg3cty9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -671,7 +742,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/08/a06-GCP-Applications/" data-id="ckjsqrdet000f0qi37kfg005k" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/08/a06-GCP-Applications/" data-id="ckjx92i6c000b12i3atb6ckrg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -727,7 +798,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/08/a05-GCP-Containers/" data-id="ckjsqrdeq000d0qi3ht68hrm2" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/08/a05-GCP-Containers/" data-id="ckjx92i6k000h12i3gfibhpjw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -834,68 +905,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/06/a04-GCP-Storage/" data-id="ckjsqrden000b0qi34ottabam" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-a03-GCP-Virtual-Machines" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2020/05/06/a03-GCP-Virtual-Machines/" class="article-date">
-  <time datetime="2020-05-06T11:41:07.000Z" itemprop="datePublished">2020-05-06</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/gcp/">gcp</a>►<a class="article-category-link" href="/blog/categories/gcp/a-core-infrastructure/">a-core-infrastructure</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2020/05/06/a03-GCP-Virtual-Machines/">a03-GCP-Virtual-Machines</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>We can run virtual machines by using of Compute Engine</p>
-<h2 id="VPC-Network"><a href="#VPC-Network" class="headerlink" title="VPC Network"></a>VPC Network</h2><p>Virtual Private Cloud: it connects your GCP resources to each other and to the internet.</p>
-<p>In the example below, us-east1-b and us-east1-c are on the same subnet but in different zones<br><img src="/blog/2020/05/06/a03-GCP-Virtual-Machines/subnet.png" class="" title="subnet"></p>
-<p>VPCs have routing tables, you can define firewall rules in terms of tags on compute engine.</p>
-<p>VPC Peering: establish a peering relationship between projects<br>Shared VPC:  you can use IAM to control</p>
-<h2 id="Cloud-Load-Balancing"><a href="#Cloud-Load-Balancing" class="headerlink" title="Cloud Load Balancing"></a>Cloud Load Balancing</h2><p>Users get a single, global anycast IP address</p>
-<h2 id="Cloud-CDN-Content-Delivery-Network"><a href="#Cloud-CDN-Content-Delivery-Network" class="headerlink" title="Cloud CDN(Content Delivery Network)"></a>Cloud CDN(Content Delivery Network)</h2><p>Use Google’s globally distributed edge caches to cache content close to your users</p>
-<h2 id="Compute-Engine"><a href="#Compute-Engine" class="headerlink" title="Compute Engine"></a>Compute Engine</h2><p>Create virtual machine by using of: </p>
-<ul>
-<li>GCP Console</li>
-<li>gcloud</li>
-</ul>
-<p>You can run images of linux or windows servers.</p>
-<p>You can configure memories and cpus of each VM, you can choose 2 kinds of storage: standard or SSD</p>
-<p>You can choose a Preemptible VM to save money (the instance will terminate after 24 hours, it can be used for applications<br>distribute processes across multiple instances in a cluster or for test)</p>
-
-      
-    </div>
-    <footer class="article-footer">
-<!--
-      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
-        <div>交流或订阅，请长按或扫描上方二维码</div>
-      </div>
--->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/06/a03-GCP-Virtual-Machines/" data-id="ckjsqrdel000a0qi399qmak4e" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/06/a04-GCP-Storage/" data-id="ckjx92i69000912i3d5i18235" class="article-share-link">Share</a>
       
       
     </footer>
@@ -962,6 +972,10 @@
       <ul>
         
           <li>
+            <a href="/blog/2021/01/14/Python-a02-String/">Python-a02-String</a>
+          </li>
+        
+          <li>
             <a href="/blog/2021/01/11/Python-a01-How-to-install-embedded-python-on-windows/">Python-a01-How to install embedded python on windows</a>
           </li>
         
@@ -975,10 +989,6 @@
         
           <li>
             <a href="/blog/2020/08/06/spark-skewness/">spark skewness</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2020/06/16/b10-Machine-Learning/">b10-Machine Learning</a>
           </li>
         
       </ul>
