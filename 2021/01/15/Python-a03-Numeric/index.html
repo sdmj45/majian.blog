@@ -5,17 +5,17 @@
   
 
   
-  <title>b06-01-Cloud-PubSub-HelloWorld | Developer</title>
+  <title>Python-a03-Numeric | Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="In this article I will show you how to publish and receive messages in PubSub with Java  create topic 1gcloud pubsub topics create my-topic  create subscription to this topic 1gcloud pubsub subscripti">
+  <meta name="description" content="This article shows the examples of Float, Integer in python 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748# different types    num1 &#x3D; 4    print(type(num1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="b06-01-Cloud-PubSub-HelloWorld">
-<meta property="og:url" content="https://sdmj45.github.io/blog/2020/10/02/b06-01-Cloud-PubSub-HelloWorld/index.html">
+<meta property="og:title" content="Python-a03-Numeric">
+<meta property="og:url" content="https://sdmj45.github.io/blog/2021/01/15/Python-a03-Numeric/index.html">
 <meta property="og:site_name" content="Developer">
-<meta property="og:description" content="In this article I will show you how to publish and receive messages in PubSub with Java  create topic 1gcloud pubsub topics create my-topic  create subscription to this topic 1gcloud pubsub subscripti">
+<meta property="og:description" content="This article shows the examples of Float, Integer in python 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748# different types    num1 &#x3D; 4    print(type(num1">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-10-02T10:59:33.000Z">
-<meta property="article:modified_time" content="2020-10-02T13:03:04.303Z">
+<meta property="article:published_time" content="2021-01-15T13:27:09.000Z">
+<meta property="article:modified_time" content="2021-01-17T15:35:53.585Z">
 <meta property="article:author" content="MA Jian">
 <meta name="twitter:card" content="summary">
   
@@ -70,14 +70,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-b06-01-Cloud-PubSub-HelloWorld" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Python-a03-Numeric" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2020/10/02/b06-01-Cloud-PubSub-HelloWorld/" class="article-date">
-  <time datetime="2020-10-02T10:59:33.000Z" itemprop="datePublished">2020-10-02</time>
+    <a href="/blog/2021/01/15/Python-a03-Numeric/" class="article-date">
+  <time datetime="2021-01-15T13:27:09.000Z" itemprop="datePublished">2021-01-15</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/gcp/">gcp</a>►<a class="article-category-link" href="/blog/categories/gcp/b-data-engineer/">b-data-engineer</a>
+    <a class="article-category-link" href="/blog/categories/python/">python</a>►<a class="article-category-link" href="/blog/categories/python/a-basics/">a-basics</a>
   </div>
 
   </div>
@@ -88,7 +88,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      b06-01-Cloud-PubSub-HelloWorld
+      Python-a03-Numeric
     </h1>
   
 
@@ -96,33 +96,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>In this article I will show you how to publish and receive messages in PubSub with Java</p>
-<ol>
-<li><p>create topic</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcloud pubsub topics create my-topic</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>create subscription to this topic</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcloud pubsub subscriptions create my-sub --topic my-topic</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>git clone project into cloud shell</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:<span class="comment">//github.com/googleapis/java-pubsub.git</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>go into the sample</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd samples/snippets/</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>modify PublisherExample.java and SubscribeAsyncExample.java to put the right project id, topic id and subscription id</p>
-</li>
-<li><p>compile project</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean install -<span class="type">DskipTests</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>run subscriber</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn exec:java -<span class="type">Dexec</span>.mainClass=<span class="string">"pubsub.SubscribeAsyncExample"</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>run publisher in another screen and observe subscriber</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn exec:java -<span class="type">Dexec</span>.mainClass=<span class="string">"pubsub.PublisherExample"</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<div class="video-container"><iframe src="https://www.youtube.com/embed/FCUkRvSEo-Y" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
+        <p>This article shows the examples of Float, Integer in python</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"># different types</span><br><span class="line">    num1 &#x3D; 4</span><br><span class="line">    print(type(num1))</span><br><span class="line">    </span><br><span class="line">    num2 &#x3D; 2.1</span><br><span class="line">    print(type(num2))</span><br><span class="line">      </span><br><span class="line"># arithmetic operators</span><br><span class="line">    print(5 + 2)</span><br><span class="line">    print(5 - 2)</span><br><span class="line">    print(5 * 2)</span><br><span class="line">    print(5 &#x2F; 2)</span><br><span class="line">    print(5 &#x2F;&#x2F; 2) # floor division</span><br><span class="line">    print(3 ** 2) # exponent</span><br><span class="line">    print(3 % 2) # modulus</span><br><span class="line">    print(abs(-3)) # absolute</span><br><span class="line">    print(round(3.6)) # round number 4</span><br><span class="line">    print(round(3.75, 1)) # round number 3.8</span><br><span class="line">    </span><br><span class="line"># calculation order</span><br><span class="line">    print(3 + 2 * 2)</span><br><span class="line">    print((3+2)*2)   </span><br><span class="line">     </span><br><span class="line"># increment</span><br><span class="line">    num1 &#x3D; 1</span><br><span class="line">    num1 &#x3D; num1 + 1</span><br><span class="line">    print(num1)</span><br><span class="line">    </span><br><span class="line">    num2 &#x3D; 1</span><br><span class="line">    num2 +&#x3D; 1</span><br><span class="line">    print(num2)</span><br><span class="line"></span><br><span class="line"># comparisons</span><br><span class="line">    print(3 &#x3D;&#x3D; 2) # equal</span><br><span class="line">    print(3 !&#x3D; 2) # not equal</span><br><span class="line">    print(3 &gt; 2)  # greater than</span><br><span class="line">    print(3 &lt; 2)  # less than</span><br><span class="line">    print(3 &gt;&#x3D; 2) # greater or equal</span><br><span class="line">    print(3 &lt;&#x3D; 2) # less or equal</span><br><span class="line"></span><br><span class="line"># cast</span><br><span class="line">    num1 &#x3D; &#39;10&#39;</span><br><span class="line">    num2 &#x3D; &#39;20&#39;</span><br><span class="line">    print(num1 + num2) # 1020</span><br><span class="line"></span><br><span class="line">    num3 &#x3D; int(num1)</span><br><span class="line">    num4 &#x3D; int(num2)</span><br><span class="line">    print(num3 + num4) # 30</span><br></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
@@ -132,7 +108,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/10/02/b06-01-Cloud-PubSub-HelloWorld/" data-id="ckk1ay8fl000h0qi36yhoehub" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/15/Python-a03-Numeric/" data-id="ckk1ay8fb00050qi30g4u073y" class="article-share-link">Share</a>
       
       
     </footer>
@@ -141,19 +117,10 @@
     
 <nav id="article-nav">
   
-    <a href="/blog/2021/01/11/Python-a01-How-to-install-embedded-python-on-windows/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Python-a01-How to install embedded python on windows
-        
-      </div>
-    </a>
   
-  
-    <a href="/blog/2020/08/20/GCP-Kubernetes-Manually/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/2021/01/14/Python-a02-String/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">GCP-Kubernetes-Manually</div>
+      <div class="article-nav-title">Python-a02-String</div>
     </a>
   
 </nav>
