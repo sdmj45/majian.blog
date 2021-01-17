@@ -70,6 +70,58 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Kubernetes-Deploy-Example-Part-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2019/04/26/Kubernetes-Deploy-Example-Part-2/" class="article-date">
+  <time datetime="2019-04-26T11:44:51.000Z" itemprop="datePublished">2019-04-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/devops/">devops</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2019/04/26/Kubernetes-Deploy-Example-Part-2/">Kubernetes Deploy Example - Part 2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>This is part 2 of Kubernetes Deploy Example, in this example, we will use the yaml file to deploy a nginx.</p>
+<p>In this example, we have combined the Deployment part and the Service part together. We could deploy them at the same time.</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">apps/v1</span> <span class="comment"># for versions before 1.9.0 use apps/v1beta2 </span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Deployment</span> </span><br><span class="line"><span class="attr">metadata:</span> </span><br><span class="line">  <span class="attr">name:</span> <span class="string">nginx-deployment</span> </span><br><span class="line"><span class="attr">spec:</span> </span><br><span class="line">  <span class="attr">selector:</span> </span><br><span class="line">    <span class="attr">matchLabels:</span> </span><br><span class="line">      <span class="attr">app:</span> <span class="string">nginx</span></span><br><span class="line">  <span class="attr">replicas:</span> <span class="number">2</span> <span class="comment"># tells deployment to run 2 pods matching the template </span></span><br><span class="line">  <span class="attr">template:</span> </span><br><span class="line">    <span class="attr">metadata:</span> </span><br><span class="line">      <span class="attr">labels:</span> </span><br><span class="line">        <span class="attr">app:</span> <span class="string">nginx</span> </span><br><span class="line">    <span class="attr">spec:</span> </span><br><span class="line">      <span class="attr">containers:</span> </span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">nginx</span> </span><br><span class="line">        <span class="attr">image:</span> <span class="string">nginx:latest</span> </span><br><span class="line">        <span class="attr">ports:</span> </span><br><span class="line">        <span class="bullet">-</span> <span class="attr">containerPort:</span> <span class="number">80</span> </span><br><span class="line"><span class="string">---</span> </span><br><span class="line"><span class="comment"># https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service  </span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Service</span> </span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span> </span><br><span class="line"><span class="attr">metadata:</span> </span><br><span class="line">  <span class="attr">name:</span> <span class="string">nginx-service</span> </span><br><span class="line"><span class="attr">spec:</span> </span><br><span class="line">  <span class="attr">selector:</span> </span><br><span class="line">    <span class="attr">app:</span> <span class="string">nginx</span> </span><br><span class="line">  <span class="attr">ports:</span> </span><br><span class="line">  <span class="bullet">-</span> <span class="attr">protocol:</span> <span class="string">TCP</span> </span><br><span class="line">    <span class="attr">port:</span> <span class="number">80</span> </span><br><span class="line">    <span class="attr">targetPort:</span> <span class="number">80</span> </span><br><span class="line">    <span class="attr">nodePort:</span> <span class="number">32000</span> </span><br><span class="line">  <span class="attr">type:</span> <span class="string">NodePort</span></span><br></pre></td></tr></table></figure>
+<h2 id="Step-1-Apply-applications-with-yaml-file"><a href="#Step-1-Apply-applications-with-yaml-file" class="headerlink" title="Step 1: Apply applications with yaml file"></a>Step 1: Apply applications with yaml file</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">kubectl apply -f ./deployment.yaml</span><br><span class="line">deployment.apps <span class="string">"nginx-deployment"</span> created</span><br><span class="line">service <span class="string">"nginx-service"</span> created</span><br></pre></td></tr></table></figure>
+<h2 id="Step-2-Get-kubernetes-ip"><a href="#Step-2-Get-kubernetes-ip" class="headerlink" title="Step 2: Get kubernetes ip"></a>Step 2: Get kubernetes ip</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">kubectl get endpoints kubernetes</span><br><span class="line"></span><br><span class="line">NAME         ENDPOINTS             AGE</span><br><span class="line">kubernetes   192.168.99.100:8443   143d</span><br></pre></td></tr></table></figure>
+<h2 id="Step-3-Access-to-nginx"><a href="#Step-3-Access-to-nginx" class="headerlink" title="Step 3: Access to nginx"></a>Step 3: Access to nginx</h2><p>Open your navigator and type the url of kubernetes with the port of nginx(we defined 32000 in the yaml file), you will access to welcome page of nginx<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.99.100:32000</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+<!--
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
+        <div>交流或订阅，请长按或扫描上方二维码</div>
+      </div>
+-->
+      <a data-url="https://sdmj45.github.io/blog/2019/04/26/Kubernetes-Deploy-Example-Part-2/" data-id="ckk1iev7m000311i362pe4gdu" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Kubernetes-Deploy-Example-Part-1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2019/04/26/Kubernetes-Deploy-Example-Part-1/" class="article-date">
@@ -119,7 +171,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/04/26/Kubernetes-Deploy-Example-Part-1/" data-id="ckk1ay8fx000v0qi3hakvgtkt" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/04/26/Kubernetes-Deploy-Example-Part-1/" data-id="ckk1ievb2000w11i314clhb4l" class="article-share-link">Share</a>
       
       
     </footer>
@@ -183,7 +235,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/04/17/Avro-vs-Parquet/" data-id="ckk1ay8ft000p0qi34yubhewm" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/04/17/Avro-vs-Parquet/" data-id="ckk1iev96000j11i3f2y8gpnp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -248,7 +300,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/03/08/First%20blog/" data-id="ckk1ay8fs000o0qi3gqyq9as7" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/03/08/First%20blog/" data-id="ckk1iev77000011i3hykwbu0k" class="article-share-link">Share</a>
       
       
     </footer>
@@ -315,6 +367,10 @@
       <ul>
         
           <li>
+            <a href="/blog/2021/01/17/Python-a04-List-Tuple-Set/">Python-a04-List,Tuple,Set</a>
+          </li>
+        
+          <li>
             <a href="/blog/2021/01/15/Python-a03-Numeric/">Python-a03-Numeric</a>
           </li>
         
@@ -328,10 +384,6 @@
         
           <li>
             <a href="/blog/2020/10/02/b06-01-Cloud-PubSub-HelloWorld/">b06-01-Cloud-PubSub-HelloWorld</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2020/08/20/GCP-Kubernetes-Manually/">GCP-Kubernetes-Manually</a>
           </li>
         
       </ul>
