@@ -15,7 +15,7 @@
 <meta property="og:description" content="This article shows the examples of Dictionaries in python 123456789101112131415161718192021222324252627282930313233343536373839## basic    student &#x3D;  &amp;#123;&#39;name&#39;: &#39;John&#39;, &#39;ag">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-18T14:08:21.000Z">
-<meta property="article:modified_time" content="2021-01-18T14:31:39.823Z">
+<meta property="article:modified_time" content="2021-01-18T15:00:25.201Z">
 <meta property="article:author" content="MA Jian">
 <meta name="twitter:card" content="summary">
   
@@ -98,6 +98,7 @@
       
         <p>This article shows the examples of Dictionaries in python</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">## basic</span><br><span class="line">    student &#x3D;  &#123;&#39;name&#39;: &#39;John&#39;, &#39;age&#39;: 25, &#39;courses&#39;: [&#39;Math&#39;, &#39;CompSci&#39;]&#125;</span><br><span class="line">    print(student) # &#123;&#39;name&#39;: &#39;John&#39;, &#39;age&#39;: 25, &#39;courses&#39;: [&#39;Math&#39;, &#39;CompSci&#39;]&#125;</span><br><span class="line">    print(student[&#39;name&#39;]) # John</span><br><span class="line">    print(student[&#39;courses&#39;][0]) # Math</span><br><span class="line">    print(student[&#39;phone&#39;]) # error</span><br><span class="line">    </span><br><span class="line">    print(student.get(&#39;name&#39;)) # John</span><br><span class="line">    print(student.get(&#39;phone&#39;)) # None</span><br><span class="line">    print(student.get(&#39;phone&#39;, &#39;Not Found&#39;)) # Not Found</span><br><span class="line">    </span><br><span class="line"># add and update element</span><br><span class="line">    student[&#39;phone&#39;] &#x3D; &#39;555&#39;    </span><br><span class="line">    student[&#39;name&#39;] &#x3D; &#39;Bob&#39;</span><br><span class="line">    print(student) # &#123;&#39;name&#39;: &#39;Bob&#39;, &#39;phone&#39;: &#39;555&#39;, &#39;age&#39;: 25, &#39;courses&#39;: [&#39;Math&#39;, &#39;CompSci&#39;]&#125;</span><br><span class="line">    </span><br><span class="line">    student.update(&#123;&#39;name&#39;: &#39;Jane&#39;, &#39;age&#39;: 26, &#39;phone&#39;: &#39;666&#39;&#125;)</span><br><span class="line">    print(student) # &#123;&#39;name&#39;: &#39;Jane&#39;, &#39;phone&#39;: &#39;666&#39;, &#39;age&#39;: 26, &#39;courses&#39;: [&#39;Math&#39;, &#39;CompSci&#39;]&#125;</span><br><span class="line"></span><br><span class="line"># delete element</span><br><span class="line">    student &#x3D;  &#123;&#39;name&#39;: &#39;John&#39;, &#39;age&#39;: 25, &#39;courses&#39;: [&#39;Math&#39;, &#39;CompSci&#39;]&#125;</span><br><span class="line">    del student[&#39;age&#39;]</span><br><span class="line">    print(student) # &#123;&#39;name&#39;: &#39;John&#39;, &#39;courses&#39;: [&#39;Math&#39;, &#39;CompSci&#39;]&#125;</span><br><span class="line"></span><br><span class="line">    age &#x3D; student.pop(&#39;age&#39;)</span><br><span class="line">    print(student) # &#123;&#39;name&#39;: &#39;John&#39;, &#39;courses&#39;: [&#39;Math&#39;, &#39;CompSci&#39;]&#125;</span><br><span class="line">    print(age) # 25</span><br><span class="line">  </span><br><span class="line"># loop</span><br><span class="line">    student &#x3D;  &#123;&#39;name&#39;: &#39;John&#39;, &#39;age&#39;: 25, &#39;courses&#39;: [&#39;Math&#39;, &#39;CompSci&#39;]&#125;</span><br><span class="line">    print(student.keys()) # dict_keys([&#39;name&#39;, &#39;age&#39;, &#39;courses&#39;])</span><br><span class="line">    print(student.values()) # dict_values([&#39;John&#39;, 25, [&#39;Math&#39;, &#39;CompSci&#39;]])</span><br><span class="line">    print(student.items()) # dict_items([(&#39;name&#39;:&#39;John&#39;), (&#39;age&#39;:25), (&#39;courses&#39;:[&#39;Math&#39;, &#39;CompSci&#39;])])</span><br><span class="line">    </span><br><span class="line">    for key in student:</span><br><span class="line">        print(key) # name; age; courses</span><br><span class="line">        </span><br><span class="line">    for key,value in student.items():</span><br><span class="line">        print(key,value) #name John; age 25; courses [&#39;Math&#39;, &#39;CompSci&#39;]</span><br></pre></td></tr></table></figure>
+<div class="video-container"><iframe src="https://www.youtube.com/embed/" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       
     </div>
     <footer class="article-footer">
@@ -107,7 +108,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/18/Python-a05-Dictionaries/" data-id="ckk2o34y300091di342o4dfug" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/18/Python-a05-Dictionaries/" data-id="ckk2r0kaq000c2yi3dx1c7imy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -115,6 +116,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/blog/2021/01/18/Python-a06-Conditions-and-Boolean/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Python-a06-Conditions and Boolean
+        
+      </div>
+    </a>
   
   
     <a href="/blog/2021/01/17/Python-a04-List-Tuple-Set/" id="article-nav-older" class="article-nav-link-wrap">
@@ -177,6 +187,10 @@
       <ul>
         
           <li>
+            <a href="/blog/2021/01/18/Python-a06-Conditions-and-Boolean/">Python-a06-Conditions and Boolean</a>
+          </li>
+        
+          <li>
             <a href="/blog/2021/01/18/Python-a05-Dictionaries/">Python-a05-Dictionaries</a>
           </li>
         
@@ -190,10 +204,6 @@
         
           <li>
             <a href="/blog/2021/01/14/Python-a02-String/">Python-a02-String</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2021/01/11/Python-a01-How-to-install-embedded-python-on-windows/">Python-a01-How to install embedded python on windows</a>
           </li>
         
       </ul>
