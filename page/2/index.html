@@ -70,6 +70,82 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-b08-Cloud-Dataproc" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2020/06/05/b08-Cloud-Dataproc/" class="article-date">
+  <time datetime="2020-06-05T11:16:59.000Z" itemprop="datePublished">2020-06-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/gcp/">gcp</a>►<a class="article-category-link" href="/blog/categories/gcp/b-data-engineer/">b-data-engineer</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2020/06/05/b08-Cloud-Dataproc/">b08-Cloud Dataproc</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Dataproc"><a href="#Dataproc" class="headerlink" title="Dataproc"></a>Dataproc</h2><ul>
+<li>Hadoop, Spark, Hive, Pig</li>
+<li>Lift and shift to GCP</li>
+</ul>
+<h2 id="Map-Reduce"><a href="#Map-Reduce" class="headerlink" title="Map Reduce"></a>Map Reduce</h2><img src="/blog/2020/06/05/b08-Cloud-Dataproc/map_reduce.png" class="" title="map_reduce">
+<h2 id="Converting-from-HDFS-to-Google-Cloud-Storage"><a href="#Converting-from-HDFS-to-Google-Cloud-Storage" class="headerlink" title="Converting from HDFS to Google Cloud Storage"></a>Converting from HDFS to Google Cloud Storage</h2><ul>
+<li>Copy data to GCS<ul>
+<li>Install connector or copy manually</li>
+</ul>
+</li>
+<li>Update file prefix in scripts<ul>
+<li>From hdfs:// to gs://</li>
+</ul>
+</li>
+<li>Use Dataproc and run against/output to GCS</li>
+</ul>
+<h2 id="Dataproc-performance-optimization"><a href="#Dataproc-performance-optimization" class="headerlink" title="Dataproc performance optimization"></a>Dataproc performance optimization</h2><ul>
+<li>Keep your data close to your cluster<ul>
+<li>Place Dataproc cluster in same region as storage bucket</li>
+</ul>
+</li>
+<li>Larger persistent disk = better performance<ul>
+<li>Using SSD over HDD</li>
+</ul>
+</li>
+<li>Allocate more VMs<ul>
+<li>Use preemptible VM to save on costs<div class="video-container"><iframe src="https://www.youtube.com/embed/lyNiOFsTW18" frameborder="0" loading="lazy" allowfullscreen></iframe></div></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+<!--
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
+        <div>交流或订阅，请长按或扫描上方二维码</div>
+      </div>
+-->
+      <a data-url="https://sdmj45.github.io/blog/2020/06/05/b08-Cloud-Dataproc/" data-id="ckk2o351100111di3fnmudukt" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-b07-Cloud-Dataflow" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2020/05/23/b07-Cloud-Dataflow/" class="article-date">
@@ -123,7 +199,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/23/b07-Cloud-Dataflow/" data-id="ckk1iflw1000z2bi3eytl9m7l" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/23/b07-Cloud-Dataflow/" data-id="ckk2o350s000v1di374ss1gs1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -190,7 +266,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/23/b06-Cloud-PubSub/" data-id="ckk1iflup000o2bi3aebx8t0o" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/23/b06-Cloud-PubSub/" data-id="ckk2o350q000u1di3g19jfuj8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -261,7 +337,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/20/b05-Cloud-Spanner/" data-id="ckk1ifluk000l2bi3035c5k7k" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/20/b05-Cloud-Spanner/" data-id="ckk2o350l000r1di302op6b50" class="article-share-link">Share</a>
       
       
     </footer>
@@ -338,7 +414,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/19/b04-Bigtable/" data-id="ckk1ifluk000k2bi32u30hj1s" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/19/b04-Bigtable/" data-id="ckk2o350k000q1di38mwzg5jb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -468,7 +544,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/16/b03-Cloud-Datastore/" data-id="ckk1ifluj000j2bi375z3edzm" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/16/b03-Cloud-Datastore/" data-id="ckk2o350h000o1di32lxx8njz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -522,7 +598,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/14/b02-Cloud-SQL/" data-id="ckk1ifluh000h2bi33r5y1o6k" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/14/b02-Cloud-SQL/" data-id="ckk2o350f000n1di31fgaeqf1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -605,7 +681,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/11/b01-Fundamental-Concepts/" data-id="ckk1iflug000g2bi31bkaf0d2" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/11/b01-Fundamental-Concepts/" data-id="ckk2o350b000l1di38v7l59zb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -730,7 +806,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/09/a08-GCP-Big-Data-and-Machine-Learning/" data-id="ckk1iflug000f2bi32mu99bvd" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/09/a08-GCP-Big-Data-and-Machine-Learning/" data-id="ckk2o350a000k1di3anwn9j6h" class="article-share-link">Share</a>
       
       
     </footer>
@@ -786,93 +862,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/08/a07-GCP-Developing-Deploying-and-Monitoring/" data-id="ckk1iflui000i2bi38omacpk5" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-a06-GCP-Applications" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2020/05/08/a06-GCP-Applications/" class="article-date">
-  <time datetime="2020-05-08T13:21:34.000Z" itemprop="datePublished">2020-05-08</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/gcp/">gcp</a>►<a class="article-category-link" href="/blog/categories/gcp/a-core-infrastructure/">a-core-infrastructure</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2020/05/08/a06-GCP-Applications/">a06-GCP-Applications</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="App-Engine"><a href="#App-Engine" class="headerlink" title="App Engine"></a>App Engine</h2><p>is a PaaS for building scalable applications</p>
-<ul>
-<li>it makes deployment, maintenance and scalability easy</li>
-<li>suited for building scalable web applications and mobile backends</li>
-</ul>
-<p>It offers 2 environments:</p>
-<ul>
-<li><p><strong>standard environment</strong></p>
-<ul>
-<li>easily deploy applications</li>
-<li>autoscale</li>
-<li>free daily quota</li>
-<li>usage based pricing</li>
-<li>Specific versions of Java, Python, PHP and Go are supported</li>
-</ul>
-<p>Sandbox constraints:</p>
-<ul>
-<li>No writing to local files</li>
-<li>All requests time out at 60s</li>
-<li>Limits on third-party software</li>
-</ul>
-</li>
-<li><strong>flexible environment</strong><ul>
-<li>Build and deploy containerized apps with a click</li>
-<li>No sandbox constraints</li>
-<li>Can access App Engine resources</li>
-</ul>
-</li>
-</ul>
-<p>Comparing standard and flexible environments<br><img src="/blog/2020/05/08/a06-GCP-Applications/standard_vs_flexible.png" class="" title="standard_vs_flexible"><br>Comparing Kubernetes Engine and App Engine<br><img src="/blog/2020/05/08/a06-GCP-Applications/kubernetes_engine_vs_app_engine.png" class="" title="kubernetes_engine_vs_app_engine"></p>
-<p>GCP provides 2 API management tools</p>
-<h2 id="Cloud-Endpoints"><a href="#Cloud-Endpoints" class="headerlink" title="Cloud Endpoints"></a>Cloud Endpoints</h2><ul>
-<li>Control access and validate calls with JSON Web Token and Google API keys<ul>
-<li>Identify web, mobile users with Auth0 and Firebase Authentication</li>
-</ul>
-</li>
-<li>Generate client libraries<h2 id="Apigee-Edge"><a href="#Apigee-Edge" class="headerlink" title="Apigee Edge"></a>Apigee Edge</h2></li>
-<li>A platform for making APIs available to your customers and partners</li>
-<li>Contains analytics, monetization, and a developer portal<br>The backend services for Apigee need not to be in GCP</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-<!--
-      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
-        <div>交流或订阅，请长按或扫描上方二维码</div>
-      </div>
--->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/08/a06-GCP-Applications/" data-id="ckk1ifluf000e2bi36tdb95sl" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/08/a07-GCP-Developing-Deploying-and-Monitoring/" data-id="ckk2o3505000h1di31qdy49qc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -939,6 +929,10 @@
       <ul>
         
           <li>
+            <a href="/blog/2021/01/18/Python-a05-Dictionaries/">Python-a05-Dictionaries</a>
+          </li>
+        
+          <li>
             <a href="/blog/2021/01/17/Python-a04-List-Tuple-Set/">Python-a04-List,Tuple,Set</a>
           </li>
         
@@ -952,10 +946,6 @@
         
           <li>
             <a href="/blog/2021/01/11/Python-a01-How-to-install-embedded-python-on-windows/">Python-a01-How to install embedded python on windows</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2020/10/02/b06-01-Cloud-PubSub-HelloWorld/">b06-01-Cloud-PubSub-HelloWorld</a>
           </li>
         
       </ul>
