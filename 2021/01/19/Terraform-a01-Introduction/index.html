@@ -5,17 +5,17 @@
   
 
   
-  <title>b06-01-Cloud-PubSub-HelloWorld | Developer</title>
+  <title>Terraform-a01-Introduction | Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="In this article I will show you how to publish and receive messages in PubSub with Java  create topic 1gcloud pubsub topics create my-topic  create subscription to this topic 1gcloud pubsub subscripti">
+  <meta name="description" content="introduction">
 <meta property="og:type" content="article">
-<meta property="og:title" content="b06-01-Cloud-PubSub-HelloWorld">
-<meta property="og:url" content="https://sdmj45.github.io/blog/2020/10/02/b06-01-Cloud-PubSub-HelloWorld/index.html">
+<meta property="og:title" content="Terraform-a01-Introduction">
+<meta property="og:url" content="https://sdmj45.github.io/blog/2021/01/19/Terraform-a01-Introduction/index.html">
 <meta property="og:site_name" content="Developer">
-<meta property="og:description" content="In this article I will show you how to publish and receive messages in PubSub with Java  create topic 1gcloud pubsub topics create my-topic  create subscription to this topic 1gcloud pubsub subscripti">
+<meta property="og:description" content="introduction">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-10-02T10:59:33.000Z">
-<meta property="article:modified_time" content="2020-10-02T13:03:04.303Z">
+<meta property="article:published_time" content="2021-01-19T13:47:02.000Z">
+<meta property="article:modified_time" content="2021-01-19T13:47:26.509Z">
 <meta property="article:author" content="MA Jian">
 <meta name="twitter:card" content="summary">
   
@@ -70,14 +70,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-b06-01-Cloud-PubSub-HelloWorld" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Terraform-a01-Introduction" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2020/10/02/b06-01-Cloud-PubSub-HelloWorld/" class="article-date">
-  <time datetime="2020-10-02T10:59:33.000Z" itemprop="datePublished">2020-10-02</time>
+    <a href="/blog/2021/01/19/Terraform-a01-Introduction/" class="article-date">
+  <time datetime="2021-01-19T13:47:02.000Z" itemprop="datePublished">2021-01-19</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/gcp/">gcp</a>►<a class="article-category-link" href="/blog/categories/gcp/b-data-engineer/">b-data-engineer</a>
+    <a class="article-category-link" href="/blog/categories/devops/">devops</a>►<a class="article-category-link" href="/blog/categories/devops/terraform/">terraform</a>
   </div>
 
   </div>
@@ -88,7 +88,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      b06-01-Cloud-PubSub-HelloWorld
+      Terraform-a01-Introduction
     </h1>
   
 
@@ -96,33 +96,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>In this article I will show you how to publish and receive messages in PubSub with Java</p>
-<ol>
-<li><p>create topic</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcloud pubsub topics create my-topic</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>create subscription to this topic</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcloud pubsub subscriptions create my-sub --topic my-topic</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>git clone project into cloud shell</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:<span class="comment">//github.com/googleapis/java-pubsub.git</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>go into the sample</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd samples/snippets/</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>modify PublisherExample.java and SubscribeAsyncExample.java to put the right project id, topic id and subscription id</p>
-</li>
-<li><p>compile project</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean install -<span class="type">DskipTests</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>run subscriber</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn exec:java -<span class="type">Dexec</span>.mainClass=<span class="string">"pubsub.SubscribeAsyncExample"</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>run publisher in another screen and observe subscriber</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn exec:java -<span class="type">Dexec</span>.mainClass=<span class="string">"pubsub.PublisherExample"</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<div class="video-container"><iframe src="https://www.youtube.com/embed/FCUkRvSEo-Y" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
+        <p>introduction</p>
+
       
     </div>
     <footer class="article-footer">
@@ -132,7 +107,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/10/02/b06-01-Cloud-PubSub-HelloWorld/" data-id="ckk41xvyv000rrxi33sq24ial" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/19/Terraform-a01-Introduction/" data-id="ckk41xvyd000drxi32ma6h7zy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -141,19 +116,10 @@
     
 <nav id="article-nav">
   
-    <a href="/blog/2021/01/11/Python-a01-How-to-install-embedded-python-on-windows/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Python-a01-How to install embedded python on windows
-        
-      </div>
-    </a>
   
-  
-    <a href="/blog/2020/08/20/GCP-Kubernetes-Manually/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/2021/01/18/Python-a06-Conditions-and-Boolean/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">GCP-Kubernetes-Manually</div>
+      <div class="article-nav-title">Python-a06-Conditions and Boolean</div>
     </a>
   
 </nav>
