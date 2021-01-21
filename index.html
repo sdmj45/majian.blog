@@ -96,7 +96,47 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>introduction</p>
+        <h1 id="What-is-Terraform"><a href="#What-is-Terraform" class="headerlink" title="What is Terraform"></a>What is Terraform</h1><p>Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently.<br>It is <strong>open source</strong> and <strong>declarative</strong></p>
+<p>The differences between declarative and imperative:<br>    declarative: define WHAT the result you want<br>    imperative: define exact steps - HOW</p>
+<p>The key features: </p>
+<ul>
+<li>Infrastructure as Code</li>
+<li>Execution Plan</li>
+<li>Resource Graph</li>
+<li>Change Automation</li>
+</ul>
+<p>A. Previsioning infrastructure:</p>
+<ol>
+<li>private network space</li>
+<li>ec2 server instances</li>
+<li>install Docker and other tools</li>
+<li>security</li>
+</ol>
+<p>B. Deploy applications</p>
+<h1 id="Difference-between-Ansible-and-Terraform"><a href="#Difference-between-Ansible-and-Terraform" class="headerlink" title="Difference between Ansible and Terraform"></a>Difference between Ansible and Terraform</h1><p>Both: Infrastructure as a Code</p>
+<h3 id="Ansible"><a href="#Ansible" class="headerlink" title="Ansible"></a>Ansible</h3><p><strong>Better for configuring that infrastructure</strong></p>
+<pre><code>Mainly a configuration tool
+More mature
+</code></pre><h3 id="Terraform"><a href="#Terraform" class="headerlink" title="Terraform"></a>Terraform</h3><p><strong>Better for infrastructure</strong></p>
+<pre><code>Mainly infrastructure provisioning tool
+More advanced in orchestration
+</code></pre><h1 id="How-does-Terraform-work"><a href="#How-does-Terraform-work" class="headerlink" title="How does Terraform work"></a>How does Terraform work</h1><ol>
+<li><p>create execution plan</p>
+<img src="/blog/2021/01/19/Terraform-a01-Introduction/creating_execution_plan.png" class="" title="creating_execution_plan">
+</li>
+<li><p>execute plan with providers</p>
+<img src="/blog/2021/01/19/Terraform-a01-Introduction/execute_plan_with_providers.png" class="" title="execute_plan_with_providers">
+</li>
+</ol>
+<h1 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h1><p>example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">terraform &#123;</span><br><span class="line">  required_providers &#123;</span><br><span class="line">    google &#x3D; &#123;</span><br><span class="line">      source &#x3D; &quot;hashicorp&#x2F;google&quot;</span><br><span class="line">      version &#x3D; &quot;3.5.0&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">provider &quot;google&quot; &#123;</span><br><span class="line"></span><br><span class="line">  credentials &#x3D; file(&quot;&lt;NAME&gt;.json&quot;)</span><br><span class="line"></span><br><span class="line">  project &#x3D; &quot;&lt;PROJECT_ID&gt;&quot;</span><br><span class="line">  region  &#x3D; &quot;us-central1&quot;</span><br><span class="line">  zone    &#x3D; &quot;us-central1-c&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">resource &quot;google_compute_network&quot; &quot;vpc_network&quot; &#123;</span><br><span class="line">  name &#x3D; &quot;terraform-network&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Terraform-Block"><a href="#Terraform-Block" class="headerlink" title="Terraform Block"></a>Terraform Block</h2><p>it defines which provider to download from Terraform Registry</p>
+<h2 id="Provider"><a href="#Provider" class="headerlink" title="Provider"></a>Provider</h2><p>It is used to configure the named provider</p>
+<h2 id="Resource"><a href="#Resource" class="headerlink" title="Resource"></a>Resource</h2><p>It contains the <strong>resource type</strong>, and the <strong>resource name</strong>.</p>
+<p><strong>resource ID</strong>: resource type and resource name together</p>
+<h1 id="Commands"><a href="#Commands" class="headerlink" title="Commands"></a>Commands</h1><p><strong>refresh</strong>:<br>    query provider to get the current state</p>
+<p><strong>plan</strong>:<br>    create an execution plan</p>
+<p><strong>apply</strong>:<br>    execute the plan</p>
+<p><strong>destroy</strong>:<br>    destroy the resources/infrastructure</p>
 
       
     </div>
@@ -107,7 +147,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/19/Terraform-a01-Introduction/" data-id="ckk41xvyd000drxi32ma6h7zy" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/19/Terraform-a01-Introduction/" data-id="ckk6v3ipf000d0qi32imy4pm7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -154,7 +194,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/18/Python-a06-Conditions-and-Boolean/" data-id="ckk41xvyc000crxi3cxw56buy" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/18/Python-a06-Conditions-and-Boolean/" data-id="ckk6v3ipe000b0qi3c18kdx2u" class="article-share-link">Share</a>
       
       
     </footer>
@@ -202,7 +242,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/18/Python-a05-Dictionaries/" data-id="ckk41xvyb000brxi3gpsz2z8g" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/18/Python-a05-Dictionaries/" data-id="ckk6v3ipc00090qi33b1oasuu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -250,7 +290,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/17/Python-a04-List-Tuple-Set/" data-id="ckk41xvya0009rxi3brq3e3r4" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/17/Python-a04-List-Tuple-Set/" data-id="ckk6v3ipd000a0qi391z3d97g" class="article-share-link">Share</a>
       
       
     </footer>
@@ -298,7 +338,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/15/Python-a03-Numeric/" data-id="ckk41xvyb000arxi3ffua9y09" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/15/Python-a03-Numeric/" data-id="ckk6v3ipb00080qi33xwt7cdw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -346,7 +386,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/14/Python-a02-String/" data-id="ckk41xvz2000yrxi3d7q60egn" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/14/Python-a02-String/" data-id="ckk6v3ior00070qi3a1294wlr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -402,7 +442,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/11/Python-a01-How-to-install-embedded-python-on-windows/" data-id="ckk41xvy70007rxi34s4w1p46" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/11/Python-a01-How-to-install-embedded-python-on-windows/" data-id="ckk6v3ion00040qi3bsbf996e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -474,7 +514,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/10/02/b06-01-Cloud-PubSub-HelloWorld/" data-id="ckk41xvyv000rrxi33sq24ial" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/10/02/b06-01-Cloud-PubSub-HelloWorld/" data-id="ckk6v3ipv000s0qi3b7xl6k3n" class="article-share-link">Share</a>
       
       
     </footer>
@@ -537,7 +577,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/08/20/GCP-Kubernetes-Manually/" data-id="ckk41xvy10003rxi3cq7n3red" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/08/20/GCP-Kubernetes-Manually/" data-id="ckk6v3iod00010qi34kkub6tj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -580,7 +620,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/08/06/spark-skewness/" data-id="ckk41xvz40010rxi3fo0pgndw" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/08/06/spark-skewness/" data-id="ckk6v3iq1000y0qi3di5t0gr3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/spark/" rel="tag">spark</a></li></ul>
