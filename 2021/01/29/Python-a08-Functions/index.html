@@ -5,17 +5,17 @@
   
 
   
-  <title>Python-a07 Loops and Iterations | Developer</title>
+  <title>Python-a08 Functions | Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="This article shows the examples of Loops and Iterations in python 123456789101112131415161718192021222324252627282930313233343536## loop    nums &#x3D; [1,2,3,4,5]    for num in nums:        print(num">
+  <meta name="description" content="This article shows the examples of Functions in python 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566## basic    def hello_">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python-a07 Loops and Iterations">
-<meta property="og:url" content="https://sdmj45.github.io/blog/2021/01/29/Python-a07-Loops-and-Iterations/index.html">
+<meta property="og:title" content="Python-a08 Functions">
+<meta property="og:url" content="https://sdmj45.github.io/blog/2021/01/29/Python-a08-Functions/index.html">
 <meta property="og:site_name" content="Developer">
-<meta property="og:description" content="This article shows the examples of Loops and Iterations in python 123456789101112131415161718192021222324252627282930313233343536## loop    nums &#x3D; [1,2,3,4,5]    for num in nums:        print(num">
+<meta property="og:description" content="This article shows the examples of Functions in python 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566## basic    def hello_">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-01-29T09:59:53.000Z">
-<meta property="article:modified_time" content="2021-01-29T10:18:23.742Z">
+<meta property="article:published_time" content="2021-01-29T14:03:35.000Z">
+<meta property="article:modified_time" content="2021-01-29T15:02:36.757Z">
 <meta property="article:author" content="MA Jian">
 <meta name="twitter:card" content="summary">
   
@@ -70,10 +70,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Python-a07-Loops-and-Iterations" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Python-a08-Functions" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2021/01/29/Python-a07-Loops-and-Iterations/" class="article-date">
-  <time datetime="2021-01-29T09:59:53.000Z" itemprop="datePublished">2021-01-29</time>
+    <a href="/blog/2021/01/29/Python-a08-Functions/" class="article-date">
+  <time datetime="2021-01-29T14:03:35.000Z" itemprop="datePublished">2021-01-29</time>
 </a>
     
   <div class="article-category">
@@ -88,7 +88,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Python-a07 Loops and Iterations
+      Python-a08 Functions
     </h1>
   
 
@@ -96,8 +96,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>This article shows the examples of Loops and Iterations in python</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">## loop</span><br><span class="line">    nums &#x3D; [1,2,3,4,5]</span><br><span class="line">    for num in nums:</span><br><span class="line">        print(num, end&#x3D;&quot;; &quot;)          # 1; 2; 3; 4; 5</span><br><span class="line">        </span><br><span class="line">## break</span><br><span class="line">    nums &#x3D; [1,2,3,4,5]</span><br><span class="line">    for num in nums:</span><br><span class="line">        if num &#x3D;&#x3D; 3:</span><br><span class="line">            print(&#39;Found !&#39;, end&#x3D;&quot;; &quot;)</span><br><span class="line">            break</span><br><span class="line">        print(num, end&#x3D;&quot;; &quot;)      # 1; 2; Found !</span><br><span class="line">        </span><br><span class="line">## continue</span><br><span class="line">    nums &#x3D; [1,2,3,4,5]</span><br><span class="line">    for num in nums:</span><br><span class="line">        if num &#x3D;&#x3D; 3:</span><br><span class="line">            print(&#39;Found !&#39;, end&#x3D;&quot;; &quot;)</span><br><span class="line">        continue</span><br><span class="line">        print(num, end&#x3D;&quot;; &quot;)      # 1; 2; Found !; 4; 5;</span><br><span class="line">        </span><br><span class="line">## loop within loop</span><br><span class="line">    nums &#x3D; [1,2,3]</span><br><span class="line">    for num in nums:</span><br><span class="line">        for letter in &#39;abc&#39;:</span><br><span class="line">            print(num, letter, end&#x3D;&quot;; &quot;)     # 1 a; 1 b; 1 c; 2 a; 2 b; 2 c; 3 a; 3 b; 3 c; </span><br><span class="line">            </span><br><span class="line">## range</span><br><span class="line">    for num in range(1, 11):</span><br><span class="line">        print(num, end&#x3D;&quot;; &quot;)     # 1; 2; 3; 4; 5; 6; 7; 8; 9; 10; </span><br><span class="line">        </span><br><span class="line">## while</span><br><span class="line">    x &#x3D; 0</span><br><span class="line">    while x &lt; 10:</span><br><span class="line">        print(x, end&#x3D;&quot;; &quot;)</span><br><span class="line">        x+&#x3D;1                      # 0; 1; 2; 3; 4; 5; 6; 7; 8; 9;</span><br></pre></td></tr></table></figure>
+        <p>This article shows the examples of Functions in python</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">## basic</span><br><span class="line">    def hello_func():</span><br><span class="line">        pass</span><br><span class="line"></span><br><span class="line">    print(hello_func)  # &lt;function hello_func at 0x000001FC6BA4C430&gt;</span><br><span class="line">    print(hello_func())  # None</span><br><span class="line"></span><br><span class="line">## function without input</span><br><span class="line">    def hello_func():</span><br><span class="line">        return &#39;hello&#39;</span><br><span class="line">    print(hello_func())             # hello</span><br><span class="line"></span><br><span class="line">## function with input</span><br><span class="line">    def hello_func(greeting):</span><br><span class="line">        return &#39;&#123;&#125; Function.&#39;.format(greeting)</span><br><span class="line">    print(hello_func(&#39;Hi&#39;))         # Hi Function.</span><br><span class="line"></span><br><span class="line">## default value</span><br><span class="line">    def hello_func(greeting, name&#x3D;&#39;You&#39;):</span><br><span class="line">        return &#39;&#123;&#125;, &#123;&#125; Function.&#39;.format(greeting, name)</span><br><span class="line"></span><br><span class="line">    print(hello_func(&#39;Hi&#39;))         # Hi, You Function.</span><br><span class="line">    </span><br><span class="line">## positional arguments, keyword arguments</span><br><span class="line">   ## 1</span><br><span class="line">    def student_info(*args, **kwargs):</span><br><span class="line">        print(args)</span><br><span class="line">        print(kwargs)</span><br><span class="line"></span><br><span class="line">    student_info(&#39;Math&#39;, &#39;Art&#39;, name&#x3D;&#39;John&#39;, age&#x3D;22)    # (&#39;Math&#39;, &#39;Art&#39;)</span><br><span class="line">                                                        # &#123;&#39;name&#39;: &#39;John&#39;, &#39;age&#39;: 22&#125;</span><br><span class="line">    </span><br><span class="line">   ## 2    </span><br><span class="line">    courses &#x3D; [&#39;Math&#39;, &#39;Art&#39;]</span><br><span class="line">    info &#x3D; &#123;&#39;name&#39;: &#39;John&#39;, &#39;age&#39;: 22&#125;</span><br><span class="line">    student_info(courses, info)         # ([&#39;Math&#39;, &#39;Art&#39;], &#123;&#39;name&#39;: &#39;John&#39;, &#39;age&#39;: 22&#125;)</span><br><span class="line">                                        # &#123;&#125;     </span><br><span class="line">                                        </span><br><span class="line">   ## 3    </span><br><span class="line">    courses &#x3D; [&#39;Math&#39;, &#39;Art&#39;]</span><br><span class="line">    info &#x3D; &#123;&#39;name&#39;: &#39;John&#39;, &#39;age&#39;: 22&#125;</span><br><span class="line">    student_info(*courses, **info)         # (&#39;Math&#39;, &#39;Art&#39;)</span><br><span class="line">                                           # &#123;&#39;name&#39;: &#39;John&#39;, &#39;age&#39;: 22&#125;</span><br><span class="line">                                                                                 </span><br><span class="line">## example print number of month days </span><br><span class="line">    month_days &#x3D; [0,31,28,31,30,31,30,31,31,30,31,30,31]</span><br><span class="line"></span><br><span class="line">    def is_leap(year):</span><br><span class="line">        &quot;&quot;&quot;Return True for leap years, False for non-leap years.&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">        return (year % 4 &#x3D;&#x3D; 0 and year % 100 !&#x3D; 0) or year % 400 &#x3D;&#x3D; 0</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    def days_in_month(year, month):</span><br><span class="line">        &quot;&quot;&quot;Return number of days in that month in that year.&quot;&quot;&quot;</span><br><span class="line">    </span><br><span class="line">        if not 1 &lt;&#x3D; month &lt;&#x3D; 12:</span><br><span class="line">            return &#39;Invalid Month&#39;</span><br><span class="line">    </span><br><span class="line">        if month &#x3D;&#x3D; 2 and is_leap(year):</span><br><span class="line">            return 29</span><br><span class="line">    </span><br><span class="line">        return month_days[month]</span><br><span class="line">    </span><br><span class="line">    print(days_in_month(2020,2))    # 29</span><br><span class="line">    print(days_in_month(2021,2))    # 28</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
@@ -107,7 +107,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a07-Loops-and-Iterations/" data-id="ckkif14pt000911i37mid631a" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a08-Functions/" data-id="ckkif14pu000a11i317b60xqh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -116,19 +116,10 @@
     
 <nav id="article-nav">
   
-    <a href="/blog/2021/01/29/Python-a08-Functions/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Python-a08 Functions
-        
-      </div>
-    </a>
   
-  
-    <a href="/blog/2021/01/19/Terraform-a01-Introduction/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/2021/01/29/Python-a07-Loops-and-Iterations/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Terraform-a01-Introduction</div>
+      <div class="article-nav-title">Python-a07 Loops and Iterations</div>
     </a>
   
 </nav>
