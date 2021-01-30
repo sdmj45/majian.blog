@@ -70,6 +70,53 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Python-a09-Modules" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2021/01/29/Python-a09-Modules/" class="article-date">
+  <time datetime="2021-01-29T16:05:13.000Z" itemprop="datePublished">2021-01-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/python/">python</a>►<a class="article-category-link" href="/blog/categories/python/a-basics/">a-basics</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2021/01/29/Python-a09-Modules/">Python-a09-Modules</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>This article shows the examples of Modules in python</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line">## my_module.py file</span><br><span class="line">    print(&#39;Imported my_module...&#39;)</span><br><span class="line">    </span><br><span class="line">    test &#x3D; &#39;Test String&#39;</span><br><span class="line">    </span><br><span class="line">    def find_index(to_search, target):</span><br><span class="line">        &#39;&#39;&#39;Find the index of a value in a sequence&#39;&#39;&#39;</span><br><span class="line">        for i, value in enumerate(to_search):</span><br><span class="line">            if value &#x3D;&#x3D; target:</span><br><span class="line">                return i</span><br><span class="line">        return -1</span><br><span class="line">    </span><br><span class="line">## test.py basic</span><br><span class="line">    import my_module</span><br><span class="line"></span><br><span class="line">    courses &#x3D; [&#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;]</span><br><span class="line">    </span><br><span class="line">    index &#x3D; my_module.find_index(courses, &#39;Math&#39;)</span><br><span class="line">    </span><br><span class="line">    print(index)   # Imported my_module...</span><br><span class="line">                   # 1   </span><br><span class="line">                    </span><br><span class="line">## test.py as</span><br><span class="line">    import my_module as mm</span><br><span class="line"></span><br><span class="line">    courses &#x3D; [&#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;]</span><br><span class="line">    </span><br><span class="line">    index &#x3D; mm.find_index(courses, &#39;Math&#39;)</span><br><span class="line">    </span><br><span class="line">    print(index)   # Imported my_module...</span><br><span class="line">                   # 1</span><br><span class="line">    </span><br><span class="line">## test.py from</span><br><span class="line">    from my_module import find_index,test</span><br><span class="line">    </span><br><span class="line">    courses &#x3D; [&#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;]</span><br><span class="line">    </span><br><span class="line">    index &#x3D; find_index(courses, &#39;Math&#39;)</span><br><span class="line">    </span><br><span class="line">    print(index)       # Imported my_module...</span><br><span class="line">                       # 1</span><br><span class="line">    print(test)        # Test String</span><br><span class="line">     </span><br><span class="line">## test.py from as</span><br><span class="line">    from my_module import find_index as fi,test</span><br><span class="line">    </span><br><span class="line">    courses &#x3D; [&#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;]</span><br><span class="line">    </span><br><span class="line">    index &#x3D; fi(courses, &#39;Math&#39;)</span><br><span class="line">    </span><br><span class="line">    print(index)       # Imported my_module...</span><br><span class="line">                       # 1</span><br><span class="line">    print(test)        # Test String</span><br><span class="line"> </span><br><span class="line">## sys.path: the path of modules to import from</span><br><span class="line">     </span><br><span class="line">    from my_module import find_index, test</span><br><span class="line">    import sys</span><br><span class="line">    </span><br><span class="line">    courses &#x3D; [&#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;]</span><br><span class="line">    </span><br><span class="line">    index &#x3D; find_index(courses, &#39;Math&#39;)</span><br><span class="line">     </span><br><span class="line">    # print(index)</span><br><span class="line">    # print(test)</span><br><span class="line">    print(sys.path) # [&#39;C:\\Dev\\examples\\python\\python_examples&#39;,...]</span><br><span class="line">    </span><br><span class="line">## add path to sys.path or to PYTHONPATH</span><br><span class="line">    # move my_module.py to new dir mymoduledir</span><br><span class="line">    # rerun test.py, there is an error ModuleNotFoundError</span><br><span class="line">    </span><br><span class="line">    # solution 1: add mymoduledir to sys.path</span><br><span class="line">        import sys</span><br><span class="line">        sys.path.append(&#39;C:\Dev\examples\python\python_examples\mymoduledir&#39;)</span><br><span class="line">        print(sys.path)   </span><br><span class="line">         </span><br><span class="line">    # solution 2: set mymoduledir to PYTHONPATH</span><br><span class="line">        set PYTHONPATH&#x3D;C:\Dev\examples\python\python_examples\mymoduledir</span><br><span class="line">        </span><br><span class="line">## import existing libraries</span><br><span class="line">    # random</span><br><span class="line">    import random</span><br><span class="line">    courses &#x3D; [&#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;]</span><br><span class="line">    random_choice &#x3D; random.choice(courses)</span><br><span class="line">    print(random_choice)</span><br><span class="line">    </span><br><span class="line">    # math</span><br><span class="line">    import math</span><br><span class="line">    res &#x3D; math.log2(2)</span><br><span class="line">    print(res)    # 1.0</span><br><span class="line">    </span><br><span class="line">    # datetime</span><br><span class="line">    import datetime</span><br><span class="line">    </span><br><span class="line">    today &#x3D; datetime.date.today()</span><br><span class="line">    print(today)</span><br><span class="line">    </span><br><span class="line">    # os</span><br><span class="line">    import os</span><br><span class="line">    # get current working directory</span><br><span class="line">    print(os.getcwd())</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+<!--
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
+        <div>交流或订阅，请长按或扫描上方二维码</div>
+      </div>
+-->
+      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a09-Modules/" data-id="ckkjmbuki000g0qi3god4caeg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Python-a08-Functions" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2021/01/29/Python-a08-Functions/" class="article-date">
@@ -107,7 +154,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a08-Functions/" data-id="ckkif14pu000a11i317b60xqh" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a08-Functions/" data-id="ckkjmbukk000h0qi3ed338mqe" class="article-share-link">Share</a>
       
       
     </footer>
@@ -154,7 +201,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a07-Loops-and-Iterations/" data-id="ckkif14pt000911i37mid631a" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a07-Loops-and-Iterations/" data-id="ckkjmbuk8000a0qi322xr5654" class="article-share-link">Share</a>
       
       
     </footer>
@@ -241,7 +288,7 @@ More advanced in orchestration
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/19/Terraform-a01-Introduction/" data-id="ckkif14q1000f11i37qf7f4u3" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/19/Terraform-a01-Introduction/" data-id="ckkjmbukd000c0qi3eb229158" class="article-share-link">Share</a>
       
       
     </footer>
@@ -288,7 +335,7 @@ More advanced in orchestration
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/18/Python-a06-Conditions-and-Boolean/" data-id="ckkif14px000c11i36o37118d" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/18/Python-a06-Conditions-and-Boolean/" data-id="ckkjmbukb000b0qi3gzu11afu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -336,7 +383,7 @@ More advanced in orchestration
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/18/Python-a05-Dictionaries/" data-id="ckkif14pr000811i34uqp7ejb" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/18/Python-a05-Dictionaries/" data-id="ckkjmbukg000e0qi3fov4hvrk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -384,7 +431,7 @@ More advanced in orchestration
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/17/Python-a04-List-Tuple-Set/" data-id="ckkif14sa001911i3e95k0t5n" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/17/Python-a04-List-Tuple-Set/" data-id="ckkjmbuk700090qi34fdsb3u3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -432,7 +479,7 @@ More advanced in orchestration
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/15/Python-a03-Numeric/" data-id="ckkif14pq000711i35mru1970" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/15/Python-a03-Numeric/" data-id="ckkjmbuk500070qi3ht1bd3g5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -480,7 +527,7 @@ More advanced in orchestration
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/14/Python-a02-String/" data-id="ckkif14po000611i35h3lhv5j" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/14/Python-a02-String/" data-id="ckkjmbuk600080qi39v1j20vs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -536,79 +583,7 @@ More advanced in orchestration
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/11/Python-a01-How-to-install-embedded-python-on-windows/" data-id="ckkif14pn000511i3d1ss40ig" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-b06-01-Cloud-PubSub-HelloWorld" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2020/10/02/b06-01-Cloud-PubSub-HelloWorld/" class="article-date">
-  <time datetime="2020-10-02T10:59:33.000Z" itemprop="datePublished">2020-10-02</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/gcp/">gcp</a>►<a class="article-category-link" href="/blog/categories/gcp/b-data-engineer/">b-data-engineer</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2020/10/02/b06-01-Cloud-PubSub-HelloWorld/">b06-01-Cloud-PubSub-HelloWorld</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>In this article I will show you how to publish and receive messages in PubSub with Java</p>
-<ol>
-<li><p>create topic</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcloud pubsub topics create my-topic</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>create subscription to this topic</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcloud pubsub subscriptions create my-sub --topic my-topic</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>git clone project into cloud shell</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:<span class="comment">//github.com/googleapis/java-pubsub.git</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>go into the sample</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd samples/snippets/</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>modify PublisherExample.java and SubscribeAsyncExample.java to put the right project id, topic id and subscription id</p>
-</li>
-<li><p>compile project</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean install -<span class="type">DskipTests</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>run subscriber</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn exec:java -<span class="type">Dexec</span>.mainClass=<span class="string">"pubsub.SubscribeAsyncExample"</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>run publisher in another screen and observe subscriber</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn exec:java -<span class="type">Dexec</span>.mainClass=<span class="string">"pubsub.PublisherExample"</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<div class="video-container"><iframe src="https://www.youtube.com/embed/FCUkRvSEo-Y" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
-      
-    </div>
-    <footer class="article-footer">
-<!--
-      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
-        <div>交流或订阅，请长按或扫描上方二维码</div>
-      </div>
--->
-      <a data-url="https://sdmj45.github.io/blog/2020/10/02/b06-01-Cloud-PubSub-HelloWorld/" data-id="ckkif14s2000x11i3h73bfq95" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/11/Python-a01-How-to-install-embedded-python-on-windows/" data-id="ckkjmbuk500060qi366gt3rr6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -675,6 +650,10 @@ More advanced in orchestration
       <ul>
         
           <li>
+            <a href="/blog/2021/01/29/Python-a09-Modules/">Python-a09-Modules</a>
+          </li>
+        
+          <li>
             <a href="/blog/2021/01/29/Python-a08-Functions/">Python-a08 Functions</a>
           </li>
         
@@ -688,10 +667,6 @@ More advanced in orchestration
         
           <li>
             <a href="/blog/2021/01/18/Python-a06-Conditions-and-Boolean/">Python-a06-Conditions and Boolean</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2021/01/18/Python-a05-Dictionaries/">Python-a05-Dictionaries</a>
           </li>
         
       </ul>

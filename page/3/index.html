@@ -70,6 +70,136 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-b03-Cloud-Datastore" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2020/05/16/b03-Cloud-Datastore/" class="article-date">
+  <time datetime="2020-05-16T08:08:57.000Z" itemprop="datePublished">2020-05-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/gcp/">gcp</a>►<a class="article-category-link" href="/blog/categories/gcp/b-data-engineer/">b-data-engineer</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2020/05/16/b03-Cloud-Datastore/">b03-Cloud-Datastore</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="What-is-a-Cloud-Datastore"><a href="#What-is-a-Cloud-Datastore" class="headerlink" title="What is a Cloud Datastore"></a>What is a Cloud Datastore</h2><ul>
+<li>NoSQL<ul>
+<li>Flexible structure/relationship</li>
+</ul>
+</li>
+<li>No Ops<ul>
+<li>No provisioning of instances</li>
+<li>Compute layer is abstracted away</li>
+</ul>
+</li>
+<li>Scalable<ul>
+<li>Multi-regions access</li>
+<li>Sharding/replication automatic</li>
+</ul>
+</li>
+<li><p>We can have only 1 Datastore per project</p>
+<h2 id="When-to-use-Datastore"><a href="#When-to-use-Datastore" class="headerlink" title="When to use Datastore"></a>When to use Datastore</h2><ul>
+<li>Applications need scale</li>
+<li>Product catalog - real time inventory</li>
+<li>User profiles - mobile apps</li>
+<li>Game save states</li>
+<li>ACID transactions, eg, transferring funds </li>
+</ul>
+<h2 id="When-not-use-Datastore"><a href="#When-not-use-Datastore" class="headerlink" title="When not use Datastore"></a>When not use Datastore</h2></li>
+<li>Analytics(full SQL semantics)<ul>
+<li>Use Big Query/Cloud Spanner</li>
+</ul>
+</li>
+<li>Extreme scale(10M+ read/writes per second)<ul>
+<li>Use Bigtable</li>
+</ul>
+</li>
+<li>Don’t need ACID<ul>
+<li>Bigtable</li>
+</ul>
+</li>
+<li>Lift and shift(existing MYSQL)<ul>
+<li>Cloud SQL</li>
+</ul>
+</li>
+<li>Near zero latency(&lt; 10ms)<ul>
+<li>Use in-memory database (Redis)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Relational-Database-vs-Datastore"><a href="#Relational-Database-vs-Datastore" class="headerlink" title="Relational Database vs Datastore"></a>Relational Database vs Datastore</h2><p>Entities can be hierarchical<br><img src="/blog/2020/05/16/b03-Cloud-Datastore/rdbms_vs_datastore.png" class="" title="rdbms_vs_datastore"></p>
+<h2 id="Queries-and-Indexing"><a href="#Queries-and-Indexing" class="headerlink" title="Queries and Indexing"></a>Queries and Indexing</h2><h3 id="Query"><a href="#Query" class="headerlink" title="Query"></a>Query</h3><ul>
+<li>retrieve entity from datastore</li>
+<li>query methods<ul>
+<li>programmatic</li>
+<li>web console</li>
+<li>GQL( google query language)</li>
+</ul>
+</li>
+</ul>
+<h3 id="Indexing"><a href="#Indexing" class="headerlink" title="Indexing"></a>Indexing</h3><ul>
+<li>queries get results from indexes</li>
+<li>index type<ul>
+<li>Built-in: Allows single property queries</li>
+<li>Composite: use index.yaml</li>
+</ul>
+</li>
+</ul>
+<h3 id="Danger-Exploding-Indexes"><a href="#Danger-Exploding-Indexes" class="headerlink" title="Danger - Exploding Indexes !"></a>Danger - Exploding Indexes !</h3><ul>
+<li>solutions:<ul>
+<li>use index.yaml to narrow index scope</li>
+<li>do not index properties that don’t need indexing</li>
+</ul>
+</li>
+</ul>
+<h2 id="Data-Consistency"><a href="#Data-Consistency" class="headerlink" title="Data Consistency"></a>Data Consistency</h2><p>Performance vs Accuracy</p>
+<ul>
+<li>Strongly Consistent<ul>
+<li>Parallel processes with orders guaranteed</li>
+<li>Use case: financial transaction</li>
+</ul>
+</li>
+<li>Eventually Consistent<ul>
+<li>Parallel processes not with orders guaranteed </li>
+<li>Use case: Census population, order not important<div class="video-container"><iframe src="https://www.youtube.com/embed/EZVu3AIxKFg" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+<!--
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
+        <div>交流或订阅，请长按或扫描上方二维码</div>
+      </div>
+-->
+      <a data-url="https://sdmj45.github.io/blog/2020/05/16/b03-Cloud-Datastore/" data-id="ckkjmbuml000u0qi3d5hlgsdn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-b02-Cloud-SQL" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2020/05/14/b02-Cloud-SQL/" class="article-date">
@@ -114,7 +244,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/14/b02-Cloud-SQL/" data-id="ckkif14rw000q11i30bup6n7k" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/14/b02-Cloud-SQL/" data-id="ckkjmbumm000v0qi38ay1gn8d" class="article-share-link">Share</a>
       
       
     </footer>
@@ -197,7 +327,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/11/b01-Fundamental-Concepts/" data-id="ckkif14rv000o11i3a0d642l1" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/11/b01-Fundamental-Concepts/" data-id="ckkjmbumk000s0qi3e066ahyf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -322,7 +452,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/09/a08-GCP-Big-Data-and-Machine-Learning/" data-id="ckkif14ru000n11i37pes4c6y" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/09/a08-GCP-Big-Data-and-Machine-Learning/" data-id="ckkjmbumi000p0qi37sio72gj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -378,7 +508,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/08/a07-GCP-Developing-Deploying-and-Monitoring/" data-id="ckkif14rs000l11i3bg4z2n8d" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/08/a07-GCP-Developing-Deploying-and-Monitoring/" data-id="ckkjmbumh000o0qi33jswgqtp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -464,7 +594,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/08/a06-GCP-Applications/" data-id="ckkif14rr000k11i3b2pg6myi" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/08/a06-GCP-Applications/" data-id="ckkjmbumf000l0qi36y302113" class="article-share-link">Share</a>
       
       
     </footer>
@@ -520,7 +650,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/08/a05-GCP-Containers/" data-id="ckkif14rh000h11i35m3bg0po" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/08/a05-GCP-Containers/" data-id="ckkjmbum8000i0qi3gm5w12xv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -627,7 +757,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/06/a04-GCP-Storage/" data-id="ckkif14sf001c11i3eqfz37a7" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/06/a04-GCP-Storage/" data-id="ckkjmbumg000m0qi31134dfnn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -688,7 +818,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/06/a03-GCP-Virtual-Machines/" data-id="ckkif14py000d11i3990m6i7c" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/06/a03-GCP-Virtual-Machines/" data-id="ckkjmbumj000r0qi3fib09mxl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -738,106 +868,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/06/spark-cross-join/" data-id="ckkif14s4001011i3ctec7n63" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-a02-Getting-Started-With-GCP" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2020/05/03/a02-Getting-Started-With-GCP/" class="article-date">
-  <time datetime="2020-05-03T12:53:10.000Z" itemprop="datePublished">2020-05-03</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/gcp/">gcp</a>►<a class="article-category-link" href="/blog/categories/gcp/a-core-infrastructure/">a-core-infrastructure</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2020/05/03/a02-Getting-Started-With-GCP/">a02-Getting-Started-With-GCP</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="IAM"><a href="#IAM" class="headerlink" title="IAM"></a>IAM</h2><p>IAM: Google Cloud’s Identity and Access Management.<br>It has 3 parts:</p>
-<ul>
-<li><strong>Who</strong>:<br>  can be defined by google account, google group, service account</li>
-<li><strong>Can do what</strong>: can be defined by an <strong>IAM role</strong> which is a collection of permissions<ul>
-<li>There are 3 kinds of roles:<ul>
-<li>Primitive role</li>
-<li>Predefined role</li>
-<li>Custom role:  can only be defined in organization or project, but not in folders</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>On which resource</strong></li>
-</ul>
-<h2 id="GCP-resource-hierarchy"><a href="#GCP-resource-hierarchy" class="headerlink" title="GCP resource hierarchy"></a>GCP resource hierarchy</h2><p>polices can define in organization, folder, project, they are inherited in the hierarchy.<br><img src="/blog/2020/05/03/a02-Getting-Started-With-GCP/resources_hierarchy.png" class="" title="resources_hierarchy"></p>
-<p><strong>Projects</strong> are the main way you organise your gcp resources.</p>
-<p>Each project has </p>
-<ul>
-<li>Project ID: immutable (assigned by you)</li>
-<li>Project Name: mutable (assigned by you)</li>
-<li>Project number: immutable (assigned by GCP)</li>
-</ul>
-<p>Policies defined in organisation level can be inherited to all children.</p>
-<p>GCP use <strong>least</strong> privilege in managing any kind of compute infrastructure. </p>
-<p><strong>The policies implemented at a higher level in this hierarchy can’t take away access that’s granted at a lower level</strong><br>Eg: if you grant Editor role to Organisation and Viewer role to the folder, then the folder is granted the Editor role.</p>
-<p>Projects can have different owners and users - they are built separately and managed separately.</p>
-<h2 id="Service-Account"><a href="#Service-Account" class="headerlink" title="Service Account"></a>Service Account</h2><p>For example: If you want to give permissions to a Compute Engine rather than a person, you would use service account.<br>A service account is also a resource, so you can give a role to it.</p>
-<p>There are 4 ways to interact with GCP’s management layer:</p>
-<ul>
-<li>GCP console<ul>
-<li>Manage and create projects</li>
-<li>Access to GCP APIs</li>
-<li>Offers access to Cloud Shell</li>
-</ul>
-</li>
-<li>Cloud shell and Cloud SDK<ul>
-<li>Includes command line tools: gcloud, gsutil(Cloud storage), bq(BigQuery)</li>
-</ul>
-</li>
-<li>API<ul>
-<li>Enabled through GCP console</li>
-<li>APIs Explorer is an interface tool that let you easily try GCP APIs using a browser</li>
-<li>Use libraries within your code<ul>
-<li>Cloud Client Libraries</li>
-<li>Google API Client Libraries</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Cloud Console Mobile App</li>
-</ul>
-<p>When using GCP, it handles most of the lower security layer, the upper layers remain the customer’s responsibility<br><img src="/blog/2020/05/03/a02-Getting-Started-With-GCP/cloud_security.png" class="" title="cloud_security"></p>
-<h2 id="Cloud-MarketPlace-formerly-Cloud-Launcher"><a href="#Cloud-MarketPlace-formerly-Cloud-Launcher" class="headerlink" title="Cloud MarketPlace( formerly Cloud Launcher)"></a>Cloud MarketPlace( formerly Cloud Launcher)</h2><p>It’s a tool for quickly deploying functional software packages on GCP</p>
-<div class="video-container"><iframe src="https://www.youtube.com/embed/WVwEVeW4A64" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
-      
-    </div>
-    <footer class="article-footer">
-<!--
-      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
-        <div>交流或订阅，请长按或扫描上方二维码</div>
-      </div>
--->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/03/a02-Getting-Started-With-GCP/" data-id="ckkif14pv000b11i3c1s0dzka" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/06/spark-cross-join/" data-id="ckkjmbums00150qi3fg6kcfi1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -904,6 +935,10 @@
       <ul>
         
           <li>
+            <a href="/blog/2021/01/29/Python-a09-Modules/">Python-a09-Modules</a>
+          </li>
+        
+          <li>
             <a href="/blog/2021/01/29/Python-a08-Functions/">Python-a08 Functions</a>
           </li>
         
@@ -917,10 +952,6 @@
         
           <li>
             <a href="/blog/2021/01/18/Python-a06-Conditions-and-Boolean/">Python-a06-Conditions and Boolean</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2021/01/18/Python-a05-Dictionaries/">Python-a05-Dictionaries</a>
           </li>
         
       </ul>
