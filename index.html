@@ -98,7 +98,7 @@
       
         <p>This article shows the examples of Classes and Instances in python</p>
 <p>OOP: Object-Oriented Programming</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># basic</span><br><span class="line">class Employee:</span><br><span class="line">    def __init__(self, first, last, pay):</span><br><span class="line">        self.first &#x3D; first</span><br><span class="line">        self.last &#x3D; last</span><br><span class="line">        self.pay &#x3D; pay</span><br><span class="line">        self.email &#x3D; first + &#39;.&#39; + last + &#39;@company.com&#39;</span><br><span class="line"></span><br><span class="line">    def fullname(self):</span><br><span class="line">        return &#39;&#123;&#125; &#123;&#125;&#39;.format(self.first, self.last)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">emp_1 &#x3D; Employee(&#39;Bob&#39;, &#39;Gobdo&#39;, 20)</span><br><span class="line">print(emp_1.email)</span><br><span class="line">print(emp_1.fullname())</span><br><span class="line"></span><br><span class="line"># the same thing of fullname()</span><br><span class="line">print(Employee.fullname(emp_1))</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"># basic</span><br><span class="line">class Employee:</span><br><span class="line">    def __init__(self, first, last, pay):</span><br><span class="line">        self.first &#x3D; first</span><br><span class="line">        self.last &#x3D; last</span><br><span class="line">        self.pay &#x3D; pay</span><br><span class="line">        self.email &#x3D; first + &#39;.&#39; + last + &#39;@company.com&#39;</span><br><span class="line"></span><br><span class="line">    def fullname(self):</span><br><span class="line">        return &#39;&#123;&#125; &#123;&#125;&#39;.format(self.first, self.last)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">emp_1 &#x3D; Employee(&#39;Bob&#39;, &#39;Gobdo&#39;, 20)</span><br><span class="line">print(emp_1.email)</span><br><span class="line">print(emp_1.fullname())</span><br><span class="line"></span><br><span class="line"># the same thing of fullname()</span><br><span class="line">print(Employee.fullname(emp_1))</span><br><span class="line"></span><br><span class="line"># class variables</span><br><span class="line">class Employee:</span><br><span class="line">    raise_amount &#x3D; 2.04</span><br><span class="line"></span><br><span class="line">    def __init__(self, first, last, pay):</span><br><span class="line">        self.first &#x3D; first</span><br><span class="line">        self.last &#x3D; last</span><br><span class="line">        self.pay &#x3D; pay</span><br><span class="line">        self.email &#x3D; first + &#39;.&#39; + last + &#39;@company.com&#39;</span><br><span class="line"></span><br><span class="line">    def fullname(self):</span><br><span class="line">        return &#39;&#123;&#125; &#123;&#125;&#39;.format(self.first, self.last)</span><br><span class="line"></span><br><span class="line">    def apply_raise(self):</span><br><span class="line">        self.pay &#x3D; int(self.pay * self.raise_amount) # raise_amount is class vriable, we can remplace by Employee.raise_amount</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">emp_1 &#x3D; Employee(&#39;Bob&#39;, &#39;Gobdo&#39;, 20)</span><br><span class="line">print(emp_1.pay)        # 20</span><br><span class="line">emp_1.apply_raise()</span><br><span class="line">print(emp_1.pay)        # 40</span><br><span class="line"></span><br><span class="line">print(Employee.__dict__)    # there is raise_amount inside</span><br><span class="line">print(emp_1.__dict__)       # there is no raise_amount inside</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># change raise_amount by instance</span><br><span class="line">emp_1 &#x3D; Employee(&#39;Bob&#39;, &#39;Gobdo&#39;, 20)</span><br><span class="line">emp_2 &#x3D; Employee(&#39;John&#39;, &#39;Youhs&#39;, 30)</span><br><span class="line"></span><br><span class="line">emp_1.raise_amount &#x3D; 3</span><br><span class="line">print(Employee.raise_amount)    # 2.04</span><br><span class="line">print(emp_1.raise_amount)       # 3</span><br><span class="line">print(emp_2.raise_amount)       # 2.04</span><br><span class="line"></span><br><span class="line"># change raise_amount by class</span><br><span class="line">emp_1 &#x3D; Employee(&#39;Bob&#39;, &#39;Gobdo&#39;, 20)</span><br><span class="line">emp_2 &#x3D; Employee(&#39;John&#39;, &#39;Youhs&#39;, 30)</span><br><span class="line"></span><br><span class="line">Employee.raise_amount &#x3D; 3</span><br><span class="line">print(Employee.raise_amount)    # 3</span><br><span class="line">print(emp_1.raise_amount)       # 3</span><br><span class="line">print(emp_2.raise_amount)       # 3</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
@@ -108,7 +108,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/02/01/Python-b01-Classes-and-Instances/" data-id="ckkmg0uim000f11i3eraae53c" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/02/01/Python-b01-Classes-and-Instances/" data-id="ckkmp4rl0000e50i36iwr910z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -155,7 +155,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a09-Modules/" data-id="ckkmg0uij000c11i3hzpp2tcd" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a09-Modules/" data-id="ckkmp4rkz000d50i3fqqvgguz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -202,7 +202,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a08-Functions/" data-id="ckkmg0uij000b11i3hwegdfm1" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a08-Functions/" data-id="ckkmp4rky000c50i3gzh19ypf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -249,7 +249,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a07-Loops-and-Iterations/" data-id="ckkmg0uii000a11i37m1qf5an" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a07-Loops-and-Iterations/" data-id="ckkmp4rl6000l50i30ionaj46" class="article-share-link">Share</a>
       
       
     </footer>
@@ -336,7 +336,7 @@ More advanced in orchestration
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/19/Terraform-a01-Introduction/" data-id="ckkmg0uim000e11i37ml069x2" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/19/Terraform-a01-Introduction/" data-id="ckkmp4rl1000f50i349zg7qfa" class="article-share-link">Share</a>
       
       
     </footer>
@@ -383,7 +383,7 @@ More advanced in orchestration
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/18/Python-a06-Conditions-and-Boolean/" data-id="ckkmg0uik000d11i3htio75pp" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/18/Python-a06-Conditions-and-Boolean/" data-id="ckkmp4rkx000a50i38lw15fx4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -431,7 +431,7 @@ More advanced in orchestration
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/18/Python-a05-Dictionaries/" data-id="ckkmg0uig000811i3cu348joy" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/18/Python-a05-Dictionaries/" data-id="ckkmp4rkw000950i3en7i421l" class="article-share-link">Share</a>
       
       
     </footer>
@@ -479,7 +479,7 @@ More advanced in orchestration
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/17/Python-a04-List-Tuple-Set/" data-id="ckkmg0uif000711i3f8yi4j8b" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/17/Python-a04-List-Tuple-Set/" data-id="ckkmp4rkx000b50i3e04gfq0x" class="article-share-link">Share</a>
       
       
     </footer>
@@ -527,7 +527,7 @@ More advanced in orchestration
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/15/Python-a03-Numeric/" data-id="ckkmg0uie000611i313k6a1eh" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/15/Python-a03-Numeric/" data-id="ckkmp4rku000750i3g07bbt1i" class="article-share-link">Share</a>
       
       
     </footer>
@@ -575,7 +575,7 @@ More advanced in orchestration
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/14/Python-a02-String/" data-id="ckkmg0uic000411i33r19hdlc" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/14/Python-a02-String/" data-id="ckkmp4rkv000850i3cta53gto" class="article-share-link">Share</a>
       
       
     </footer>
