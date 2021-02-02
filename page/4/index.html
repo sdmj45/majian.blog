@@ -70,6 +70,67 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-a03-GCP-Virtual-Machines" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2020/05/06/a03-GCP-Virtual-Machines/" class="article-date">
+  <time datetime="2020-05-06T11:41:07.000Z" itemprop="datePublished">2020-05-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/gcp/">gcp</a>►<a class="article-category-link" href="/blog/categories/gcp/a-core-infrastructure/">a-core-infrastructure</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2020/05/06/a03-GCP-Virtual-Machines/">a03-GCP-Virtual-Machines</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>We can run virtual machines by using of Compute Engine</p>
+<h2 id="VPC-Network"><a href="#VPC-Network" class="headerlink" title="VPC Network"></a>VPC Network</h2><p>Virtual Private Cloud: it connects your GCP resources to each other and to the internet.</p>
+<p>In the example below, us-east1-b and us-east1-c are on the same subnet but in different zones<br><img src="/blog/2020/05/06/a03-GCP-Virtual-Machines/subnet.png" class="" title="subnet"></p>
+<p>VPCs have routing tables, you can define firewall rules in terms of tags on compute engine.</p>
+<p>VPC Peering: establish a peering relationship between projects<br>Shared VPC:  you can use IAM to control</p>
+<h2 id="Cloud-Load-Balancing"><a href="#Cloud-Load-Balancing" class="headerlink" title="Cloud Load Balancing"></a>Cloud Load Balancing</h2><p>Users get a single, global anycast IP address</p>
+<h2 id="Cloud-CDN-Content-Delivery-Network"><a href="#Cloud-CDN-Content-Delivery-Network" class="headerlink" title="Cloud CDN(Content Delivery Network)"></a>Cloud CDN(Content Delivery Network)</h2><p>Use Google’s globally distributed edge caches to cache content close to your users</p>
+<h2 id="Compute-Engine"><a href="#Compute-Engine" class="headerlink" title="Compute Engine"></a>Compute Engine</h2><p>Create virtual machine by using of: </p>
+<ul>
+<li>GCP Console</li>
+<li>gcloud</li>
+</ul>
+<p>You can run images of linux or windows servers.</p>
+<p>You can configure memories and cpus of each VM, you can choose 2 kinds of storage: standard or SSD</p>
+<p>You can choose a Preemptible VM to save money (the instance will terminate after 24 hours, it can be used for applications<br>distribute processes across multiple instances in a cluster or for test)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+<!--
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
+        <div>交流或订阅，请长按或扫描上方二维码</div>
+      </div>
+-->
+      <a data-url="https://sdmj45.github.io/blog/2020/05/06/a03-GCP-Virtual-Machines/" data-id="ckko721ka000j11i3cwzwh4d8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-spark-cross-join" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2020/05/06/spark-cross-join/" class="article-date">
@@ -110,7 +171,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/06/spark-cross-join/" data-id="ckkmp4rlk001150i3bubu4v96" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/06/spark-cross-join/" data-id="ckko721kn001011i35b3ogzp4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -209,7 +270,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/03/a02-Getting-Started-With-GCP/" data-id="ckkmp4rl3000h50i39ylz2q0n" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/03/a02-Getting-Started-With-GCP/" data-id="ckko721m2001611i35ewbbcs8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -305,7 +366,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/01/a01-GCP-introduction/" data-id="ckkmp4rl2000g50i31helat6e" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/01/a01-GCP-introduction/" data-id="ckko721ka000i11i3b6htecf4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -356,7 +417,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/03/31/xiaomakuaibao/" data-id="ckkmp4rln001450i3d64l8s5v" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/03/31/xiaomakuaibao/" data-id="ckko721ko001211i3bvbj3k1p" class="article-share-link">Share</a>
       
       
     </footer>
@@ -423,7 +484,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/05/17/spark-listeners/" data-id="ckkmp4rll001250i3h4k3dhxn" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/05/17/spark-listeners/" data-id="ckko721kp001311i3h1x06wuv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -526,7 +587,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/05/13/Hive-vs-Presto/" data-id="ckkmp4rkr000350i3a13k4kiv" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/05/13/Hive-vs-Presto/" data-id="ckko721jv000311i34d6b4pen" class="article-share-link">Share</a>
       
       
     </footer>
@@ -595,7 +656,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/05/03/Jenkins-multiple-pipelines/" data-id="ckkmp4rlo001550i3euft7jw1" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/05/03/Jenkins-multiple-pipelines/" data-id="ckko721jy000511i3a0hg53kx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -647,7 +708,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/04/26/Kubernetes-Deploy-Example-Part-2/" data-id="ckkmp4rlj001050i3bp9h9uow" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/04/26/Kubernetes-Deploy-Example-Part-2/" data-id="ckko721k0000711i30tdteq34" class="article-share-link">Share</a>
       
       
     </footer>
@@ -706,71 +767,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/04/26/Kubernetes-Deploy-Example-Part-1/" data-id="ckkmp4rks000450i3em7ac05c" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Avro-vs-Parquet" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2019/04/17/Avro-vs-Parquet/" class="article-date">
-  <time datetime="2019-04-17T13:54:12.000Z" itemprop="datePublished">2019-04-17</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/big-data/">big data</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2019/04/17/Avro-vs-Parquet/">Avro vs Parquet</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Avro"><a href="#Avro" class="headerlink" title="Avro"></a>Avro</h1><p>Apache Avro is a remote procedure call and data serialization framework developed with Apache Hadoop project. It uses Json for defining data types and protocols and serialize data in compact binary format.<br>Avro stores both schema and data together in one message or file.<br>A key feature of Avro is robust support for data schemas that change over time, called scheam evolution.</p>
-<h3 id="Avro-1"><a href="#Avro-1" class="headerlink" title="Avro"></a>Avro</h3><ul>
-<li>Row based format</li>
-<li>Schema is stored as JSON within the file</li>
-<li>It is also a Serialization and RPC framework</li>
-<li>Files support block compression and are splittable</li>
-<li>Can be written from streaming data (eg Apache Kafka)</li>
-<li>Excellent with schema evolution</li>
-</ul>
-<h1 id="Parquet"><a href="#Parquet" class="headerlink" title="Parquet"></a>Parquet</h1><p>Parquet is a columnar file format that provides optimizations to speed up queries and a far more efficient file format than csv or json</p>
-<h3 id="Parquet-1"><a href="#Parquet-1" class="headerlink" title="Parquet"></a>Parquet</h3><ul>
-<li>Column based format</li>
-<li>Schema is stored in the footer of the file</li>
-<li>Due to merging of schema across multiple files, schema evolution is expensive</li>
-<li>Excellent for selected column data consumption and processing</li>
-<li>Can’t be written from streaming data since it needs to wait for blocks to get finished. However, this will work using micro-batch (eg Apache Spark).</li>
-<li>Working excellent with spark as there is vectorized reader for parquet</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-<!--
-      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
-        <div>交流或订阅，请长按或扫描上方二维码</div>
-      </div>
--->
-      <a data-url="https://sdmj45.github.io/blog/2019/04/17/Avro-vs-Parquet/" data-id="ckkmp4rkm000150i3hn0g4i6q" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/04/26/Kubernetes-Deploy-Example-Part-1/" data-id="ckko721jz000611i33y3c459l" class="article-share-link">Share</a>
       
       
     </footer>
@@ -837,6 +834,10 @@
       <ul>
         
           <li>
+            <a href="/blog/2021/02/02/Python-b02-classmethod-staticmethod/">Python-b02-classmethod-staticmethod</a>
+          </li>
+        
+          <li>
             <a href="/blog/2021/02/01/Python-b01-Classes-and-Instances/">Python-b01-Classes and Instances</a>
           </li>
         
@@ -850,10 +851,6 @@
         
           <li>
             <a href="/blog/2021/01/29/Python-a07-Loops-and-Iterations/">Python-a07 Loops and Iterations</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2021/01/19/Terraform-a01-Introduction/">Terraform-a01-Introduction</a>
           </li>
         
       </ul>
