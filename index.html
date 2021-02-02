@@ -70,6 +70,53 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Python-b03-Inheritance" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2021/02/02/Python-b03-Inheritance/" class="article-date">
+  <time datetime="2021-02-02T16:43:36.000Z" itemprop="datePublished">2021-02-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/python/">python</a>►<a class="article-category-link" href="/blog/categories/python/b-OOP/">b-OOP</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2021/02/02/Python-b03-Inheritance/">Python-b03-Inheritance</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>This article shows the examples of inheritance in python</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br></pre></td><td class="code"><pre><span class="line"># Developer is a sub class of Employee</span><br><span class="line">class Employee:</span><br><span class="line">raise_amount &#x3D; 2.04</span><br><span class="line"></span><br><span class="line">    def __init__(self, first, last, pay):</span><br><span class="line">        self.first &#x3D; first</span><br><span class="line">        self.last &#x3D; last</span><br><span class="line">        self.pay &#x3D; pay</span><br><span class="line">        self.email &#x3D; first + &#39;.&#39; + last + &#39;@company.com&#39;</span><br><span class="line"></span><br><span class="line">    def fullname(self):</span><br><span class="line">        return &#39;&#123;&#125; &#123;&#125;&#39;.format(self.first, self.last)</span><br><span class="line"></span><br><span class="line">    def apply_raise(self):</span><br><span class="line">        self.pay &#x3D; int(self.pay * self.raise_amount)</span><br><span class="line"></span><br><span class="line">    def set_regular_raise_amount(self, amount):</span><br><span class="line">        self.raise_amount &#x3D; amount</span><br><span class="line"></span><br><span class="line">    @classmethod</span><br><span class="line">    def set_class_raise_amount(cls, amount):</span><br><span class="line">        cls.raise_amount &#x3D; amount</span><br><span class="line"></span><br><span class="line">    @staticmethod</span><br><span class="line">    def is_workday(day):</span><br><span class="line">        if day.weekday() &#x3D;&#x3D; 5 or day.weekday() &#x3D;&#x3D; 6:</span><br><span class="line">            return False</span><br><span class="line">        return True</span><br><span class="line"></span><br><span class="line">class Developer(Employee):</span><br><span class="line">pass</span><br><span class="line"></span><br><span class="line">emp_1 &#x3D; Developer(&#39;Bob&#39;, &#39;Gobdo&#39;, 20)</span><br><span class="line">emp_2 &#x3D; Developer(&#39;John&#39;, &#39;Youhs&#39;, 30)</span><br><span class="line"></span><br><span class="line">print(emp_1.email)      # Bob.Gobdo@company.com</span><br><span class="line">print(emp_2.email)      # John.Youhs@company.com</span><br><span class="line"></span><br><span class="line">print(help(Developer))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># change variable in sub class</span><br><span class="line">class Developer(Employee):</span><br><span class="line">    raise_amount &#x3D; 3</span><br><span class="line"></span><br><span class="line">emp_1 &#x3D; Employee(&#39;Bob&#39;, &#39;Gobdo&#39;, 20)</span><br><span class="line"></span><br><span class="line">print(emp_1.pay)        # 20</span><br><span class="line">emp_1.apply_raise()</span><br><span class="line">print(emp_1.pay)        # 40</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">dev_1 &#x3D; Developer(&#39;Bob&#39;, &#39;Gobdo&#39;, 20)</span><br><span class="line"></span><br><span class="line">print(emp_1.pay)        # 20</span><br><span class="line">emp_1.apply_raise()</span><br><span class="line">print(emp_1.pay)        # 60</span><br><span class="line"></span><br><span class="line"># inherit __init__</span><br><span class="line">class Developer(Employee):</span><br><span class="line">    raise_amount &#x3D; 3</span><br><span class="line"></span><br><span class="line">    def __init__(self, first, last, pay, prog_lang):</span><br><span class="line">        super().__init__(first, last, pay)</span><br><span class="line">        self.prog_lang &#x3D; prog_lang</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">dev_1 &#x3D; Developer(&#39;Bob&#39;, &#39;Gobdo&#39;, 20, &#39;Python&#39;)</span><br><span class="line">print(dev_1.email)          # Bob.Gobdo@company.com</span><br><span class="line">print(dev_1.prog_lang)      # Python</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># another sub class</span><br><span class="line">class Developer(Employee):</span><br><span class="line">    raise_amount &#x3D; 3</span><br><span class="line"></span><br><span class="line">    def __init__(self, first, last, pay, prog_lang):</span><br><span class="line">        super().__init__(first, last, pay)</span><br><span class="line">        self.prog_lang &#x3D; prog_lang</span><br><span class="line"></span><br><span class="line">class Manager(Employee):</span><br><span class="line"></span><br><span class="line">    def __init__(self, first, last, pay, employees &#x3D; None):</span><br><span class="line">        super().__init__(first, last, pay)</span><br><span class="line">        if employees is None:</span><br><span class="line">            self.employees &#x3D; []</span><br><span class="line">        else:</span><br><span class="line">            self.employees &#x3D; employees</span><br><span class="line"></span><br><span class="line">    def add_employee(self, emp):</span><br><span class="line">        if emp not in self.employees:</span><br><span class="line">            self.employees.append(emp)</span><br><span class="line"></span><br><span class="line">    def remove_employee(self, emp):</span><br><span class="line">        if emp in self.employees:</span><br><span class="line">            self.employees.remove(emp)</span><br><span class="line"></span><br><span class="line">    def print_emps(self):</span><br><span class="line">        for emp in self.employees:</span><br><span class="line">            print(&#39;--&gt;&#39;, emp.fullname())</span><br><span class="line"></span><br><span class="line">dev_1 &#x3D; Developer(&#39;Bob&#39;, &#39;Gobdo&#39;, 20, &#39;Python&#39;)</span><br><span class="line"></span><br><span class="line">mgr_1 &#x3D; Manager(&#39;Sue&#39;, &#39;Smith&#39;, 50, [dev_1])</span><br><span class="line">print(mgr_1.email)              # Sue.Smith@company.com</span><br><span class="line">mgr_1.print_emps()              # --&gt; Bob Gobdo</span><br><span class="line"></span><br><span class="line">dev_2 &#x3D; Developer(&#39;John&#39;, &#39;Youhs&#39;, 30, &#39;Java&#39;)</span><br><span class="line">mgr_1.add_employee(dev_2)</span><br><span class="line">mgr_1.print_emps()              # --&gt; Bob Gobdo</span><br><span class="line">                                # --&gt; John Youhs</span><br><span class="line"></span><br><span class="line">mgr_1.remove_employee(dev_2)</span><br><span class="line">mgr_1.print_emps()             # --&gt; Bob Gobdo</span><br><span class="line"></span><br><span class="line"># isinstance, issubclass</span><br><span class="line"></span><br><span class="line">print(isinstance(mgr_1, Manager))   # True</span><br><span class="line">print(isinstance(mgr_1, Employee))  # True</span><br><span class="line">print(isinstance(mgr_1, Developer)) # False</span><br><span class="line"></span><br><span class="line">print(issubclass(Developer, Employee))  # True</span><br><span class="line">print(issubclass(Manager, Employee))    # True</span><br><span class="line">print(issubclass(Manager, Developer))   # False</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+<!--
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
+        <div>交流或订阅，请长按或扫描上方二维码</div>
+      </div>
+-->
+      <a data-url="https://sdmj45.github.io/blog/2021/02/02/Python-b03-Inheritance/" data-id="ckkoa6z8y000k2mi3hcvi1czy" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Python-b02-classmethod-staticmethod" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2021/02/02/Python-b02-classmethod-staticmethod/" class="article-date">
@@ -107,7 +154,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/02/02/Python-b02-classmethod-staticmethod/" data-id="ckko721k8000g11i3627o33sb" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/02/02/Python-b02-classmethod-staticmethod/" data-id="ckkoa6z8s000h2mi39h8t744a" class="article-share-link">Share</a>
       
       
     </footer>
@@ -155,7 +202,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/02/01/Python-b01-Classes-and-Instances/" data-id="ckko721kq001511i3du8x5ott" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/02/01/Python-b01-Classes-and-Instances/" data-id="ckkoa6z8q000g2mi36oz2h0o6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -202,7 +249,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a09-Modules/" data-id="ckko721k7000e11i339xtf3fm" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a09-Modules/" data-id="ckkoa6z8n000e2mi3ekk415tw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -249,7 +296,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a08-Functions/" data-id="ckko721k9000h11i3fyio8r3j" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a08-Functions/" data-id="ckkoa6z8e000a2mi30lpp7ncv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -296,7 +343,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a07-Loops-and-Iterations/" data-id="ckko721k7000f11i3bvxd33ex" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a07-Loops-and-Iterations/" data-id="ckkoa6z8p000f2mi3h1l72p6y" class="article-share-link">Share</a>
       
       
     </footer>
@@ -383,7 +430,7 @@ More advanced in orchestration
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/19/Terraform-a01-Introduction/" data-id="ckko721kb000k11i3fqtkajk1" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/19/Terraform-a01-Introduction/" data-id="ckkoa6z8u000j2mi3d4qlg2e6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -430,7 +477,7 @@ More advanced in orchestration
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/18/Python-a06-Conditions-and-Boolean/" data-id="ckko721k4000c11i3an4qdq7u" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/18/Python-a06-Conditions-and-Boolean/" data-id="ckkoa6z8i000d2mi38pc2g1gx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -478,7 +525,7 @@ More advanced in orchestration
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/18/Python-a05-Dictionaries/" data-id="ckko721k3000b11i305ga8n1q" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/18/Python-a05-Dictionaries/" data-id="ckkoa6z8g000c2mi32ilr3cqg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -526,55 +573,7 @@ More advanced in orchestration
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/17/Python-a04-List-Tuple-Set/" data-id="ckko721k3000a11i3f3w65496" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Python-a03-Numeric" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2021/01/15/Python-a03-Numeric/" class="article-date">
-  <time datetime="2021-01-15T13:27:09.000Z" itemprop="datePublished">2021-01-15</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/python/">python</a>►<a class="article-category-link" href="/blog/categories/python/a-basics/">a-basics</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2021/01/15/Python-a03-Numeric/">Python-a03-Numeric</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>This article shows the examples of Float, Integer in python</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"># different types</span><br><span class="line">    num1 &#x3D; 4</span><br><span class="line">    print(type(num1))</span><br><span class="line">    </span><br><span class="line">    num2 &#x3D; 2.1</span><br><span class="line">    print(type(num2))</span><br><span class="line">      </span><br><span class="line"># arithmetic operators</span><br><span class="line">    print(5 + 2)</span><br><span class="line">    print(5 - 2)</span><br><span class="line">    print(5 * 2)</span><br><span class="line">    print(5 &#x2F; 2)</span><br><span class="line">    print(5 &#x2F;&#x2F; 2) # floor division</span><br><span class="line">    print(3 ** 2) # exponent</span><br><span class="line">    print(3 % 2) # modulus</span><br><span class="line">    print(abs(-3)) # absolute</span><br><span class="line">    print(round(3.6)) # round number 4</span><br><span class="line">    print(round(3.75, 1)) # round number 3.8</span><br><span class="line">    </span><br><span class="line"># calculation order</span><br><span class="line">    print(3 + 2 * 2)</span><br><span class="line">    print((3+2)*2)   </span><br><span class="line">     </span><br><span class="line"># increment</span><br><span class="line">    num1 &#x3D; 1</span><br><span class="line">    num1 &#x3D; num1 + 1</span><br><span class="line">    print(num1)</span><br><span class="line">    </span><br><span class="line">    num2 &#x3D; 1</span><br><span class="line">    num2 +&#x3D; 1</span><br><span class="line">    print(num2)</span><br><span class="line"></span><br><span class="line"># comparisons</span><br><span class="line">    print(3 &#x3D;&#x3D; 2) # equal</span><br><span class="line">    print(3 !&#x3D; 2) # not equal</span><br><span class="line">    print(3 &gt; 2)  # greater than</span><br><span class="line">    print(3 &lt; 2)  # less than</span><br><span class="line">    print(3 &gt;&#x3D; 2) # greater or equal</span><br><span class="line">    print(3 &lt;&#x3D; 2) # less or equal</span><br><span class="line"></span><br><span class="line"># cast</span><br><span class="line">    num1 &#x3D; &#39;10&#39;</span><br><span class="line">    num2 &#x3D; &#39;20&#39;</span><br><span class="line">    print(num1 + num2) # 1020</span><br><span class="line"></span><br><span class="line">    num3 &#x3D; int(num1)</span><br><span class="line">    num4 &#x3D; int(num2)</span><br><span class="line">    print(num3 + num4) # 30</span><br></pre></td></tr></table></figure>
-<div class="video-container"><iframe src="https://www.youtube.com/embed/4KNoGLaexTs" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
-      
-    </div>
-    <footer class="article-footer">
-<!--
-      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
-        <div>交流或订阅，请长按或扫描上方二维码</div>
-      </div>
--->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/15/Python-a03-Numeric/" data-id="ckko721k2000911i3ag3a1wd2" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/17/Python-a04-List-Tuple-Set/" data-id="ckkoa6z8f000b2mi3cebvcrol" class="article-share-link">Share</a>
       
       
     </footer>
@@ -641,6 +640,10 @@ More advanced in orchestration
       <ul>
         
           <li>
+            <a href="/blog/2021/02/02/Python-b03-Inheritance/">Python-b03-Inheritance</a>
+          </li>
+        
+          <li>
             <a href="/blog/2021/02/02/Python-b02-classmethod-staticmethod/">Python-b02-classmethod-staticmethod</a>
           </li>
         
@@ -654,10 +657,6 @@ More advanced in orchestration
         
           <li>
             <a href="/blog/2021/01/29/Python-a08-Functions/">Python-a08 Functions</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2021/01/29/Python-a07-Loops-and-Iterations/">Python-a07 Loops and Iterations</a>
           </li>
         
       </ul>

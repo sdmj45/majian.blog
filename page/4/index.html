@@ -70,6 +70,113 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-a04-GCP-Storage" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2020/05/06/a04-GCP-Storage/" class="article-date">
+  <time datetime="2020-05-06T15:30:14.000Z" itemprop="datePublished">2020-05-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/gcp/">gcp</a>►<a class="article-category-link" href="/blog/categories/gcp/a-core-infrastructure/">a-core-infrastructure</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2020/05/06/a04-GCP-Storage/">a04-GCP-Storage</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Cloud-Storage"><a href="#Cloud-Storage" class="headerlink" title="Cloud Storage"></a>Cloud Storage</h2><p>It is <strong>object storage</strong>(you have a storage and have a unique key to access) which is not the same as<br><strong>file storage</strong>(you manage your data as a hierarchy of folders) or<br><strong>block storage</strong>(the operating system manage data as chunks of disk)</p>
+<p>Cloud storage works well with web technologies and is scalable</p>
+<p>Each of objects in Cloud Storage has a URL and is immutable</p>
+<p>Usage:</p>
+<ul>
+<li>serving website content</li>
+<li>storing data for archival and disaster recovery</li>
+<li>distributing large data objects to your end users via Direct Download</li>
+</ul>
+<p>For most case, IAM is sufficient, but if you need finer control, you can create ACLs(access control lists).<br>Each ACL consists of:</p>
+<ul>
+<li>a user or group</li>
+<li>a permission</li>
+</ul>
+<p>Cloud Storage keeps a history of modification, you can list the archived versions of an object, restore or delete it</p>
+<p>Cloud Storage offers <strong>lifecycle management policies</strong>, eg: you could delete objects older than 5 days</p>
+<p>Cloud Storage has different types of storage classes: Multi-Regional, Regional, Nearline, Coldline<br><img src="/blog/2020/05/06/a04-GCP-Storage/cloud_storage_classes.png" class="" title="cloud_storage_classes"></p>
+<p>3 Ways to bring data into Cloud Storage:</p>
+<ul>
+<li>Online Transfer</li>
+<li>Storage Transfer Service</li>
+<li>Transfer Appliance</li>
+</ul>
+<h2 id="Cloud-Bigtable"><a href="#Cloud-Bigtable" class="headerlink" title="Cloud Bigtable"></a>Cloud Bigtable</h2><p>It is google’s NoSQL, big data database service. It supports high throughput, both read and write.</p>
+<p>It offers same API as HBase(native database for Apache Hadoop), differences:</p>
+<ul>
+<li>Bigtable can scale and manage fast and easily</li>
+<li>Bigtable encrypts data in-flight and at rest</li>
+<li>Bigtable can be controlled access with IAM</li>
+<li>Bigtable drives major applications such as Google Analytics, Gmail</li>
+</ul>
+<p>Bigtable access patterns:</p>
+<ul>
+<li>application api</li>
+<li>streaming</li>
+<li>batch processing</li>
+</ul>
+<h2 id="Cloud-SQL"><a href="#Cloud-SQL" class="headerlink" title="Cloud SQL"></a>Cloud SQL</h2><p>managed RDBMS</p>
+<ul>
+<li>MySQL and PostgreSQL databases</li>
+<li>Automatic replication</li>
+<li>Managed backups</li>
+<li>Vertical scaling(read and write)</li>
+<li>Horizontal scaling(read)</li>
+<li>Google security</li>
+</ul>
+<h2 id="Cloud-Spanner"><a href="#Cloud-Spanner" class="headerlink" title="Cloud Spanner"></a>Cloud Spanner</h2><p>horizontally scalable RDBMS</p>
+<ul>
+<li>Strong global consistency</li>
+<li>High availability</li>
+<li>SQL queries</li>
+<li>Automatic replication</li>
+</ul>
+<h2 id="Cloud-Datastore"><a href="#Cloud-Datastore" class="headerlink" title="Cloud Datastore"></a>Cloud Datastore</h2><p>horizontally scalable NoSQL DB</p>
+<ul>
+<li>Designed for application backend</li>
+<li>Supports transactions</li>
+<li>includes a free daily quota</li>
+</ul>
+<h2 id="Cloud-Storage-Comparing"><a href="#Cloud-Storage-Comparing" class="headerlink" title="Cloud Storage Comparing"></a>Cloud Storage Comparing</h2><img src="/blog/2020/05/06/a04-GCP-Storage/cloud_storage_comparing_1.png" class="" title="cloud_storage_comparing_1">
+<img src="/blog/2020/05/06/a04-GCP-Storage/cloud_storage_comparing_2.png" class="" title="cloud_storage_comparing_2">
+
+      
+    </div>
+    <footer class="article-footer">
+<!--
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
+        <div>交流或订阅，请长按或扫描上方二维码</div>
+      </div>
+-->
+      <a data-url="https://sdmj45.github.io/blog/2020/05/06/a04-GCP-Storage/" data-id="ckkoa6z95000n2mi3021683av" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-a03-GCP-Virtual-Machines" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2020/05/06/a03-GCP-Virtual-Machines/" class="article-date">
@@ -121,7 +228,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/06/a03-GCP-Virtual-Machines/" data-id="ckko721ka000j11i3cwzwh4d8" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/06/a03-GCP-Virtual-Machines/" data-id="ckkoa6z90000m2mi3fvev0b1h" class="article-share-link">Share</a>
       
       
     </footer>
@@ -171,7 +278,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/06/spark-cross-join/" data-id="ckko721kn001011i35b3ogzp4" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/06/spark-cross-join/" data-id="ckkoa6z9u00112mi35ol02nzj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -270,7 +377,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/03/a02-Getting-Started-With-GCP/" data-id="ckko721m2001611i35ewbbcs8" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/03/a02-Getting-Started-With-GCP/" data-id="ckkoa6z8z000l2mi3f2kdax8b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -366,7 +473,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/01/a01-GCP-introduction/" data-id="ckko721ka000i11i3b6htecf4" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/01/a01-GCP-introduction/" data-id="ckkoa6za300152mi3grl24zj5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -417,7 +524,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/03/31/xiaomakuaibao/" data-id="ckko721ko001211i3bvbj3k1p" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/03/31/xiaomakuaibao/" data-id="ckkoa6z9x00132mi3bpoe2zgq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -484,7 +591,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/05/17/spark-listeners/" data-id="ckko721kp001311i3h1x06wuv" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/05/17/spark-listeners/" data-id="ckkoa6za400162mi3hzmz1s7e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -587,7 +694,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/05/13/Hive-vs-Presto/" data-id="ckko721jv000311i34d6b4pen" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/05/13/Hive-vs-Presto/" data-id="ckkoa6z8t000i2mi308z77j9y" class="article-share-link">Share</a>
       
       
     </footer>
@@ -656,7 +763,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/05/03/Jenkins-multiple-pipelines/" data-id="ckko721jy000511i3a0hg53kx" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/05/03/Jenkins-multiple-pipelines/" data-id="ckkoa6z7x00032mi32rsx5qh9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -708,66 +815,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/04/26/Kubernetes-Deploy-Example-Part-2/" data-id="ckko721k0000711i30tdteq34" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Kubernetes-Deploy-Example-Part-1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2019/04/26/Kubernetes-Deploy-Example-Part-1/" class="article-date">
-  <time datetime="2019-04-26T09:52:39.000Z" itemprop="datePublished">2019-04-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/devops/">devops</a>►<a class="article-category-link" href="/blog/categories/devops/kubernetes/">kubernetes</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2019/04/26/Kubernetes-Deploy-Example-Part-1/">Kubernetes Deploy Example - Part 1</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Kubernetes is a container orchestration system for automating application deployment, scaling and management. Here we will show a simple example of nginx deployment by kubernetes.</p>
-<h2 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h2><ol>
-<li>install kubernetes, for me, I use minikube</li>
-<li>install docker </li>
-</ol>
-<h2 id="Step-1-Pull-the-image-from-Docker-Registry"><a href="#Step-1-Pull-the-image-from-Docker-Registry" class="headerlink" title="Step 1: Pull the image from Docker Registry"></a>Step 1: Pull the image from Docker Registry</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ kubectl run nginx --image=nginx:latest --port=80</span><br></pre></td></tr></table></figure>
-<h2 id="Step-2-Check-if-deployment-ok"><a href="#Step-2-Check-if-deployment-ok" class="headerlink" title="Step 2: Check if deployment ok"></a>Step 2: Check if deployment ok</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ kubectl get pods</span><br><span class="line"></span><br><span class="line">NAME              READY     STATUS    RESTARTS   AGE</span><br><span class="line">nginx-6bfb654d7c-xjvhg                1/1       Running   0          1h</span><br></pre></td></tr></table></figure>
-<h2 id="Step-3-Expose-service-through-NodePort"><a href="#Step-3-Expose-service-through-NodePort" class="headerlink" title="Step 3: Expose service through NodePort"></a>Step 3: Expose service through NodePort</h2><p>As I use minikube in local, I don’t have LoadBalancer installed, so I use NodePort as type here</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">kubectl expose deployment nginx --<span class="built_in">type</span>=NodePort --port=80 --target-port=80</span><br><span class="line"></span><br><span class="line">service <span class="string">"nginx"</span> exposed</span><br></pre></td></tr></table></figure>
-<h2 id="Step-4-Get-service-port"><a href="#Step-4-Get-service-port" class="headerlink" title="Step 4: Get service port"></a>Step 4: Get service port</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">kubectl get svc nginx</span><br><span class="line"></span><br><span class="line">NAME      TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE</span><br><span class="line">nginx     NodePort   10.109.174.66   &lt;none&gt;        80:32598/TCP   45m</span><br></pre></td></tr></table></figure>
-<p>Here we can find that the service if exposed by port 32598</p>
-<h2 id="Step-5-Get-kubernetes-ip"><a href="#Step-5-Get-kubernetes-ip" class="headerlink" title="Step 5: Get kubernetes ip"></a>Step 5: Get kubernetes ip</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">kubectl get endpoints kubernetes</span><br><span class="line"></span><br><span class="line">NAME         ENDPOINTS             AGE</span><br><span class="line">kubernetes   192.168.99.100:8443   143d</span><br></pre></td></tr></table></figure>
-<h2 id="Step-6-Access-to-nginx"><a href="#Step-6-Access-to-nginx" class="headerlink" title="Step 6: Access to nginx"></a>Step 6: Access to nginx</h2><p>Open your navigator and type the url of kubernetes with the port of nginx, you will access to welcome page of nginx<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.99.100:32598</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-<!--
-      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
-        <div>交流或订阅，请长按或扫描上方二维码</div>
-      </div>
--->
-      <a data-url="https://sdmj45.github.io/blog/2019/04/26/Kubernetes-Deploy-Example-Part-1/" data-id="ckko721jz000611i33y3c459l" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/04/26/Kubernetes-Deploy-Example-Part-2/" data-id="ckkoa6z7z00042mi372m2hi3v" class="article-share-link">Share</a>
       
       
     </footer>
@@ -834,6 +882,10 @@
       <ul>
         
           <li>
+            <a href="/blog/2021/02/02/Python-b03-Inheritance/">Python-b03-Inheritance</a>
+          </li>
+        
+          <li>
             <a href="/blog/2021/02/02/Python-b02-classmethod-staticmethod/">Python-b02-classmethod-staticmethod</a>
           </li>
         
@@ -847,10 +899,6 @@
         
           <li>
             <a href="/blog/2021/01/29/Python-a08-Functions/">Python-a08 Functions</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2021/01/29/Python-a07-Loops-and-Iterations/">Python-a07 Loops and Iterations</a>
           </li>
         
       </ul>

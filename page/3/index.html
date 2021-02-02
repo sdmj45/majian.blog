@@ -70,6 +70,73 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-b06-Cloud-PubSub" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2020/05/23/b06-Cloud-PubSub/" class="article-date">
+  <time datetime="2020-05-23T14:01:29.000Z" itemprop="datePublished">2020-05-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/gcp/">gcp</a>►<a class="article-category-link" href="/blog/categories/gcp/b-data-engineer/">b-data-engineer</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2020/05/23/b06-Cloud-PubSub/">b06-Cloud-PubSub</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Cloud-Pub-Sub"><a href="#Cloud-Pub-Sub" class="headerlink" title="Cloud Pub/Sub"></a>Cloud Pub/Sub</h2><ul>
+<li>Global scale messaging buffer/coupler</li>
+<li>No-ops</li>
+<li>Decouples senders and receivers</li>
+<li>Equivalent to Kafka</li>
+<li>At-least-once delivery</li>
+</ul>
+<h2 id="Pub-Sub-overview"><a href="#Pub-Sub-overview" class="headerlink" title="Pub/Sub overview"></a>Pub/Sub overview</h2><img src="/blog/2020/05/23/b06-Cloud-PubSub/pubsub_overview.png" class="" title="pubsub_overview">
+<ul>
+<li>Topic: publisher sends messages to topic</li>
+<li>Messages are stored in message store until they are delivered and acknowledged by subscribers</li>
+<li>Pub/Sub forwards messages from a topic to subscribers. messages can be pushed by Pub/Sub to subscriber or pulled by subscribers from Pub/Sub</li>
+<li>Subscriber receives pending messages from subscription and acknowledge to Pub/Sub</li>
+<li>After message is acknowledged by the subscriber, it is removed from the subscription’s queue of messages.</li>
+</ul>
+<h2 id="Push-and-Pull"><a href="#Push-and-Pull" class="headerlink" title="Push and Pull"></a>Push and Pull</h2><ul>
+<li>Push = lower latency, more real-time</li>
+<li>Push subscribers must be Webhook endpoints that accept POST over HTTPS</li>
+<li>Pull ideal for large volume of messages - batch delivery</li>
+</ul>
+<div class="video-container"><iframe src="https://www.youtube.com/embed/1Ip6of_VBvg" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
+
+      
+    </div>
+    <footer class="article-footer">
+<!--
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
+        <div>交流或订阅，请长按或扫描上方二维码</div>
+      </div>
+-->
+      <a data-url="https://sdmj45.github.io/blog/2020/05/23/b06-Cloud-PubSub/" data-id="ckkoa6z9o000x2mi3cr5n0tgm" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-b05-Cloud-Spanner" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2020/05/20/b05-Cloud-Spanner/" class="article-date">
@@ -131,7 +198,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/20/b05-Cloud-Spanner/" data-id="ckko721ki000s11i39l7ahjpt" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/20/b05-Cloud-Spanner/" data-id="ckkoa6z9n000w2mi32h7w9om1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -208,7 +275,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/19/b04-Bigtable/" data-id="ckko721kl000w11i38e1c9fno" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/19/b04-Bigtable/" data-id="ckkoa6z9h000u2mi39yvb4zie" class="article-share-link">Share</a>
       
       
     </footer>
@@ -338,7 +405,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/16/b03-Cloud-Datastore/" data-id="ckko721kh000r11i3dbbnamau" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/16/b03-Cloud-Datastore/" data-id="ckkoa6z9f000s2mi3gma741k1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -392,7 +459,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/14/b02-Cloud-SQL/" data-id="ckko721kj000u11i3hivyamw2" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/14/b02-Cloud-SQL/" data-id="ckkoa6z9d000r2mi30f6h7v40" class="article-share-link">Share</a>
       
       
     </footer>
@@ -475,7 +542,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/11/b01-Fundamental-Concepts/" data-id="ckko721kg000p11i3guez0hng" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/11/b01-Fundamental-Concepts/" data-id="ckkoa6z9c000q2mi3fsol9zdn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -600,7 +667,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/09/a08-GCP-Big-Data-and-Machine-Learning/" data-id="ckko721kh000q11i3425ogefz" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/09/a08-GCP-Big-Data-and-Machine-Learning/" data-id="ckkoa6z9g000t2mi3g9yghbvp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -656,7 +723,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/08/a07-GCP-Developing-Deploying-and-Monitoring/" data-id="ckko721kf000o11i36gbyh473" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/08/a07-GCP-Developing-Deploying-and-Monitoring/" data-id="ckkoa6z9b000p2mi3146yfnk6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -742,7 +809,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/08/a06-GCP-Applications/" data-id="ckko721kd000n11i3539qfj89" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/08/a06-GCP-Applications/" data-id="ckkoa6z9a000o2mi3ha435jyg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -798,114 +865,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/08/a05-GCP-Containers/" data-id="ckko721kc000m11i3dfc6huko" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-a04-GCP-Storage" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2020/05/06/a04-GCP-Storage/" class="article-date">
-  <time datetime="2020-05-06T15:30:14.000Z" itemprop="datePublished">2020-05-06</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/gcp/">gcp</a>►<a class="article-category-link" href="/blog/categories/gcp/a-core-infrastructure/">a-core-infrastructure</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2020/05/06/a04-GCP-Storage/">a04-GCP-Storage</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Cloud-Storage"><a href="#Cloud-Storage" class="headerlink" title="Cloud Storage"></a>Cloud Storage</h2><p>It is <strong>object storage</strong>(you have a storage and have a unique key to access) which is not the same as<br><strong>file storage</strong>(you manage your data as a hierarchy of folders) or<br><strong>block storage</strong>(the operating system manage data as chunks of disk)</p>
-<p>Cloud storage works well with web technologies and is scalable</p>
-<p>Each of objects in Cloud Storage has a URL and is immutable</p>
-<p>Usage:</p>
-<ul>
-<li>serving website content</li>
-<li>storing data for archival and disaster recovery</li>
-<li>distributing large data objects to your end users via Direct Download</li>
-</ul>
-<p>For most case, IAM is sufficient, but if you need finer control, you can create ACLs(access control lists).<br>Each ACL consists of:</p>
-<ul>
-<li>a user or group</li>
-<li>a permission</li>
-</ul>
-<p>Cloud Storage keeps a history of modification, you can list the archived versions of an object, restore or delete it</p>
-<p>Cloud Storage offers <strong>lifecycle management policies</strong>, eg: you could delete objects older than 5 days</p>
-<p>Cloud Storage has different types of storage classes: Multi-Regional, Regional, Nearline, Coldline<br><img src="/blog/2020/05/06/a04-GCP-Storage/cloud_storage_classes.png" class="" title="cloud_storage_classes"></p>
-<p>3 Ways to bring data into Cloud Storage:</p>
-<ul>
-<li>Online Transfer</li>
-<li>Storage Transfer Service</li>
-<li>Transfer Appliance</li>
-</ul>
-<h2 id="Cloud-Bigtable"><a href="#Cloud-Bigtable" class="headerlink" title="Cloud Bigtable"></a>Cloud Bigtable</h2><p>It is google’s NoSQL, big data database service. It supports high throughput, both read and write.</p>
-<p>It offers same API as HBase(native database for Apache Hadoop), differences:</p>
-<ul>
-<li>Bigtable can scale and manage fast and easily</li>
-<li>Bigtable encrypts data in-flight and at rest</li>
-<li>Bigtable can be controlled access with IAM</li>
-<li>Bigtable drives major applications such as Google Analytics, Gmail</li>
-</ul>
-<p>Bigtable access patterns:</p>
-<ul>
-<li>application api</li>
-<li>streaming</li>
-<li>batch processing</li>
-</ul>
-<h2 id="Cloud-SQL"><a href="#Cloud-SQL" class="headerlink" title="Cloud SQL"></a>Cloud SQL</h2><p>managed RDBMS</p>
-<ul>
-<li>MySQL and PostgreSQL databases</li>
-<li>Automatic replication</li>
-<li>Managed backups</li>
-<li>Vertical scaling(read and write)</li>
-<li>Horizontal scaling(read)</li>
-<li>Google security</li>
-</ul>
-<h2 id="Cloud-Spanner"><a href="#Cloud-Spanner" class="headerlink" title="Cloud Spanner"></a>Cloud Spanner</h2><p>horizontally scalable RDBMS</p>
-<ul>
-<li>Strong global consistency</li>
-<li>High availability</li>
-<li>SQL queries</li>
-<li>Automatic replication</li>
-</ul>
-<h2 id="Cloud-Datastore"><a href="#Cloud-Datastore" class="headerlink" title="Cloud Datastore"></a>Cloud Datastore</h2><p>horizontally scalable NoSQL DB</p>
-<ul>
-<li>Designed for application backend</li>
-<li>Supports transactions</li>
-<li>includes a free daily quota</li>
-</ul>
-<h2 id="Cloud-Storage-Comparing"><a href="#Cloud-Storage-Comparing" class="headerlink" title="Cloud Storage Comparing"></a>Cloud Storage Comparing</h2><img src="/blog/2020/05/06/a04-GCP-Storage/cloud_storage_comparing_1.png" class="" title="cloud_storage_comparing_1">
-<img src="/blog/2020/05/06/a04-GCP-Storage/cloud_storage_comparing_2.png" class="" title="cloud_storage_comparing_2">
-
-      
-    </div>
-    <footer class="article-footer">
-<!--
-      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
-        <div>交流或订阅，请长按或扫描上方二维码</div>
-      </div>
--->
-      <a data-url="https://sdmj45.github.io/blog/2020/05/06/a04-GCP-Storage/" data-id="ckko721kc000l11i38i992vp2" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/05/08/a05-GCP-Containers/" data-id="ckkoa6za500172mi373do316u" class="article-share-link">Share</a>
       
       
     </footer>
@@ -972,6 +932,10 @@
       <ul>
         
           <li>
+            <a href="/blog/2021/02/02/Python-b03-Inheritance/">Python-b03-Inheritance</a>
+          </li>
+        
+          <li>
             <a href="/blog/2021/02/02/Python-b02-classmethod-staticmethod/">Python-b02-classmethod-staticmethod</a>
           </li>
         
@@ -985,10 +949,6 @@
         
           <li>
             <a href="/blog/2021/01/29/Python-a08-Functions/">Python-a08 Functions</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2021/01/29/Python-a07-Loops-and-Iterations/">Python-a07 Loops and Iterations</a>
           </li>
         
       </ul>
