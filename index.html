@@ -70,6 +70,56 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Python-b04-Special-Magic-Dunder-Methods" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2021/02/03/Python-b04-Special-Magic-Dunder-Methods/" class="article-date">
+  <time datetime="2021-02-03T16:44:45.000Z" itemprop="datePublished">2021-02-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/python/">python</a>►<a class="article-category-link" href="/blog/categories/python/b-OOP/">b-OOP</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2021/02/03/Python-b04-Special-Magic-Dunder-Methods/">Python-b04-Special(Magic/Dunder) Methods</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>This article shows the examples of special(magic/dunder) methods in python</p>
+<h4 id="basic"><a href="#basic" class="headerlink" title="basic"></a>basic</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">class Employee:</span><br><span class="line">    raise_amount &#x3D; 2.04</span><br><span class="line"></span><br><span class="line">    def __init__(self, first, last, pay):</span><br><span class="line">        self.first &#x3D; first</span><br><span class="line">        self.last &#x3D; last</span><br><span class="line">        self.pay &#x3D; pay</span><br><span class="line">        self.email &#x3D; first + &#39;.&#39; + last + &#39;@company.com&#39;</span><br><span class="line"></span><br><span class="line">    def fullname(self):</span><br><span class="line">        return &#39;&#123;&#125; &#123;&#125;&#39;.format(self.first, self.last)</span><br><span class="line"></span><br><span class="line">    def apply_raise(self):</span><br><span class="line">        self.pay &#x3D; int(self.pay * self.raise_amount)</span><br><span class="line"></span><br><span class="line">    def set_regular_raise_amount(self, amount):</span><br><span class="line">        self.raise_amount &#x3D; amount</span><br><span class="line"></span><br><span class="line">    @classmethod</span><br><span class="line">    def set_class_raise_amount(cls, amount):</span><br><span class="line">        cls.raise_amount &#x3D; amount</span><br><span class="line"></span><br><span class="line">    @staticmethod</span><br><span class="line">    def is_workday(day):</span><br><span class="line">        if day.weekday() &#x3D;&#x3D; 5 or day.weekday() &#x3D;&#x3D; 6:</span><br><span class="line">            return False</span><br><span class="line">        return True</span><br><span class="line"></span><br><span class="line">emp_1 &#x3D; Employee(&#39;Bob&#39;, &#39;Gobdo&#39;, 20)</span><br><span class="line">print(emp_1)                # &lt;__main__.Employee object at 0x00000200249F63A0&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="add-repr-method-in-the-class"><a href="#add-repr-method-in-the-class" class="headerlink" title="add __repr__ method in the class"></a>add __repr__ method in the class</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">    class Employee:</span><br><span class="line">    raise_amount &#x3D; 2.04</span><br><span class="line"></span><br><span class="line">    def __init__(self, first, last, pay):</span><br><span class="line">        self.first &#x3D; first</span><br><span class="line">        self.last &#x3D; last</span><br><span class="line">        self.pay &#x3D; pay</span><br><span class="line">        self.email &#x3D; first + &#39;.&#39; + last + &#39;@company.com&#39;</span><br><span class="line"></span><br><span class="line">    def fullname(self):</span><br><span class="line">        return &#39;&#123;&#125; &#123;&#125;&#39;.format(self.first, self.last)</span><br><span class="line"></span><br><span class="line">    def apply_raise(self):</span><br><span class="line">        self.pay &#x3D; int(self.pay * self.raise_amount)</span><br><span class="line"></span><br><span class="line">    def set_regular_raise_amount(self, amount):</span><br><span class="line">        self.raise_amount &#x3D; amount</span><br><span class="line"></span><br><span class="line">    @classmethod</span><br><span class="line">    def set_class_raise_amount(cls, amount):</span><br><span class="line">        cls.raise_amount &#x3D; amount</span><br><span class="line"></span><br><span class="line">    @staticmethod</span><br><span class="line">    def is_workday(day):</span><br><span class="line">        if day.weekday() &#x3D;&#x3D; 5 or day.weekday() &#x3D;&#x3D; 6:</span><br><span class="line">            return False</span><br><span class="line">        return True</span><br><span class="line">        </span><br><span class="line">    def __repr__(self):</span><br><span class="line">        return &quot;Employee(&#39;&#123;&#125;&#39;,&#39;&#123;&#125;&#39;,&#123;&#125;)&quot;.format(self.first, self.last, self.pay)</span><br><span class="line"></span><br><span class="line">emp_1 &#x3D; Employee(&#39;Bob&#39;, &#39;Gobdo&#39;, 20)</span><br><span class="line">print(emp_1)        #Employee(&#39;Bob&#39;,&#39;Gobdo&#39;,20)</span><br></pre></td></tr></table></figure>
+<h4 id="add-str-method-in-the-class"><a href="#add-str-method-in-the-class" class="headerlink" title="add __str__ method in the class"></a>add __str__ method in the class</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">class Employee:</span><br><span class="line">    raise_amount &#x3D; 2.04</span><br><span class="line"></span><br><span class="line">    def __init__(self, first, last, pay):</span><br><span class="line">        self.first &#x3D; first</span><br><span class="line">        self.last &#x3D; last</span><br><span class="line">        self.pay &#x3D; pay</span><br><span class="line">        self.email &#x3D; first + &#39;.&#39; + last + &#39;@company.com&#39;</span><br><span class="line"></span><br><span class="line">    def fullname(self):</span><br><span class="line">        return &#39;&#123;&#125; &#123;&#125;&#39;.format(self.first, self.last)</span><br><span class="line"></span><br><span class="line">    def apply_raise(self):</span><br><span class="line">        self.pay &#x3D; int(self.pay * self.raise_amount)</span><br><span class="line"></span><br><span class="line">    def set_regular_raise_amount(self, amount):</span><br><span class="line">        self.raise_amount &#x3D; amount</span><br><span class="line"></span><br><span class="line">    @classmethod</span><br><span class="line">    def set_class_raise_amount(cls, amount):</span><br><span class="line">        cls.raise_amount &#x3D; amount</span><br><span class="line"></span><br><span class="line">    @staticmethod</span><br><span class="line">    def is_workday(day):</span><br><span class="line">        if day.weekday() &#x3D;&#x3D; 5 or day.weekday() &#x3D;&#x3D; 6:</span><br><span class="line">            return False</span><br><span class="line">        return True</span><br><span class="line"></span><br><span class="line">    def __repr__(self):</span><br><span class="line">        return &quot;Employee(&#39;&#123;&#125;&#39;,&#39;&#123;&#125;&#39;,&#123;&#125;)&quot;.format(self.first, self.last, self.pay)</span><br><span class="line"></span><br><span class="line">    def __str__(self):</span><br><span class="line">        return &#39;&#123;&#125; - &#123;&#125;&#39;.format(self.fullname(), self.email)</span><br><span class="line">    </span><br><span class="line">emp_1 &#x3D; Employee(&#39;Bob&#39;, &#39;Gobdo&#39;, 20)</span><br><span class="line">print(emp_1)                # Bob Gobdo - Bob.Gobdo@company.com</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+<!--
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
+        <div>交流或订阅，请长按或扫描上方二维码</div>
+      </div>
+-->
+      <a data-url="https://sdmj45.github.io/blog/2021/02/03/Python-b04-Special-Magic-Dunder-Methods/" data-id="ckkpo6lfw000g1xi39egzgp9v" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Python-b03-Inheritance" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2021/02/02/Python-b03-Inheritance/" class="article-date">
@@ -107,7 +157,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/02/02/Python-b03-Inheritance/" data-id="ckkoa6z8y000k2mi3hcvi1czy" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/02/02/Python-b03-Inheritance/" data-id="ckkpo6llw00311xi3d8h2hfe4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -154,7 +204,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/02/02/Python-b02-classmethod-staticmethod/" data-id="ckkoa6z8s000h2mi39h8t744a" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/02/02/Python-b02-classmethod-staticmethod/" data-id="ckkpo6lfr000c1xi3fhf856j9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -202,7 +252,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/02/01/Python-b01-Classes-and-Instances/" data-id="ckkoa6z8q000g2mi36oz2h0o6" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/02/01/Python-b01-Classes-and-Instances/" data-id="ckkpo6lft000e1xi354vc45d0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -249,7 +299,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a09-Modules/" data-id="ckkoa6z8n000e2mi3ekk415tw" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a09-Modules/" data-id="ckkpo6lfq000a1xi323fn6imh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -296,7 +346,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a08-Functions/" data-id="ckkoa6z8e000a2mi30lpp7ncv" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a08-Functions/" data-id="ckkpo6lfs000d1xi30ww7a17j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -343,7 +393,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a07-Loops-and-Iterations/" data-id="ckkoa6z8p000f2mi3h1l72p6y" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a07-Loops-and-Iterations/" data-id="ckkpo6lfp00091xi37lk7b0sb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -430,7 +480,7 @@ More advanced in orchestration
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/19/Terraform-a01-Introduction/" data-id="ckkoa6z8u000j2mi3d4qlg2e6" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/19/Terraform-a01-Introduction/" data-id="ckkpo6lfy000j1xi30ww7gyhw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -477,7 +527,7 @@ More advanced in orchestration
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/18/Python-a06-Conditions-and-Boolean/" data-id="ckkoa6z8i000d2mi38pc2g1gx" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/18/Python-a06-Conditions-and-Boolean/" data-id="ckkpo6lfu000f1xi3g3grb1um" class="article-share-link">Share</a>
       
       
     </footer>
@@ -525,55 +575,7 @@ More advanced in orchestration
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/18/Python-a05-Dictionaries/" data-id="ckkoa6z8g000c2mi32ilr3cqg" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Python-a04-List-Tuple-Set" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2021/01/17/Python-a04-List-Tuple-Set/" class="article-date">
-  <time datetime="2021-01-17T16:10:19.000Z" itemprop="datePublished">2021-01-17</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/python/">python</a>►<a class="article-category-link" href="/blog/categories/python/a-basics/">a-basics</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2021/01/17/Python-a04-List-Tuple-Set/">Python-a04-List,Tuple,Set</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>This article shows the examples of List, Tuple, Set in python</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br></pre></td><td class="code"><pre><span class="line">## List </span><br><span class="line"># List basics</span><br><span class="line">    courses &#x3D; [&#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;]</span><br><span class="line">    print(courses)</span><br><span class="line">    print(len(courses))</span><br><span class="line">    print(courses[0])</span><br><span class="line">    print(courses[-1]) # start from the end </span><br><span class="line">    print(courses[4]) # error</span><br><span class="line">    print(courses[0:2]) # the first index include, not the second one</span><br><span class="line">    print(courses[:2]) # from the first to index 2</span><br><span class="line">    print(courses[2:]) # from index 2 to the end</span><br><span class="line"></span><br><span class="line"># Add elements to List</span><br><span class="line">    courses1 &#x3D; [&#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;]    </span><br><span class="line">    courses1.append(&#39;Art&#39;)</span><br><span class="line">    print(courses1) # [&#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;, &#39;Art&#39;]</span><br><span class="line">    </span><br><span class="line">    courses2 &#x3D; [&#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;]    </span><br><span class="line">    courses2.insert(0, &#39;Art&#39;)</span><br><span class="line">    print(courses2) # [&#39;Art&#39;, &#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;]</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    courses3 &#x3D; [&#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;] </span><br><span class="line">    courses4 &#x3D; [&#39;Art&#39;, &#39;Education&#39;]</span><br><span class="line">    courses3.insert(0, courses4)</span><br><span class="line">    print(courses3) # [[&#39;Art&#39;, &#39;Education&#39;], &#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;] </span><br><span class="line">    </span><br><span class="line">    courses5 &#x3D; [&#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;] </span><br><span class="line">    courses6 &#x3D; [&#39;Art&#39;, &#39;Education&#39;]</span><br><span class="line">    courses5.extend(courses6)</span><br><span class="line">    print(courses5) # [&#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;, &#39;Art&#39;, &#39;Education&#39;] </span><br><span class="line">    </span><br><span class="line"># Remove elements to List    </span><br><span class="line">    courses &#x3D; [&#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;]</span><br><span class="line">    courses.remove(&#39;Math&#39;)</span><br><span class="line">    print(courses) #[&#39;History&#39;, &#39;Physics&#39;, &#39;CompSci&#39;]</span><br><span class="line">    </span><br><span class="line">    courses1 &#x3D; [&#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;]</span><br><span class="line">    courses.pop()</span><br><span class="line">    print(courses) #[&#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;]</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    courses2 &#x3D; [&#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;]</span><br><span class="line">    popped &#x3D; courses.pop()</span><br><span class="line">    print(popped) #&#39;CompSci&#39;</span><br><span class="line">    </span><br><span class="line"># Order in List       </span><br><span class="line">    courses &#x3D; [&#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;]</span><br><span class="line">    courses.reverse()</span><br><span class="line">    print(courses) #[&#39;CompSci&#39;, &#39;Physics&#39;, &#39;Math&#39;, &#39;History&#39;]</span><br><span class="line">    </span><br><span class="line">    courses1 &#x3D; [&#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;]</span><br><span class="line">    courses1.sort()</span><br><span class="line">    print(courses1) #[&#39;CompSci&#39;, &#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;]</span><br><span class="line">     </span><br><span class="line">    courses2 &#x3D; [&#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;]</span><br><span class="line">    courses2.sort(reverse&#x3D;True)</span><br><span class="line">    print(courses2) #[&#39;Physics&#39;, &#39;Math&#39;, &#39;History&#39;, &#39;CompSci&#39;]</span><br><span class="line">    </span><br><span class="line"> </span><br><span class="line">    courses3 &#x3D; [&#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;]</span><br><span class="line">    courses4 &#x3D; sorted(courses3)</span><br><span class="line">    print(courses4) #[&#39;CompSci&#39;, &#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;]</span><br><span class="line">    </span><br><span class="line"># Min, Max, Sum in List  </span><br><span class="line">    nums &#x3D; [1,5,2,4,3]</span><br><span class="line">    print(min(nums)) #1</span><br><span class="line">    print(max(nums)) #5</span><br><span class="line">    print(sum(nums)) #15</span><br><span class="line">    </span><br><span class="line"># index in List  </span><br><span class="line">    courses &#x3D; [&#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;]</span><br><span class="line">    print(courses.index(&#39;ComSci&#39;)) # 3</span><br><span class="line">    print(courses.index(&#39;Art&#39;)) # error</span><br><span class="line">    print(&#39;Art&#39; in courses) # False</span><br><span class="line">    print(&#39;Math&#39; in courses) # True</span><br><span class="line">    </span><br><span class="line">    for item in courses:</span><br><span class="line">        print(item)  # History Math Physics CompSci</span><br><span class="line">    </span><br><span class="line">    for index, course in enumerate(courses):</span><br><span class="line">        print(index, course)  # 0 History  1 Math  2 Physics  3 CompSci</span><br><span class="line">    </span><br><span class="line">    for index, course in enumerate(courses, start&#x3D;1):</span><br><span class="line">        print(index, course)  # 1 History  2 Math  3 Physics  4 CompSci</span><br><span class="line">    </span><br><span class="line"># join in List</span><br><span class="line">    courses &#x3D; [&#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;]</span><br><span class="line">    course_str &#x3D; &#39;, &#39;.join(courses)</span><br><span class="line">    new_courses &#x3D; course_str.split(&#39;, &#39;)</span><br><span class="line">    print(course_str) # &#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;</span><br><span class="line">    print(new_courses) # [&#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;]</span><br><span class="line">    </span><br><span class="line">## Tuple</span><br><span class="line"># List is mutable, Tuple is immnutable, we can&#39;t add, append, modify element in Tuple</span><br><span class="line">    list1 &#x3D; [&#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;]</span><br><span class="line">    list2 &#x3D; list1</span><br><span class="line">    print(list1) #[&#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;]</span><br><span class="line">    print(list2) #[&#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;]</span><br><span class="line">    </span><br><span class="line">    list1[0] &#x3D; &#39;Art&#39;</span><br><span class="line">    print(list1) #[&#39;Art&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;]</span><br><span class="line">    print(list2) #[&#39;Art&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;]</span><br><span class="line">    </span><br><span class="line">    tuple1 &#x3D; (&#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;)</span><br><span class="line">    tuple2 &#x3D; tuple1</span><br><span class="line">    print(tuple1) #(&#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;)</span><br><span class="line">    print(tuple2) #(&#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;)</span><br><span class="line">    </span><br><span class="line">    tuple1[0] &#x3D; &#39;Art&#39;  # error</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">## Set</span><br><span class="line"># Set values are unordered and unduplicated</span><br><span class="line">    set1 &#x3D; &#123;&#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;&#125;</span><br><span class="line">    print(set1) #&#123;&#39;Math&#39;, &#39;History&#39;, &#39;Physics&#39;, &#39;CompSci&#39;&#125; order may change</span><br><span class="line">    </span><br><span class="line">    set2 &#x3D; &#123;&#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;, &#39;Math&#39;&#125;</span><br><span class="line">    print(set2) #&#123;&#39;Math&#39;, &#39;History&#39;, &#39;Physics&#39;, &#39;CompSci&#39;&#125; order may change</span><br><span class="line">    </span><br><span class="line">    set3 &#x3D; &#123;&#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;&#125;</span><br><span class="line">    print(&#39;Math&#39; in set3) #True Set is optimized for the check existing</span><br><span class="line">     </span><br><span class="line">    # Set is optimized to find the same and differences between 2 ones</span><br><span class="line">    set4 &#x3D; &#123;&#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;&#125;</span><br><span class="line">    set5 &#x3D; &#123;&#39;History&#39;, &#39;Math&#39;, &#39;Art&#39;, &#39;Design&#39;&#125;</span><br><span class="line">    print(set4.intersaction(set5)) #&#123;&#39;History&#39;, &#39;Math&#39;&#125;</span><br><span class="line">    print(set4.difference(set5)) #&#123;&#39;Physics&#39;, &#39;CompSci&#39;&#125;</span><br><span class="line">    print(set4.union(set5)) #&#123;&#39;History&#39;, &#39;Math&#39;, &#39;Physics&#39;, &#39;CompSci&#39;, &#39;Art&#39;, &#39;Design&#39;&#125;</span><br><span class="line">    </span><br><span class="line">## How to create empty List, Tuple, Set</span><br><span class="line">    empty_list &#x3D; []    </span><br><span class="line">    empty_list &#x3D; list()    </span><br><span class="line">     </span><br><span class="line">    empty_tuple &#x3D; ()    </span><br><span class="line">    empty_tuple &#x3D; tuple()    </span><br><span class="line">    </span><br><span class="line">    empty_set &#x3D; &#123;&#125; # This is wrong, it&#39;s a dict</span><br><span class="line">    empty_set &#x3D; set()</span><br></pre></td></tr></table></figure>
-<div class="video-container"><iframe src="https://www.youtube.com/embed/" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
-      
-    </div>
-    <footer class="article-footer">
-<!--
-      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
-        <div>交流或订阅，请长按或扫描上方二维码</div>
-      </div>
--->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/17/Python-a04-List-Tuple-Set/" data-id="ckkoa6z8f000b2mi3cebvcrol" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/18/Python-a05-Dictionaries/" data-id="ckkpo6lfq000b1xi3fspghjgt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -640,6 +642,10 @@ More advanced in orchestration
       <ul>
         
           <li>
+            <a href="/blog/2021/02/03/Python-b04-Special-Magic-Dunder-Methods/">Python-b04-Special(Magic/Dunder) Methods</a>
+          </li>
+        
+          <li>
             <a href="/blog/2021/02/02/Python-b03-Inheritance/">Python-b03-Inheritance</a>
           </li>
         
@@ -653,10 +659,6 @@ More advanced in orchestration
         
           <li>
             <a href="/blog/2021/01/29/Python-a09-Modules/">Python-a09-Modules</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2021/01/29/Python-a08-Functions/">Python-a08 Functions</a>
           </li>
         
       </ul>
