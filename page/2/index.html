@@ -70,6 +70,54 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Python-a05-Dictionaries" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2021/01/18/Python-a05-Dictionaries/" class="article-date">
+  <time datetime="2021-01-18T14:08:21.000Z" itemprop="datePublished">2021-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/python/">python</a>►<a class="article-category-link" href="/blog/categories/python/a-basics/">a-basics</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2021/01/18/Python-a05-Dictionaries/">Python-a05-Dictionaries</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>This article shows the examples of Dictionaries in python</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">## basic</span><br><span class="line">    student &#x3D;  &#123;&#39;name&#39;: &#39;John&#39;, &#39;age&#39;: 25, &#39;courses&#39;: [&#39;Math&#39;, &#39;CompSci&#39;]&#125;</span><br><span class="line">    print(student) # &#123;&#39;name&#39;: &#39;John&#39;, &#39;age&#39;: 25, &#39;courses&#39;: [&#39;Math&#39;, &#39;CompSci&#39;]&#125;</span><br><span class="line">    print(student[&#39;name&#39;]) # John</span><br><span class="line">    print(student[&#39;courses&#39;][0]) # Math</span><br><span class="line">    print(student[&#39;phone&#39;]) # error</span><br><span class="line">    </span><br><span class="line">    print(student.get(&#39;name&#39;)) # John</span><br><span class="line">    print(student.get(&#39;phone&#39;)) # None</span><br><span class="line">    print(student.get(&#39;phone&#39;, &#39;Not Found&#39;)) # Not Found</span><br><span class="line">    </span><br><span class="line"># add and update element</span><br><span class="line">    student[&#39;phone&#39;] &#x3D; &#39;555&#39;    </span><br><span class="line">    student[&#39;name&#39;] &#x3D; &#39;Bob&#39;</span><br><span class="line">    print(student) # &#123;&#39;name&#39;: &#39;Bob&#39;, &#39;phone&#39;: &#39;555&#39;, &#39;age&#39;: 25, &#39;courses&#39;: [&#39;Math&#39;, &#39;CompSci&#39;]&#125;</span><br><span class="line">    </span><br><span class="line">    student.update(&#123;&#39;name&#39;: &#39;Jane&#39;, &#39;age&#39;: 26, &#39;phone&#39;: &#39;666&#39;&#125;)</span><br><span class="line">    print(student) # &#123;&#39;name&#39;: &#39;Jane&#39;, &#39;phone&#39;: &#39;666&#39;, &#39;age&#39;: 26, &#39;courses&#39;: [&#39;Math&#39;, &#39;CompSci&#39;]&#125;</span><br><span class="line"></span><br><span class="line"># delete element</span><br><span class="line">    student &#x3D;  &#123;&#39;name&#39;: &#39;John&#39;, &#39;age&#39;: 25, &#39;courses&#39;: [&#39;Math&#39;, &#39;CompSci&#39;]&#125;</span><br><span class="line">    del student[&#39;age&#39;]</span><br><span class="line">    print(student) # &#123;&#39;name&#39;: &#39;John&#39;, &#39;courses&#39;: [&#39;Math&#39;, &#39;CompSci&#39;]&#125;</span><br><span class="line"></span><br><span class="line">    age &#x3D; student.pop(&#39;age&#39;)</span><br><span class="line">    print(student) # &#123;&#39;name&#39;: &#39;John&#39;, &#39;courses&#39;: [&#39;Math&#39;, &#39;CompSci&#39;]&#125;</span><br><span class="line">    print(age) # 25</span><br><span class="line">  </span><br><span class="line"># loop</span><br><span class="line">    student &#x3D;  &#123;&#39;name&#39;: &#39;John&#39;, &#39;age&#39;: 25, &#39;courses&#39;: [&#39;Math&#39;, &#39;CompSci&#39;]&#125;</span><br><span class="line">    print(student.keys()) # dict_keys([&#39;name&#39;, &#39;age&#39;, &#39;courses&#39;])</span><br><span class="line">    print(student.values()) # dict_values([&#39;John&#39;, 25, [&#39;Math&#39;, &#39;CompSci&#39;]])</span><br><span class="line">    print(student.items()) # dict_items([(&#39;name&#39;:&#39;John&#39;), (&#39;age&#39;:25), (&#39;courses&#39;:[&#39;Math&#39;, &#39;CompSci&#39;])])</span><br><span class="line">    </span><br><span class="line">    for key in student:</span><br><span class="line">        print(key) # name; age; courses</span><br><span class="line">        </span><br><span class="line">    for key,value in student.items():</span><br><span class="line">        print(key,value) #name John; age 25; courses [&#39;Math&#39;, &#39;CompSci&#39;]</span><br></pre></td></tr></table></figure>
+<div class="video-container"><iframe src="https://www.youtube.com/embed/" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
+      
+    </div>
+    <footer class="article-footer">
+<!--
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
+        <div>交流或订阅，请长按或扫描上方二维码</div>
+      </div>
+-->
+      <a data-url="https://sdmj45.github.io/blog/2021/01/18/Python-a05-Dictionaries/" data-id="ckkqo5kx5000f11i38ou341w5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Python-a04-List-Tuple-Set" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2021/01/17/Python-a04-List-Tuple-Set/" class="article-date">
@@ -108,7 +156,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/17/Python-a04-List-Tuple-Set/" data-id="ckkpokhbj000b37i392e56ygz" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/17/Python-a04-List-Tuple-Set/" data-id="ckkqo5kxw001711i36mes2a0u" class="article-share-link">Share</a>
       
       
     </footer>
@@ -156,7 +204,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/15/Python-a03-Numeric/" data-id="ckkpokhbh000837i3cre7hhyg" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/15/Python-a03-Numeric/" data-id="ckkqo5kwv000911i3ee7n7dp5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -204,7 +252,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/14/Python-a02-String/" data-id="ckkpokhbe000537i30ex85zwv" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/14/Python-a02-String/" data-id="ckkqo5kws000611i3aqn53w12" class="article-share-link">Share</a>
       
       
     </footer>
@@ -260,7 +308,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/11/Python-a01-How-to-install-embedded-python-on-windows/" data-id="ckkpokhbd000437i3h1g4cdi9" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/11/Python-a01-How-to-install-embedded-python-on-windows/" data-id="ckkqo5kwt000711i38ief5aum" class="article-share-link">Share</a>
       
       
     </footer>
@@ -332,7 +380,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/10/02/b06-01-Cloud-PubSub-HelloWorld/" data-id="ckkpokhc4000v37i3gi1jac2e" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/10/02/b06-01-Cloud-PubSub-HelloWorld/" data-id="ckkqo5kxp000v11i36jmt825u" class="article-share-link">Share</a>
       
       
     </footer>
@@ -395,7 +443,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/08/20/GCP-Kubernetes-Manually/" data-id="ckkpokhbf000637i324jffoi3" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/08/20/GCP-Kubernetes-Manually/" data-id="ckkqo5kvv000011i33v836vjx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -438,7 +486,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/08/06/spark-skewness/" data-id="ckkpokhca001337i34bwacsja" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/08/06/spark-skewness/" data-id="ckkqo5kxu001411i3gify7hvy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/spark/" rel="tag">spark</a></li></ul>
@@ -550,7 +598,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/06/16/b10-Machine-Learning/" data-id="ckkpokhc7001037i38y598xcv" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/06/16/b10-Machine-Learning/" data-id="ckkqo5kxs001011i35brh1lfb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -620,83 +668,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/06/12/b09-BigQuery/" data-id="ckkpokhc7000z37i34qax61cw" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-b08-Cloud-Dataproc" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2020/06/05/b08-Cloud-Dataproc/" class="article-date">
-  <time datetime="2020-06-05T11:16:59.000Z" itemprop="datePublished">2020-06-05</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/gcp/">gcp</a>►<a class="article-category-link" href="/blog/categories/gcp/b-data-engineer/">b-data-engineer</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2020/06/05/b08-Cloud-Dataproc/">b08-Cloud Dataproc</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Dataproc"><a href="#Dataproc" class="headerlink" title="Dataproc"></a>Dataproc</h2><ul>
-<li>Hadoop, Spark, Hive, Pig</li>
-<li>Lift and shift to GCP</li>
-</ul>
-<h2 id="Map-Reduce"><a href="#Map-Reduce" class="headerlink" title="Map Reduce"></a>Map Reduce</h2><img src="/blog/2020/06/05/b08-Cloud-Dataproc/map_reduce.png" class="" title="map_reduce">
-<h2 id="Converting-from-HDFS-to-Google-Cloud-Storage"><a href="#Converting-from-HDFS-to-Google-Cloud-Storage" class="headerlink" title="Converting from HDFS to Google Cloud Storage"></a>Converting from HDFS to Google Cloud Storage</h2><ul>
-<li>Copy data to GCS<ul>
-<li>Install connector or copy manually</li>
-</ul>
-</li>
-<li>Update file prefix in scripts<ul>
-<li>From hdfs:// to gs://</li>
-</ul>
-</li>
-<li>Use Dataproc and run against/output to GCS</li>
-</ul>
-<h2 id="Dataproc-performance-optimization"><a href="#Dataproc-performance-optimization" class="headerlink" title="Dataproc performance optimization"></a>Dataproc performance optimization</h2><ul>
-<li>Keep your data close to your cluster<ul>
-<li>Place Dataproc cluster in same region as storage bucket</li>
-</ul>
-</li>
-<li>Larger persistent disk = better performance<ul>
-<li>Using SSD over HDD</li>
-</ul>
-</li>
-<li>Allocate more VMs<ul>
-<li>Use preemptible VM to save on costs<div class="video-container"><iframe src="https://www.youtube.com/embed/lyNiOFsTW18" frameborder="0" loading="lazy" allowfullscreen></iframe></div></li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-<!--
-      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
-        <div>交流或订阅，请长按或扫描上方二维码</div>
-      </div>
--->
-      <a data-url="https://sdmj45.github.io/blog/2020/06/05/b08-Cloud-Dataproc/" data-id="ckkpokhc6000y37i3ef5kb49i" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/06/12/b09-BigQuery/" data-id="ckkqo5kxs001111i3dj424aea" class="article-share-link">Share</a>
       
       
     </footer>
@@ -763,6 +735,10 @@
       <ul>
         
           <li>
+            <a href="/blog/2021/02/04/Python-b05-Property-Decorators/">Python-b05-Property Decorators</a>
+          </li>
+        
+          <li>
             <a href="/blog/2021/02/03/Python-b04-Special-Magic-Dunder-Methods/">Python-b04-Special(Magic/Dunder) Methods</a>
           </li>
         
@@ -776,10 +752,6 @@
         
           <li>
             <a href="/blog/2021/02/01/Python-b01-Classes-and-Instances/">Python-b01-Classes and Instances</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2021/01/29/Python-a09-Modules/">Python-a09-Modules</a>
           </li>
         
       </ul>
