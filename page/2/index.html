@@ -70,6 +70,53 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Python-a06-Conditions-and-Boolean" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2021/01/18/Python-a06-Conditions-and-Boolean/" class="article-date">
+  <time datetime="2021-01-18T14:59:17.000Z" itemprop="datePublished">2021-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/python/">python</a>►<a class="article-category-link" href="/blog/categories/python/a-basics/">a-basics</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2021/01/18/Python-a06-Conditions-and-Boolean/">Python-a06-Conditions and Boolean</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>This article shows the examples of Conditions and Boolean in python</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">## basic</span><br><span class="line">    if True:</span><br><span class="line">        print(&#39;Conditional was true&#39;) # Conditional was true</span><br><span class="line">        </span><br><span class="line">    if False:</span><br><span class="line">        print(&#39;Conditional was true&#39;) #</span><br><span class="line">       </span><br><span class="line"># Comparisons</span><br><span class="line">    # Equal:            &#x3D;&#x3D;</span><br><span class="line">    # Not Equal:        !&#x3D;</span><br><span class="line">    # Greater Than:     &gt;</span><br><span class="line">    # Less Than:        &lt;</span><br><span class="line">    # Greater or Equal: &gt;&#x3D;</span><br><span class="line">    # Less or Equal:    &lt;&#x3D;</span><br><span class="line">    # Object Identity:  is</span><br><span class="line">    </span><br><span class="line">    language &#x3D; &#39;Python&#39;</span><br><span class="line">    if language &#x3D;&#x3D; &#39;Python&#39;:</span><br><span class="line">        print(&#39;Conditional was true&#39;) # Conditional was true</span><br><span class="line">    else:</span><br><span class="line">        print(&#39;No match&#39;) </span><br><span class="line">        </span><br><span class="line">    num &#x3D; [1,2,3]</span><br><span class="line">    num_two &#x3D; [1,2,3]</span><br><span class="line">    num_three &#x3D; num</span><br><span class="line">    print(num is num_two) # False</span><br><span class="line">    print(num is num_three) # True</span><br><span class="line">    print(id(num))</span><br><span class="line">    print(id(num_two))</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"># if elif else        </span><br><span class="line">    language &#x3D; &#39;Python&#39;</span><br><span class="line">    if language &#x3D;&#x3D; &#39;Python&#39;:</span><br><span class="line">        print(&#39;Conditional was true&#39;)</span><br><span class="line">    elif language &#x3D;&#x3D; &#39;Java&#39;:</span><br><span class="line">        print(&#39;Language is Java&#39;)    </span><br><span class="line">    else:</span><br><span class="line">        print(&#39;No match&#39;) </span><br><span class="line"></span><br><span class="line"># booleans operators: and or not</span><br><span class="line">    user &#x3D; &#39;Admin&#39;</span><br><span class="line">    logged_in &#x3D; True</span><br><span class="line">    </span><br><span class="line">    if user &#x3D;&#x3D; &#39;Admin&#39; and logged_in:</span><br><span class="line">        print(&#39;Admin Page&#39;)</span><br><span class="line">    else:</span><br><span class="line">        print(&#39;Bad&#39;)</span><br><span class="line">            </span><br><span class="line">            </span><br><span class="line">    if user &#x3D;&#x3D; &#39;Admin&#39; or logged_in:</span><br><span class="line">        print(&#39;Admin Page&#39;)</span><br><span class="line">    else:</span><br><span class="line">        print(&#39;Bad&#39;)      </span><br><span class="line">          </span><br><span class="line">              </span><br><span class="line">    if not logged_in:</span><br><span class="line">        print(&#39;Please Log in&#39;)</span><br><span class="line">    else:</span><br><span class="line">        print(&#39;Welcome&#39;)</span><br><span class="line">        </span><br><span class="line"># False Values:</span><br><span class="line">    # False</span><br><span class="line">    # None</span><br><span class="line">    # 0 of any numeric type</span><br><span class="line">    # Any empty sequence, for example: &#39;&#39;, (), []</span><br><span class="line">    # Any empty mapping, for example: &#123;&#125;</span><br><span class="line">    </span><br><span class="line">    condition &#x3D; False</span><br><span class="line">    if condition:</span><br><span class="line">        print(&#39;Evaluated to True&#39;)</span><br><span class="line">    else:</span><br><span class="line">        print(&#39;Evaluated to False&#39;)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+<!--
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
+        <div>交流或订阅，请长按或扫描上方二维码</div>
+      </div>
+-->
+      <a data-url="https://sdmj45.github.io/blog/2021/01/18/Python-a06-Conditions-and-Boolean/" data-id="ckmawrwnp000d2zi37esx4gy9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Python-a05-Dictionaries" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2021/01/18/Python-a05-Dictionaries/" class="article-date">
@@ -108,7 +155,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/18/Python-a05-Dictionaries/" data-id="ckkqo5kx5000f11i38ou341w5" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/18/Python-a05-Dictionaries/" data-id="ckmawrwnn000b2zi3d9yb5wpz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -156,7 +203,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/17/Python-a04-List-Tuple-Set/" data-id="ckkqo5kxw001711i36mes2a0u" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/17/Python-a04-List-Tuple-Set/" data-id="ckmawrwnm000a2zi33ygjc3yd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -204,7 +251,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/15/Python-a03-Numeric/" data-id="ckkqo5kwv000911i3ee7n7dp5" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/15/Python-a03-Numeric/" data-id="ckmawrwnl00092zi34d1sf1pm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -252,7 +299,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/14/Python-a02-String/" data-id="ckkqo5kws000611i3aqn53w12" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/14/Python-a02-String/" data-id="ckmawrwno000c2zi3agpy63x8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -308,7 +355,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/11/Python-a01-How-to-install-embedded-python-on-windows/" data-id="ckkqo5kwt000711i38ief5aum" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/11/Python-a01-How-to-install-embedded-python-on-windows/" data-id="ckmawrwnk00082zi39mxb522u" class="article-share-link">Share</a>
       
       
     </footer>
@@ -380,7 +427,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/10/02/b06-01-Cloud-PubSub-HelloWorld/" data-id="ckkqo5kxp000v11i36jmt825u" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/10/02/b06-01-Cloud-PubSub-HelloWorld/" data-id="ckmawrwod00112zi3hij273s5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -443,7 +490,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/08/20/GCP-Kubernetes-Manually/" data-id="ckkqo5kvv000011i33v836vjx" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/08/20/GCP-Kubernetes-Manually/" data-id="ckmawrwne00042zi3c3wlfc79" class="article-share-link">Share</a>
       
       
     </footer>
@@ -486,7 +533,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/08/06/spark-skewness/" data-id="ckkqo5kxu001411i3gify7hvy" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/08/06/spark-skewness/" data-id="ckmawrwoh00172zi3c35s2jru" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/spark/" rel="tag">spark</a></li></ul>
@@ -598,77 +645,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/06/16/b10-Machine-Learning/" data-id="ckkqo5kxs001011i35brh1lfb" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-b09-BigQuery" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2020/06/12/b09-BigQuery/" class="article-date">
-  <time datetime="2020-06-12T06:31:40.000Z" itemprop="datePublished">2020-06-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/gcp/">gcp</a>►<a class="article-category-link" href="/blog/categories/gcp/b-data-engineer/">b-data-engineer</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2020/06/12/b09-BigQuery/">b09-BigQuery</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="What-is-BigQuery"><a href="#What-is-BigQuery" class="headerlink" title="What is BigQuery ?"></a>What is BigQuery ?</h2><ul>
-<li>Fully Managed Data warehousing<ul>
-<li>Near real time analysis of petabyte scale databases</li>
-</ul>
-</li>
-<li>Serverless(no ops)</li>
-<li>Auto scaling</li>
-<li>Both storage and analysis</li>
-<li>Interact with SQL</li>
-</ul>
-<h2 id="How-BigQuery-works"><a href="#How-BigQuery-works" class="headerlink" title="How BigQuery works"></a>How BigQuery works</h2><ul>
-<li>Columnar data store</li>
-<li>It does not update exciting records</li>
-<li>No transactional</li>
-</ul>
-<h2 id="Structure"><a href="#Structure" class="headerlink" title="Structure"></a>Structure</h2><ul>
-<li>Dataset: contains tables/views</li>
-<li>Table: collections of columns</li>
-<li>Job: long running action/query</li>
-</ul>
-<h2 id="IAM"><a href="#IAM" class="headerlink" title="IAM"></a>IAM</h2><ul>
-<li>can control by project, dataset, view</li>
-<li>cannot control at table level</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-<!--
-      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
-        <div>交流或订阅，请长按或扫描上方二维码</div>
-      </div>
--->
-      <a data-url="https://sdmj45.github.io/blog/2020/06/12/b09-BigQuery/" data-id="ckkqo5kxs001111i3dj424aea" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/06/16/b10-Machine-Learning/" data-id="ckmawrwof00142zi38vvu0a9c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -722,7 +699,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a></li></ul>
     </div>
   </div>
 
@@ -733,6 +710,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/blog/2021/03/15/Python-a10-Functional-Programming/">Python-a10-Functional Programming</a>
+          </li>
         
           <li>
             <a href="/blog/2021/02/04/Python-b05-Property-Decorators/">Python-b05-Property Decorators</a>
@@ -748,10 +729,6 @@
         
           <li>
             <a href="/blog/2021/02/02/Python-b02-classmethod-staticmethod/">Python-b02-classmethod-staticmethod</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2021/02/01/Python-b01-Classes-and-Instances/">Python-b01-Classes and Instances</a>
           </li>
         
       </ul>
