@@ -97,7 +97,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>This article shows the examples of Functional Programming in python</p>
-<h2 id="function-composition"><a href="#function-composition" class="headerlink" title="function composition"></a>function composition</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># 1</span><br><span class="line">def inner():</span><br><span class="line">    print(&#39;this is the inner function&#39;)</span><br><span class="line">    </span><br><span class="line">def outer(func):</span><br><span class="line">    func()</span><br><span class="line">    </span><br><span class="line">outer(inner)  # this is the inner function</span><br><span class="line"></span><br><span class="line"># sorted</span><br><span class="line">animals &#x3D; [&quot;ferret&quot;, &quot;vole&quot;, &quot;dog&quot;, &quot;gecko&quot;]</span><br><span class="line">print(sorted(animals, key&#x3D;len)) # [&#39;dog&#39;, &#39;vole&#39;, &#39;gecko&#39;, &#39;ferret&#39;]</span><br><span class="line"></span><br><span class="line"># 3</span><br><span class="line">def outer():</span><br><span class="line">    def inner():</span><br><span class="line">        print(&#39;this is the inner function&#39;)</span><br><span class="line">    return inner</span><br><span class="line"></span><br><span class="line">outer()() # this is the inner function</span><br></pre></td></tr></table></figure>
+<h2 id="function-composition"><a href="#function-composition" class="headerlink" title="function composition"></a>function composition</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># 1</span><br><span class="line">def inner():</span><br><span class="line">    print(&#39;this is the inner function&#39;)</span><br><span class="line">    </span><br><span class="line">def outer(func):</span><br><span class="line">    func()</span><br><span class="line">    </span><br><span class="line">outer(inner)  # this is the inner function</span><br><span class="line"></span><br><span class="line"># 2</span><br><span class="line">def outer():</span><br><span class="line">    def inner():</span><br><span class="line">        print(&#39;this is the inner function&#39;)</span><br><span class="line">    return inner</span><br><span class="line"></span><br><span class="line">outer()() # this is the inner function</span><br><span class="line"></span><br><span class="line"># sorted</span><br><span class="line">animals &#x3D; [&quot;ferret&quot;, &quot;vole&quot;, &quot;dog&quot;, &quot;gecko&quot;]</span><br><span class="line">print(sorted(animals, key&#x3D;len)) # [&#39;dog&#39;, &#39;vole&#39;, &#39;gecko&#39;, &#39;ferret&#39;]</span><br></pre></td></tr></table></figure>
 <h2 id="lambda"><a href="#lambda" class="headerlink" title="lambda"></a>lambda</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># callable Return whether the object is callable</span><br><span class="line">print(callable(lambda s: s[::-1])) # True</span><br><span class="line"></span><br><span class="line"># 2</span><br><span class="line">reverse &#x3D; lambda s: s[::-1]</span><br><span class="line">print(reverse(&#39;This is a test&#39;)) # tset a si sihT&lt;</span><br><span class="line"></span><br><span class="line"># 3</span><br><span class="line">print((lambda s: s[::-1])(&#39;This is a test&#39;))  # tset a si sihT</span><br><span class="line"></span><br><span class="line"># 4</span><br><span class="line">print((lambda x, y, z: x + y + z &#x2F; 3)(1, 2, 3)) # 4.0</span><br><span class="line"></span><br><span class="line"># 5</span><br><span class="line">def func(x):</span><br><span class="line">    return x, x ** 2, x ** 3</span><br><span class="line"></span><br><span class="line">print(func(3)) #(3, 9, 27)</span><br><span class="line"></span><br><span class="line"># 6</span><br><span class="line">print((lambda x: (x, x ** 2, x ** 3))(3)) #(3, 9, 27)</span><br></pre></td></tr></table></figure>
 <h2 id="map"><a href="#map" class="headerlink" title="map"></a>map</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># map returns an iterator</span><br><span class="line">def reverse(s):</span><br><span class="line">    return s[::-1]</span><br><span class="line"></span><br><span class="line">animals &#x3D; [&quot;cat&quot;, &quot;dog&quot;, &quot;hedgehog&quot;, &quot;gecko&quot;]</span><br><span class="line">iterator &#x3D; map(reverse, animals)</span><br><span class="line">print(iterator)         # &lt;map object at 0x000001ADCF5CFCD0&gt;</span><br><span class="line">print(list(iterator)    # [&#39;tac&#39;, &#39;god&#39;, &#39;gohegdeh&#39;, &#39;okceg&#39;]</span><br><span class="line"></span><br><span class="line"># 2</span><br><span class="line">print(list(map(lambda s: s[::-1], animals)))    # [&#39;tac&#39;, &#39;god&#39;, &#39;gohegdeh&#39;, &#39;okceg&#39;]</span><br><span class="line"></span><br><span class="line"># map with multiple iterables</span><br><span class="line">def func(a, b, c):</span><br><span class="line">    return a + b + c</span><br><span class="line"></span><br><span class="line">print(list(map(func, [1, 2, 3], [10, 20, 30], [100, 200, 300])))    # [111, 222, 333]</span><br></pre></td></tr></table></figure>
 <h1 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 1</span><br><span class="line">def greater_than_100(x):</span><br><span class="line">    return x &gt; 100</span><br><span class="line"></span><br><span class="line">print(list(filter(greater_than_100, [1, 3, 5, 100, 200, 300])))     # [200, 300]</span><br></pre></td></tr></table></figure>
@@ -111,7 +111,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/03/15/Python-a10-Functional-Programming/" data-id="ckmawrwns000g2zi3fl1a5yoz" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/03/15/Python-a10-Functional-Programming/" data-id="ckmaww3zj000i5ji31fa79c1c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -162,7 +162,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/02/04/Python-b05-Property-Decorators/" data-id="ckmawrwnw000l2zi360xlfhc9" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/02/04/Python-b05-Property-Decorators/" data-id="ckmaww3zk000k5ji34no0c85e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -213,7 +213,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/02/03/Python-b04-Special-Magic-Dunder-Methods/" data-id="ckmawrwnv000k2zi3fwy1e1i3" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/02/03/Python-b04-Special-Magic-Dunder-Methods/" data-id="ckmaww3zk000j5ji3d01t5zuf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -260,7 +260,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/02/02/Python-b03-Inheritance/" data-id="ckmawrwnu000j2zi3gpxs403p" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/02/02/Python-b03-Inheritance/" data-id="ckmaww3zy000y5ji33dhc9wjl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -307,7 +307,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/02/02/Python-b02-classmethod-staticmethod/" data-id="ckmawrwnu000i2zi361ua2brr" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/02/02/Python-b02-classmethod-staticmethod/" data-id="ckmaww3zi000h5ji36ogafi88" class="article-share-link">Share</a>
       
       
     </footer>
@@ -355,7 +355,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/02/01/Python-b01-Classes-and-Instances/" data-id="ckmawrwnt000h2zi31ue9b412" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/02/01/Python-b01-Classes-and-Instances/" data-id="ckmaww3zh000g5ji32fpv75tn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -402,7 +402,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a09-Modules/" data-id="ckmawrwnr000f2zi356u634qo" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a09-Modules/" data-id="ckmaww40400155ji38mcqf23o" class="article-share-link">Share</a>
       
       
     </footer>
@@ -449,7 +449,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a08-Functions/" data-id="ckmawrwnq000e2zi37g7n4x25" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a08-Functions/" data-id="ckmaww3zg000e5ji3b60c7rij" class="article-share-link">Share</a>
       
       
     </footer>
@@ -496,7 +496,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a07-Loops-and-Iterations/" data-id="ckmawrwo7000u2zi3gbc561jn" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a07-Loops-and-Iterations/" data-id="ckmaww3ze000c5ji3g38f432s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -583,7 +583,7 @@ More advanced in orchestration
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/19/Terraform-a01-Introduction/" data-id="ckmawrwnx000m2zi38a1uf0cr" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/19/Terraform-a01-Introduction/" data-id="ckmaww3zl000l5ji3em6wht2q" class="article-share-link">Share</a>
       
       
     </footer>
