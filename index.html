@@ -70,6 +70,58 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Python-a11-pythonic" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2021/03/16/Python-a11-pythonic/" class="article-date">
+  <time datetime="2021-03-16T14:40:53.000Z" itemprop="datePublished">2021-03-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/python/">python</a>►<a class="article-category-link" href="/blog/categories/python/a-basics/">a-basics</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2021/03/16/Python-a11-pythonic/">Python-a11-pythonic</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>This article shows the examples of pythonic in python</p>
+<h2 id="replace-map-filter-by-list-comprehension"><a href="#replace-map-filter-by-list-comprehension" class="headerlink" title="replace map, filter by list comprehension"></a>replace map, filter by list comprehension</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># no pythonic</span><br><span class="line">nums &#x3D; [1, 2, 3, 4, 5]</span><br><span class="line">result &#x3D; map(lambda x: x ** 2, filter(lambda x: x % 2 &#x3D;&#x3D; 0, nums))</span><br><span class="line">print(list(result))     # [4, 16]</span><br><span class="line"></span><br><span class="line"># pythonic</span><br><span class="line">result2 &#x3D; [x ** 2 for x in nums if x % 2 &#x3D;&#x3D; 0]</span><br><span class="line">print(list(result2))     # [4, 16]</span><br></pre></td></tr></table></figure>
+<h2 id="replace-list-comprehension-by-generator-expression"><a href="#replace-list-comprehension-by-generator-expression" class="headerlink" title="replace list comprehension by generator expression"></a>replace list comprehension by generator expression</h2><p>Generator expression takes less memory than list comprehension<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># no pythonic</span><br><span class="line">my_comp &#x3D; [x * 5 for x in range(1000)]</span><br><span class="line">print(getsizeof(my_comp))   # 8856</span><br><span class="line"># pythonic</span><br><span class="line">my_gen &#x3D; (x * 5 for x in range(1000))</span><br><span class="line">print(getsizeof(my_gen))    # 112</span><br></pre></td></tr></table></figure></p>
+<h2 id="using-of-enumerate"><a href="#using-of-enumerate" class="headerlink" title="using of enumerate"></a>using of enumerate</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># no pythonic</span><br><span class="line">fruits &#x3D; [&#39;apple&#39;,&#39;banana&#39;, &#39;orange&#39;]</span><br><span class="line">for i in range(len(fruits)):</span><br><span class="line">    print(fruits[i], &#39;:&#39;, i)    #   apple : 0</span><br><span class="line">                                #   banana : 1</span><br><span class="line">                                #   orange : 2</span><br><span class="line">                                </span><br><span class="line"># pythonic</span><br><span class="line">for i, v in enumerate(fruits):</span><br><span class="line">    print(v, &#39;:&#39;, i)            #   apple : 0</span><br><span class="line">                                #   banana : 1</span><br><span class="line">                                #   orange : 2</span><br></pre></td></tr></table></figure>
+<h2 id="use-with"><a href="#use-with" class="headerlink" title="use with"></a>use with</h2><p>With the ‘with’ statement, we get better syntax and exception handing<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># no pythonic</span><br><span class="line">f &#x3D; open(&#39;test.txt&#39;)</span><br><span class="line">try:</span><br><span class="line">    data &#x3D; f.read()</span><br><span class="line">finally:</span><br><span class="line">    f.close()        # we have to close the file by ourself</span><br><span class="line"># pythonic</span><br><span class="line">with open(&#39;test.txt&#39;) as f:</span><br><span class="line">    data &#x3D; f.read() # python close the file for us</span><br></pre></td></tr></table></figure></p>
+<h2 id="use-zip"><a href="#use-zip" class="headerlink" title="use zip"></a>use zip</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># no pythonic</span><br><span class="line">a &#x3D; [1, 5, 7]</span><br><span class="line">b &#x3D; [2, 4, 6]</span><br><span class="line">for i in range(len(a)):</span><br><span class="line">    if a[i] &gt; b[i]:</span><br><span class="line">        print(a[i])</span><br><span class="line">    else:</span><br><span class="line">        print(b[i])         # 2</span><br><span class="line">                            # 5</span><br><span class="line">                            # 7</span><br><span class="line"># pythonic</span><br><span class="line">a &#x3D; [1, 5, 7]</span><br><span class="line">b &#x3D; [2, 4, 6]</span><br><span class="line">for i, j in zip(a, b):</span><br><span class="line">    if i &gt; j:</span><br><span class="line">        print(i)</span><br><span class="line">    else:</span><br><span class="line">        print(j)            # 2</span><br><span class="line">                            # 5</span><br><span class="line">                            # 7</span><br></pre></td></tr></table></figure>
+<h2 id="exchange-two-variables"><a href="#exchange-two-variables" class="headerlink" title="exchange two variables"></a>exchange two variables</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># no pythonic</span><br><span class="line">a &#x3D; &#39;hello&#39;</span><br><span class="line">b &#x3D; &#39;world&#39;</span><br><span class="line">a,b&#x3D;b,a</span><br><span class="line">print(a, b) # world hello</span><br><span class="line"></span><br><span class="line"># pythonic</span><br><span class="line">a &#x3D; &#39;hello&#39;</span><br><span class="line">b &#x3D; &#39;world&#39;</span><br><span class="line">a,b&#x3D;b,a</span><br><span class="line">print(a, b) # world hello</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+<!--
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
+        <div>交流或订阅，请长按或扫描上方二维码</div>
+      </div>
+-->
+      <a data-url="https://sdmj45.github.io/blog/2021/03/16/Python-a11-pythonic/" data-id="ckmc7cets000e11i3cg7c0ave" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Python-a10-Functional-Programming" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2021/03/15/Python-a10-Functional-Programming/" class="article-date">
@@ -111,7 +163,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/03/15/Python-a10-Functional-Programming/" data-id="ckmaww3zj000i5ji31fa79c1c" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/03/15/Python-a10-Functional-Programming/" data-id="ckmc7cetq000d11i36qvc4em6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -162,7 +214,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/02/04/Python-b05-Property-Decorators/" data-id="ckmaww3zk000k5ji34no0c85e" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/02/04/Python-b05-Property-Decorators/" data-id="ckmc7cetx000k11i3dxfobdmx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -213,7 +265,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/02/03/Python-b04-Special-Magic-Dunder-Methods/" data-id="ckmaww3zk000j5ji3d01t5zuf" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/02/03/Python-b04-Special-Magic-Dunder-Methods/" data-id="ckmc7cetw000j11i3cuyi0s68" class="article-share-link">Share</a>
       
       
     </footer>
@@ -260,7 +312,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/02/02/Python-b03-Inheritance/" data-id="ckmaww3zy000y5ji33dhc9wjl" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/02/02/Python-b03-Inheritance/" data-id="ckmc7cety000m11i32kvmfncr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -307,7 +359,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/02/02/Python-b02-classmethod-staticmethod/" data-id="ckmaww3zi000h5ji36ogafi88" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/02/02/Python-b02-classmethod-staticmethod/" data-id="ckmc7cexv002k11i3diej7zoe" class="article-share-link">Share</a>
       
       
     </footer>
@@ -355,7 +407,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/02/01/Python-b01-Classes-and-Instances/" data-id="ckmaww3zh000g5ji32fpv75tn" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/02/01/Python-b01-Classes-and-Instances/" data-id="ckmc7cetv000i11i32b7davbx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -402,7 +454,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a09-Modules/" data-id="ckmaww40400155ji38mcqf23o" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a09-Modules/" data-id="ckmc7cetp000c11i30fpx2bch" class="article-share-link">Share</a>
       
       
     </footer>
@@ -449,7 +501,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a08-Functions/" data-id="ckmaww3zg000e5ji3b60c7rij" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a08-Functions/" data-id="ckmc7ceto000b11i312v31iu7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -496,94 +548,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a07-Loops-and-Iterations/" data-id="ckmaww3ze000c5ji3g38f432s" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Terraform-a01-Introduction" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2021/01/19/Terraform-a01-Introduction/" class="article-date">
-  <time datetime="2021-01-19T13:47:02.000Z" itemprop="datePublished">2021-01-19</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/devops/">devops</a>►<a class="article-category-link" href="/blog/categories/devops/terraform/">terraform</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2021/01/19/Terraform-a01-Introduction/">Terraform-a01-Introduction</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="What-is-Terraform"><a href="#What-is-Terraform" class="headerlink" title="What is Terraform"></a>What is Terraform</h1><p>Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently.<br>It is <strong>open source</strong> and <strong>declarative</strong></p>
-<p>The differences between declarative and imperative:<br>    declarative: define WHAT the result you want<br>    imperative: define exact steps - HOW</p>
-<p>The key features: </p>
-<ul>
-<li>Infrastructure as Code</li>
-<li>Execution Plan</li>
-<li>Resource Graph</li>
-<li>Change Automation</li>
-</ul>
-<p>A. Previsioning infrastructure:</p>
-<ol>
-<li>private network space</li>
-<li>ec2 server instances</li>
-<li>install Docker and other tools</li>
-<li>security</li>
-</ol>
-<p>B. Deploy applications</p>
-<h1 id="Difference-between-Ansible-and-Terraform"><a href="#Difference-between-Ansible-and-Terraform" class="headerlink" title="Difference between Ansible and Terraform"></a>Difference between Ansible and Terraform</h1><p>Both: Infrastructure as a Code</p>
-<h3 id="Ansible"><a href="#Ansible" class="headerlink" title="Ansible"></a>Ansible</h3><p><strong>Better for configuring that infrastructure</strong></p>
-<pre><code>Mainly a configuration tool
-More mature
-</code></pre><h3 id="Terraform"><a href="#Terraform" class="headerlink" title="Terraform"></a>Terraform</h3><p><strong>Better for infrastructure</strong></p>
-<pre><code>Mainly infrastructure provisioning tool
-More advanced in orchestration
-</code></pre><h1 id="How-does-Terraform-work"><a href="#How-does-Terraform-work" class="headerlink" title="How does Terraform work"></a>How does Terraform work</h1><ol>
-<li><p>create execution plan</p>
-<img src="/blog/2021/01/19/Terraform-a01-Introduction/creating_execution_plan.png" class="" title="creating_execution_plan">
-</li>
-<li><p>execute plan with providers</p>
-<img src="/blog/2021/01/19/Terraform-a01-Introduction/execute_plan_with_providers.png" class="" title="execute_plan_with_providers">
-</li>
-</ol>
-<h1 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h1><p>example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">terraform &#123;</span><br><span class="line">  required_providers &#123;</span><br><span class="line">    google &#x3D; &#123;</span><br><span class="line">      source &#x3D; &quot;hashicorp&#x2F;google&quot;</span><br><span class="line">      version &#x3D; &quot;3.5.0&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">provider &quot;google&quot; &#123;</span><br><span class="line"></span><br><span class="line">  credentials &#x3D; file(&quot;&lt;NAME&gt;.json&quot;)</span><br><span class="line"></span><br><span class="line">  project &#x3D; &quot;&lt;PROJECT_ID&gt;&quot;</span><br><span class="line">  region  &#x3D; &quot;us-central1&quot;</span><br><span class="line">  zone    &#x3D; &quot;us-central1-c&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">resource &quot;google_compute_network&quot; &quot;vpc_network&quot; &#123;</span><br><span class="line">  name &#x3D; &quot;terraform-network&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="Terraform-Block"><a href="#Terraform-Block" class="headerlink" title="Terraform Block"></a>Terraform Block</h2><p>it defines which provider to download from Terraform Registry</p>
-<h2 id="Provider"><a href="#Provider" class="headerlink" title="Provider"></a>Provider</h2><p>It is used to configure the named provider</p>
-<h2 id="Resource"><a href="#Resource" class="headerlink" title="Resource"></a>Resource</h2><p>It contains the <strong>resource type</strong>, and the <strong>resource name</strong>.</p>
-<p><strong>resource ID</strong>: resource type and resource name together</p>
-<h1 id="Commands"><a href="#Commands" class="headerlink" title="Commands"></a>Commands</h1><p><strong>refresh</strong>:<br>    query provider to get the current state</p>
-<p><strong>plan</strong>:<br>    create an execution plan</p>
-<p><strong>apply</strong>:<br>    execute the plan</p>
-<p><strong>destroy</strong>:<br>    destroy the resources/infrastructure</p>
-
-      
-    </div>
-    <footer class="article-footer">
-<!--
-      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
-        <div>交流或订阅，请长按或扫描上方二维码</div>
-      </div>
--->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/19/Terraform-a01-Introduction/" data-id="ckmaww3zl000l5ji3em6wht2q" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/29/Python-a07-Loops-and-Iterations/" data-id="ckmc7cetv000h11i334550gst" class="article-share-link">Share</a>
       
       
     </footer>
@@ -650,6 +615,10 @@ More advanced in orchestration
       <ul>
         
           <li>
+            <a href="/blog/2021/03/16/Python-a11-pythonic/">Python-a11-pythonic</a>
+          </li>
+        
+          <li>
             <a href="/blog/2021/03/15/Python-a10-Functional-Programming/">Python-a10-Functional Programming</a>
           </li>
         
@@ -663,10 +632,6 @@ More advanced in orchestration
         
           <li>
             <a href="/blog/2021/02/02/Python-b03-Inheritance/">Python-b03-Inheritance</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2021/02/02/Python-b02-classmethod-staticmethod/">Python-b02-classmethod-staticmethod</a>
           </li>
         
       </ul>

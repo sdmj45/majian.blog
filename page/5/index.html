@@ -70,6 +70,73 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-spark-listeners" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2019/05/17/spark-listeners/" class="article-date">
+  <time datetime="2019-05-17T14:21:43.000Z" itemprop="datePublished">2019-05-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/spark/">spark</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2019/05/17/spark-listeners/">spark listeners</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>When running spark job, driver collects logs from different executors and send events via an event bus to Web UI and to EventLog Listener simultaneously.</p>
+<p>EventLog Listener send events to a some directory for example in hdfs to store the events, and then spark history server will expose these events in its interface.</p>
+<p>We could define our custom EventLog Listener, there are several listeners already developed and we can use them directly, here I will prent 3 examples.</p>
+<img src="/blog/2019/05/17/spark-listeners/spark_history-min.png" class="" title="spark history">
+<h2 id="sparklens"><a href="#sparklens" class="headerlink" title="sparklens"></a>sparklens</h2><p><a href="https://github.com/qubole/sparklens" target="_blank" rel="noopener">Sparklens</a> is a profiling tool for Spark with built-in Spark Scheduler simulator, it reports </p>
+<ul>
+<li><p>Estimated completion time and estimated cluster utilisation with different number of executors</p>
+</li>
+<li><p>Job/Stage timeline which shows how the parallel stages were scheduled within a job. This makes it easy to visualise the DAG with stage dependencies at the job level.</p>
+</li>
+</ul>
+<p>Here is a screen capture of sparklens reporting ( in my example, I added sparklens jar in the classpath of zepplin, and import sparklens package, and then I can use sparklens directly)</p>
+<p>import package</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.qubole.sparklens.<span class="type">QuboleNotebookListener</span></span><br><span class="line"><span class="keyword">val</span> <span class="type">QNL</span> = <span class="keyword">new</span> <span class="type">QuboleNotebookListener</span>(sc.getConf)</span><br><span class="line">sc.addSparkListener(<span class="type">QNL</span>)</span><br></pre></td></tr></table></figure>
+<img src="/blog/2019/05/17/spark-listeners/sparklens-min.png" class="" title="sparklens">
+<h2 id="sparklint"><a href="#sparklint" class="headerlink" title="sparklint"></a>sparklint</h2><p><a href="https://github.com/groupon/sparklint" target="_blank" rel="noopener">Sparklint</a> is a profiling tool for Spark with advance metrics and better visualization about your spark application’s resource utilization. It helps you find out where the bottle neck are</p>
+<p>We can use it in the application code, or we can also use it to analyse event logs, at the moment when I write this blog, the actual version of sparklint is 1.0.13, and we can’t analyse event logs of history server yet if it is compressed in the configuration.<br>But we can decompress it to json file and then we can work on it.</p>
+<p>here is a screen capture of sparklint</p>
+
+<h2 id="sparkMeasure"><a href="#sparkMeasure" class="headerlink" title="sparkMeasure"></a>sparkMeasure</h2><p><a href="https://github.com/LucaCanali/sparkMeasure" target="_blank" rel="noopener">sparkMeasure</a> is a tool for performance troubleshooting of Apache Spark workloads, It simplifies the collection and analysis of Spark performance metrics.</p>
+<p>It is a tool for multiple uses: instrument interactive (notebooks) and batch workloads</p>
+
+      
+    </div>
+    <footer class="article-footer">
+<!--
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
+        <div>交流或订阅，请长按或扫描上方二维码</div>
+      </div>
+-->
+      <a data-url="https://sdmj45.github.io/blog/2019/05/17/spark-listeners/" data-id="ckmc7ceud001311i3hl7544mz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Hive-vs-Presto" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2019/05/13/Hive-vs-Presto/" class="article-date">
@@ -163,7 +230,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/05/13/Hive-vs-Presto/" data-id="ckmaww3zh000f5ji3g0ddbstw" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/05/13/Hive-vs-Presto/" data-id="ckmc7ceth000311i34lrtg0ji" class="article-share-link">Share</a>
       
       
     </footer>
@@ -232,7 +299,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/05/03/Jenkins-multiple-pipelines/" data-id="ckmaww3z700045ji3d0uqfsnw" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/05/03/Jenkins-multiple-pipelines/" data-id="ckmc7cetk000611i3fihx7074" class="article-share-link">Share</a>
       
       
     </footer>
@@ -284,7 +351,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/04/26/Kubernetes-Deploy-Example-Part-2/" data-id="ckmaww3z800055ji3hvhfam62" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/04/26/Kubernetes-Deploy-Example-Part-2/" data-id="ckmc7ceuj001a11i311nuhf6f" class="article-share-link">Share</a>
       
       
     </footer>
@@ -343,7 +410,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/04/26/Kubernetes-Deploy-Example-Part-1/" data-id="ckmaww3z900065ji34i2c01ht" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/04/26/Kubernetes-Deploy-Example-Part-1/" data-id="ckmc7ceti000411i3056j4cip" class="article-share-link">Share</a>
       
       
     </footer>
@@ -407,7 +474,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/04/17/Avro-vs-Parquet/" data-id="ckmaww3yw00005ji37tijbqm5" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/04/17/Avro-vs-Parquet/" data-id="ckmc7cess000011i30up6aspx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -472,7 +539,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2019/03/08/First%20blog/" data-id="ckmaww3z400025ji33nrdc4du" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2019/03/08/First%20blog/" data-id="ckmc7cetn000a11i30843gzku" class="article-share-link">Share</a>
       
       
     </footer>
@@ -539,6 +606,10 @@
       <ul>
         
           <li>
+            <a href="/blog/2021/03/16/Python-a11-pythonic/">Python-a11-pythonic</a>
+          </li>
+        
+          <li>
             <a href="/blog/2021/03/15/Python-a10-Functional-Programming/">Python-a10-Functional Programming</a>
           </li>
         
@@ -552,10 +623,6 @@
         
           <li>
             <a href="/blog/2021/02/02/Python-b03-Inheritance/">Python-b03-Inheritance</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2021/02/02/Python-b02-classmethod-staticmethod/">Python-b02-classmethod-staticmethod</a>
           </li>
         
       </ul>

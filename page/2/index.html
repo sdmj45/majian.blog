@@ -70,6 +70,93 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Terraform-a01-Introduction" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2021/01/19/Terraform-a01-Introduction/" class="article-date">
+  <time datetime="2021-01-19T13:47:02.000Z" itemprop="datePublished">2021-01-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/devops/">devops</a>►<a class="article-category-link" href="/blog/categories/devops/terraform/">terraform</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2021/01/19/Terraform-a01-Introduction/">Terraform-a01-Introduction</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="What-is-Terraform"><a href="#What-is-Terraform" class="headerlink" title="What is Terraform"></a>What is Terraform</h1><p>Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently.<br>It is <strong>open source</strong> and <strong>declarative</strong></p>
+<p>The differences between declarative and imperative:<br>    declarative: define WHAT the result you want<br>    imperative: define exact steps - HOW</p>
+<p>The key features: </p>
+<ul>
+<li>Infrastructure as Code</li>
+<li>Execution Plan</li>
+<li>Resource Graph</li>
+<li>Change Automation</li>
+</ul>
+<p>A. Previsioning infrastructure:</p>
+<ol>
+<li>private network space</li>
+<li>ec2 server instances</li>
+<li>install Docker and other tools</li>
+<li>security</li>
+</ol>
+<p>B. Deploy applications</p>
+<h1 id="Difference-between-Ansible-and-Terraform"><a href="#Difference-between-Ansible-and-Terraform" class="headerlink" title="Difference between Ansible and Terraform"></a>Difference between Ansible and Terraform</h1><p>Both: Infrastructure as a Code</p>
+<h3 id="Ansible"><a href="#Ansible" class="headerlink" title="Ansible"></a>Ansible</h3><p><strong>Better for configuring that infrastructure</strong></p>
+<pre><code>Mainly a configuration tool
+More mature
+</code></pre><h3 id="Terraform"><a href="#Terraform" class="headerlink" title="Terraform"></a>Terraform</h3><p><strong>Better for infrastructure</strong></p>
+<pre><code>Mainly infrastructure provisioning tool
+More advanced in orchestration
+</code></pre><h1 id="How-does-Terraform-work"><a href="#How-does-Terraform-work" class="headerlink" title="How does Terraform work"></a>How does Terraform work</h1><ol>
+<li><p>create execution plan</p>
+<img src="/blog/2021/01/19/Terraform-a01-Introduction/creating_execution_plan.png" class="" title="creating_execution_plan">
+</li>
+<li><p>execute plan with providers</p>
+<img src="/blog/2021/01/19/Terraform-a01-Introduction/execute_plan_with_providers.png" class="" title="execute_plan_with_providers">
+</li>
+</ol>
+<h1 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h1><p>example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">terraform &#123;</span><br><span class="line">  required_providers &#123;</span><br><span class="line">    google &#x3D; &#123;</span><br><span class="line">      source &#x3D; &quot;hashicorp&#x2F;google&quot;</span><br><span class="line">      version &#x3D; &quot;3.5.0&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">provider &quot;google&quot; &#123;</span><br><span class="line"></span><br><span class="line">  credentials &#x3D; file(&quot;&lt;NAME&gt;.json&quot;)</span><br><span class="line"></span><br><span class="line">  project &#x3D; &quot;&lt;PROJECT_ID&gt;&quot;</span><br><span class="line">  region  &#x3D; &quot;us-central1&quot;</span><br><span class="line">  zone    &#x3D; &quot;us-central1-c&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">resource &quot;google_compute_network&quot; &quot;vpc_network&quot; &#123;</span><br><span class="line">  name &#x3D; &quot;terraform-network&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Terraform-Block"><a href="#Terraform-Block" class="headerlink" title="Terraform Block"></a>Terraform Block</h2><p>it defines which provider to download from Terraform Registry</p>
+<h2 id="Provider"><a href="#Provider" class="headerlink" title="Provider"></a>Provider</h2><p>It is used to configure the named provider</p>
+<h2 id="Resource"><a href="#Resource" class="headerlink" title="Resource"></a>Resource</h2><p>It contains the <strong>resource type</strong>, and the <strong>resource name</strong>.</p>
+<p><strong>resource ID</strong>: resource type and resource name together</p>
+<h1 id="Commands"><a href="#Commands" class="headerlink" title="Commands"></a>Commands</h1><p><strong>refresh</strong>:<br>    query provider to get the current state</p>
+<p><strong>plan</strong>:<br>    create an execution plan</p>
+<p><strong>apply</strong>:<br>    execute the plan</p>
+<p><strong>destroy</strong>:<br>    destroy the resources/infrastructure</p>
+
+      
+    </div>
+    <footer class="article-footer">
+<!--
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
+        <div>交流或订阅，请长按或扫描上方二维码</div>
+      </div>
+-->
+      <a data-url="https://sdmj45.github.io/blog/2021/01/19/Terraform-a01-Introduction/" data-id="ckmc7cetx000l11i32rgadpsy" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Python-a06-Conditions-and-Boolean" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2021/01/18/Python-a06-Conditions-and-Boolean/" class="article-date">
@@ -107,7 +194,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/18/Python-a06-Conditions-and-Boolean/" data-id="ckmaww3zf000d5ji32v9bbbrg" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/18/Python-a06-Conditions-and-Boolean/" data-id="ckmc7cetn000911i30rsf0zhu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -155,7 +242,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/18/Python-a05-Dictionaries/" data-id="ckmaww3zd000b5ji3bxmb29w6" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/18/Python-a05-Dictionaries/" data-id="ckmc7cetm000811i3d6pi97jx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -203,7 +290,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/17/Python-a04-List-Tuple-Set/" data-id="ckmaww3zc000a5ji3gct626ez" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/17/Python-a04-List-Tuple-Set/" data-id="ckmc7cetl000711i3a1wn4qbr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -251,7 +338,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/15/Python-a03-Numeric/" data-id="ckmaww3zb00095ji36tx8awn9" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/15/Python-a03-Numeric/" data-id="ckmc7cetj000511i3eglw8u9p" class="article-share-link">Share</a>
       
       
     </footer>
@@ -299,7 +386,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/14/Python-a02-String/" data-id="ckmaww3za00085ji325w35mpu" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/14/Python-a02-String/" data-id="ckmc7cett000f11i3fce8cfz7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -355,7 +442,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2021/01/11/Python-a01-How-to-install-embedded-python-on-windows/" data-id="ckmaww3za00075ji31o5e1j7s" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2021/01/11/Python-a01-How-to-install-embedded-python-on-windows/" data-id="ckmc7cetu000g11i34wjfbc0d" class="article-share-link">Share</a>
       
       
     </footer>
@@ -427,7 +514,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/10/02/b06-01-Cloud-PubSub-HelloWorld/" data-id="ckmaww3zz000z5ji3aws40apm" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/10/02/b06-01-Cloud-PubSub-HelloWorld/" data-id="ckmc7ceu9000w11i3bz75g0b3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -490,7 +577,7 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/08/20/GCP-Kubernetes-Manually/" data-id="ckmaww3z600035ji3anxk2yj9" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/08/20/GCP-Kubernetes-Manually/" data-id="ckmc7cetf000211i31ef4603g" class="article-share-link">Share</a>
       
       
     </footer>
@@ -533,121 +620,11 @@
         <div>交流或订阅，请长按或扫描上方二维码</div>
       </div>
 -->
-      <a data-url="https://sdmj45.github.io/blog/2020/08/06/spark-skewness/" data-id="ckmaww40700185ji3an6jfykv" class="article-share-link">Share</a>
+      <a data-url="https://sdmj45.github.io/blog/2020/08/06/spark-skewness/" data-id="ckmc7ceue001511i308fcfdoa" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/spark/" rel="tag">spark</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-b10-Machine-Learning" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2020/06/16/b10-Machine-Learning/" class="article-date">
-  <time datetime="2020-06-16T09:09:03.000Z" itemprop="datePublished">2020-06-16</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/gcp/">gcp</a>►<a class="article-category-link" href="/blog/categories/gcp/b-data-engineer/">b-data-engineer</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2020/06/16/b10-Machine-Learning/">b10-Machine Learning</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="What-is-Machine-Learning"><a href="#What-is-Machine-Learning" class="headerlink" title="What is Machine Learning ?"></a>What is Machine Learning ?</h2><p>Process of combining inputs to produce useful predictions</p>
-<h2 id="How-it-works"><a href="#How-it-works" class="headerlink" title="How it works"></a>How it works</h2><ul>
-<li>Train a model with examples(example = input + label)</li>
-<li>Training = adjust model to learn relationship between features and labels</li>
-<li>Feature = input variables</li>
-<li>Inference = apply trained model to unlabeled examples</li>
-</ul>
-<h2 id="Learning-types"><a href="#Learning-types" class="headerlink" title="Learning types"></a>Learning types</h2><ul>
-<li>Supervised learning<ul>
-<li>Regression - Continuous, numeric variables</li>
-<li>Classification - categorical variables: yes/no</li>
-</ul>
-</li>
-<li>Unsupervised Learning<ul>
-<li>Clustering - finding pattern</li>
-<li>No labeled or categorized </li>
-</ul>
-</li>
-<li>Reinforcement learning<ul>
-<li>Use positive/negative reinforcement to complete a task<ul>
-<li>Complete a maze, learn chess</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="Neural-network"><a href="#Neural-network" class="headerlink" title="Neural network"></a>Neural network</h2><ul>
-<li>Neural network - model composed of layers, consisting of neurons</li>
-<li>Neuron - node, combines input values and create one output value</li>
-<li>Feature - input variables used to make predictions</li>
-<li>Hidden layer - set of neurons operating from same input set </li>
-<li>Feature engineering - deciding which features to use in a model</li>
-<li>Epoch - single pass through training dataset </li>
-<li>Deep and Wide in neural network<ul>
-<li>Wide - memorization: many features</li>
-<li>Deep - generalization: many hidden layers</li>
-<li>Deep and Wide - both: good for recommendation engines</li>
-</ul>
-</li>
-</ul>
-<h2 id="What-is-Overfitting"><a href="#What-is-Overfitting" class="headerlink" title="What is Overfitting?"></a>What is Overfitting?</h2><p>training model ‘overfitted’ to training data - unable to generalize with new data</p>
-<h2 id="Cause-of-Overfitting"><a href="#Cause-of-Overfitting" class="headerlink" title="Cause of Overfitting"></a>Cause of Overfitting</h2><ul>
-<li>Not enough training data</li>
-<li>Too many features</li>
-<li>Model fitted to unnecessary features unique to training data: “noise”</li>
-</ul>
-<h2 id="Solving-of-Overfitting"><a href="#Solving-of-Overfitting" class="headerlink" title="Solving of Overfitting"></a>Solving of Overfitting</h2><ul>
-<li>more data</li>
-<li>make model less complex</li>
-<li>remove “noise”<ul>
-<li>increase “regularization” parameters</li>
-</ul>
-</li>
-</ul>
-<h2 id="AI-platform"><a href="#AI-platform" class="headerlink" title="AI platform"></a>AI platform</h2><ul>
-<li>Fully managed Tensorflow platform</li>
-<li>Distributed training and predictions</li>
-<li>Hyperparameter tuning with Hypertune</li>
-</ul>
-<h2 id="How-AI-Platform-works"><a href="#How-AI-Platform-works" class="headerlink" title="How AI Platform works"></a>How AI Platform works</h2><ul>
-<li>Master - manages other nodes</li>
-<li>Workers - works on portion of training job</li>
-<li>Parameter servers - coordinate shared model state between workers</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-<!--
-      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-        <a href="../../../../css/images/github_qr.jpg" class="fancybox fancybox.image" rel="group"><img id="wechat_subscriber_qcode" src="../../../../css/images/github_qr.jpg" alt="qr" style="width: 200px; max-width: 100%;"></a>
-        <div>交流或订阅，请长按或扫描上方二维码</div>
-      </div>
--->
-      <a data-url="https://sdmj45.github.io/blog/2020/06/16/b10-Machine-Learning/" data-id="ckmaww40300145ji31p6412df" class="article-share-link">Share</a>
-      
-      
     </footer>
   </div>
   
@@ -712,6 +689,10 @@
       <ul>
         
           <li>
+            <a href="/blog/2021/03/16/Python-a11-pythonic/">Python-a11-pythonic</a>
+          </li>
+        
+          <li>
             <a href="/blog/2021/03/15/Python-a10-Functional-Programming/">Python-a10-Functional Programming</a>
           </li>
         
@@ -725,10 +706,6 @@
         
           <li>
             <a href="/blog/2021/02/02/Python-b03-Inheritance/">Python-b03-Inheritance</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2021/02/02/Python-b02-classmethod-staticmethod/">Python-b02-classmethod-staticmethod</a>
           </li>
         
       </ul>
